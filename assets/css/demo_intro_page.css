@@ -132,7 +132,7 @@ body{
     background-color: #CB473A;
     width: 100%;
     color:#ffffff;
-    padding: 5%;
+    padding: 3%;
     font-size:1.7em;
     margin-top: 1%;
     height: 150px;
@@ -268,7 +268,7 @@ body{
     position: relative;
     width: 60%;
     margin-left: 35%;
-    height: 180px;
+    height: 250px;
     padding: 3%;
     background: #569279;
     -webkit-border-radius: 10px;
@@ -319,7 +319,7 @@ body{
 
 article {
     position: relative;
-    margin-top: -33%;
+    margin-top: -43.3%;
     margin-left: 5%;
     padding: 5%;
     width: 65%;
@@ -554,3 +554,5 @@ article::after {
 
 
 }
+
+

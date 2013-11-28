@@ -441,11 +441,11 @@
                         <div id="slogan_game_wrapper_easy">
                             <div  class="bb-bookblock" id="bbEasy">
 
-                                <div class="bb-item"><a href="#"><img src="assets/images/easy/serious games ppt (easy)_Page_1.jpg"/></a></div>
-                                <div class="bb-item"><a href="#"><img src="assets/images/easy/serious games ppt (easy)_Page_2.jpg"/></a></div>
-                                <div class="bb-item"><a href="#"><img src="assets/images/easy/serious games ppt (easy)_Page_3.jpg"/></a></div>
-                                <div class="bb-item"><a href="#"><img src="assets/images/easy/serious games ppt (easy)_Page_4.jpg"/></a></div>
-                                <div class="bb-item"><a href="#"><img src="assets/images/easy/serious games ppt (easy)_Page_5.jpg"/></a></div>
+                                <div class="bb-item"><a href="#"><img src="assets/images/easy/serious_games_ppt_easy_Page_1.jpg"/></a></div>
+                                <div class="bb-item"><a href="#"><img src="assets/images/easy/serious_games_ppt_easy_Page_2.jpg"/></a></div>
+                                <div class="bb-item"><a href="#"><img src="assets/images/easy/serious_games_ppt_easy_Page_3.jpg"/></a></div>
+                                <div class="bb-item"><a href="#"><img src="assets/images/easy/serious_games_ppt_easy_Page_4.jpg"/></a></div>
+                                <div class="bb-item"><a href="#"><img src="assets/images/easy/serious_games_ppt_easy_Page_5.jpg"/></a></div>
 
 
                             </div>
@@ -465,11 +465,11 @@
 
 
                             <div  class="bb-bookblock" id="bbHard">
-                                <div class="bb-item"><a href="#"><img src="assets/images/hard/serious games ppt (hard)_Page_1.jpg"/></a></div>
-                                <div class="bb-item"><a href="#"><img src="assets/images/hard/serious games ppt (hard)_Page_2.jpg"/></a></div>
-                                <div class="bb-item"><a href="#"><img src="assets/images/hard/serious games ppt (hard)_Page_3.jpg"/></a></div>
-                                <div class="bb-item"><a href="#"><img src="assets/images/hard/serious games ppt (hard)_Page_4.jpg"/></a></div>
-                                <div class="bb-item"><a href="#"><img src="assets/images/hard/serious games ppt (hard)_Page_5.jpg"/></a></div>
+                                <div class="bb-item"><a href="#"><img src="assets/images/hard/serious_games_ppt_hard_Page_1.jpg"/></a></div>
+                                <div class="bb-item"><a href="#"><img src="assets/images/hard/serious_games_ppt_hard_Page_2.jpg"/></a></div>
+                                <div class="bb-item"><a href="#"><img src="assets/images/hard/serious_games_ppt_hard_Page_3.jpg"/></a></div>
+                                <div class="bb-item"><a href="#"><img src="assets/images/hard/serious_games_ppt_hard_Page_4.jpg"/></a></div>
+                                <div class="bb-item"><a href="#"><img src="assets/images/hard/serious_games_ppt_hard_Page_5.jpg"/></a></div>
 
                             </div>
                         </div>
@@ -899,6 +899,7 @@ $(function () {
     $('#teamLink').on('click', function () {
         $(this).hide();
         flipside('aboutUs');
+        $('#gamify').css("pointer-events","none");
         $('.coordinate_block').popover({
             container: 'body',
             placement: 'top',
@@ -911,6 +912,7 @@ $(function () {
         $(this).hide();
         Page2.init()
         flipside('products');
+        $('#gamify').css("pointer-events","none");
 
 //            Page.init();
     });
@@ -919,6 +921,7 @@ $(function () {
         $('#aboutUs').fadeOut('fast');
         $('#products').fadeOut('fast');
         $('#second_logo').fadeOut('fast');
+        $('#gamify').css("pointer-events","auto");
         $('#parallax_view').animate({
             left: "+=" + window.innerWidth * 0.55 + "px"
         });
@@ -1191,10 +1194,13 @@ $(function () {
 
         $("#menu_overlay").css('zIndex','999999');
         $("#menu_overlay").css('position','absolute');
-        $("#menu").css('zIndex','9999999999');
+        $("#menu").css('zIndex',"9999999");
         $("#menu").css('position','absolute');
         $("#menu").css('opacity','1');
         $("#menu").css('background','');
+
+        $('.bb-custom-wrapper>nav').css('zIndex',"10000");
+        $('#aboutUs').css('zIndex','100000');
         //$('#parallax_view').hide();
 
     });
@@ -1205,15 +1211,19 @@ $(function () {
         $('#trigger_button').click(function() {
             cur = (cur + 1) % colors.length;
             setTimeout(function(){
+                $("#do_text").show();
                 $('#do').css('background', colors[0]);
             },500);
             setTimeout(function(){
+                $('#it_text').show();
                 $('#it').css('background', colors[1]);
             },1000);
             setTimeout(function(){
+                $("#with_text").show();
                 $('#with').css('background', colors[2]);
             },1500);
             setTimeout(function(){
+                $('#games_text').show();
                 $('#games').css('background', colors[3]);
             },2000);
 
@@ -1222,6 +1232,10 @@ $(function () {
                 $('#it').css('background', "");
                 $('#with').css('background', "");
                 $('#games').css('background', "");
+                $("#do_text").hide();
+                $("#it_text").hide();
+                $("#with_text").hide();
+                $("#games_text").hide();
             },2500)
         });
 

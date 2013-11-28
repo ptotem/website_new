@@ -47,7 +47,8 @@ function scoring() {
         $this.knob({
             width: '120',
             height: '120',
-            fgColor: '#FF0000'
+            fgColor: '#569279',
+            readOnly:true
         });
 
 
@@ -81,7 +82,7 @@ function review(in1, nd) {
         //console.log("nd.charAt(index) :- " + nd.charAt(index));
         if (nd.charAt(index) == 'P') {
             $(ele).empty();
-            $(ele).css("background-color", "green");
+            $(ele).css("background-color", "#569279");
             $(ele).css("opacity", "0.65");
             //$(ele).css('filter','alpha(opacity='+50+')');
             reason = "This section is correct";
@@ -115,7 +116,7 @@ function review(in1, nd) {
                 }
             }
             $(ele).empty();
-            $(ele).css("background-color", "red");
+            $(ele).css("background-color", "#CB473A");
             $(ele).css("opacity", "0.65");
             //$(ele).css('filter','alpha(opacity='+50+')');
         }
