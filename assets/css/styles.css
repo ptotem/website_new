@@ -1,0 +1,407 @@
+body {
+    margin: 0;
+    width: 100%;
+    height: 98%;
+    overflow: hidden;
+    font-family: "Arial", sans-serif;
+    background: url('../images/background.jpg');
+    background-repeat: repeat;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    padding-left: 40px;
+    pointer-events: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+a{
+    color: #ffffff;
+}
+
+a:hover {
+    text-decoration: none;
+    /*font-weight: bold;*/
+    color: #ffffff;
+}
+
+.scene {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.layer {
+    position: relative;
+    background: transparent;
+}
+
+.panel {
+    position: absolute;
+    background: transparent;
+    pointer-events: none;
+}
+
+#catchphrase {
+    line-height: 1;
+}
+
+#logo .panel {
+    left: 10%;
+    top: 5%;
+}
+
+#sky .panel {
+    right: -5%;
+    top: -10%;
+    width: 100%;
+    height: 120%;
+    opacity: 0.8;
+}
+
+#tree .panel {
+    right: -10%;
+    bottom: -10%;
+    width: 150%;
+}
+
+#cloud1 .panel {
+    right: 55%;
+    top: 10%;
+    opacity: 0.8;
+}
+
+#cloud2 .panel {
+    right: 0%;
+    top: 25%;
+    opacity: 0.8;
+}
+
+#cloud3 .panel {
+    right: -5%;
+    top: 35%;
+    opacity: 0.8;
+
+}
+
+ul#menu {
+    position: absolute;
+    right: 0%;
+    top: 20px;
+    list-style-type: none;
+    padding: 5px;
+    color: white;
+    padding-right: 40px;
+    background: #dd8b25;
+    opacity: 0.7;
+}
+
+#menu_overlay {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    height: 80px;
+    width: 100%;
+    pointer-events: none;
+}
+
+ul#menu li {
+    display: inline;
+    padding: 10px;
+    margin: 5px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul#menu li:hover {
+    background: chocolate;
+}
+
+ul#xsmenu {
+    margin-top: 1em;
+    list-style-type: none;
+    padding: 2em;
+}
+
+ul#xsmenu li {
+    padding: 0.2em;
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-left: 5px solid gray;
+    margin-bottom: 0.2em;
+}
+
+#gamify {
+    opacity: 0.8;
+}
+
+#gamify:hover {
+    opacity: 1;
+}
+
+#aboutUs {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+}
+
+#products {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+}
+
+#close_parallax_btn{
+    position: absolute;
+    cursor: pointer;
+    right: 86px;
+    top: 32px;
+    font-size: 32px;
+    z-index: 9999999;
+    display: none;
+}
+
+/*--------------------------------------------------*/
+
+.windy {
+    width: 100%;
+    margin: 40px auto;
+    color: #aaa;
+    margin-left: 20px;
+}
+
+.windy ul.wi-container {
+    border-radius: 5px;
+}
+
+.windy ul.wi-container::before,
+.windy ul.wi-container::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #ffcf57;
+    left: 0;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.windy ul.wi-container::before {
+    top: 10px;
+    z-index: -2;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.windy ul.wi-container::after {
+    top: 7px;
+    z-index: -1;
+}
+
+.windy h4 {
+    color: #666;
+    font-size: 14px;
+    padding: 8px 0 5px;
+    margin: 5px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.windy p {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+.windy ul.wi-container li {
+    border-radius: 5px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.windy li img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.6), 0 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.windy nav {
+    position: relative;
+    width: 96px;
+    margin: 0 auto;
+}
+
+.windy nav span {
+    width: 40px;
+    height: 40px;
+    margin: 0 4px;
+    float: left;
+    background: url(../images/nav.png) no-repeat 100% 0;
+    text-indent: -9000px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.windy nav span:first-child {
+    background-position: 0 0;
+}
+
+.windy nav span:active {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    background-position: 100% 2px;
+}
+
+.windy nav span:first-child:active {
+    background-position: 0 2px;
+}
+
+/* ------------------------------------------------- */
+
+ul.wi-container {
+    width: 260px;
+    height: 375px;
+    margin: 0 auto 30px -45px;
+    position: relative;
+    padding: 0;
+    list-style-type: none;
+    -webkit-perspective: 1400px;
+    -moz-perspective: 1400px;
+    -ms-perspective: 1400px;
+    -o-perspective: 1400px;
+    perspective: 1400px;
+}
+
+ul.wi-container li {
+    width: 100%;
+    height: 100%;
+    display: none;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    padding: 20px;
+    pointer-events: auto;
+}
+
+ul.wi-container li.wi-move {
+    pointer-events: none;
+    -webkit-transition: -webkit-transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+    -moz-transition: -moz-transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+    -o-transition: -o-transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+    -ms-transition: -ms-transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+    transition: transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+}
+
+.wi-container img {
+    height: auto;
+}
+
+.nopad {
+    margin: 0;
+    padding: 0;
+}
+
+#coordinates {
+    width: 90%;
+    margin-left: 10%;
+}
+
+.coordinate_block {
+    cursor: pointer;
+}
+
+.gameView {
+    display: none;
+}
+
+#slogan,#slogan_hard {
+    margin-top: 10%;
+    /*width:100%;*/
+}
+
+#slogan_game {
+    margin-top: 10%;
+}
+
+#slogan_text,#slogan_text_hard {
+    font-size: 80px;
+    line-height: 80px;
+}
+
+.spinner {
+    border: 5px solid white;
+    /*background: orange;*/
+    /*opacity: 0.5;*/
+}
+
+#do {
+    /*background: black;*/
+    height: 200px;
+}
+
+#it {
+    /*background: green;*/
+    height: 100px;
+
+}
+
+#with {
+    /*background: yellow;*/
+    height: 100px;
+}
+
+#games {
+    /*background: blue;*/
+    height: 100px;
+}
+
+#slogan_game,#slogan_game_easy,#slogan_game_easy {
+    position: absolute;
+    right: 60px;
+}
+
+#slogan_game_wrapper,#slogan_game_wrapper_easy,#slogan_game_wrapper_hard {
+    background: chocolate;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+#buttons{
+    display: none;
+    margin-top: 30%;
+    margin-left: 20%;
+    background: #ffffff;
+    width:200px;
+    padding: 15px;
+}
+
+
+.colors{
+    margin-top: 50%;
+}
