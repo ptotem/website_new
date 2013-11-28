@@ -261,7 +261,7 @@
 </div>
 <div class="row" id="products">
     <div class="col-lg-6 col-lg-offset-6 col-md-7 col-md-offset-5 col-sm-5 col-sm-offset-6">
-        <div class="bb-custom-wrapper producting">
+        <div class="bb-custom-wrapper">
             <div id="product_page">
                 <div  class="bb-bookblock" id="bookblockProduct">
                     <div class="bb-item"><a href="#"><img src="assets/images/products/Slide1.JPG"/></a></div>
@@ -286,8 +286,8 @@
             </div>
             <br>
             <nav>
-                <span class="bb-nav-prev" id="navPrdPrev">prev</span>
-                <span class="bb-nav-next" id="navPrdNext">next</span>
+                <span class="bb-nav-prev" id="navPrdPrev" style="z-index: 999999">prev</span>
+                <span class="bb-nav-next" id="navPrdNext" style="z-index: 999999">next</span>
             </nav>
         </div>
     </div>
@@ -404,7 +404,7 @@
             </li>
             <li class="layer" data-depth="0.2" style="display: none;">
                 <div id="slogan_game" class="gameView">
-                    <div class="bb-custom-wrapper producting">
+                    <div class="bb-custom-wrapper">
                         <div id="slogan_game_wrapper">
                             <div id="gameWin" class="bb-bookblock">
                                 <div class="bb-item"><a href="#"><img src="assets/images/products/Slide1.JPG"/></a></div>
@@ -429,8 +429,8 @@
                         </div>
                         <br>
                         <nav>
-                            <span class="bb-nav-prev" id="gameWinPrev">prev</span>
-                            <span class="bb-nav-next" id="gameWinNext">next</span>
+                            <span class="bb-nav-prev" id="gameWinPrev" style="z-index: 999999">prev</span>
+                            <span class="bb-nav-next" id="gameWinNext" style="z-index: 999999">next</span>
                         </nav>
                     </div>
                 </div>
@@ -439,7 +439,7 @@
                 <div id="slogan_game_easy" class="gameView">
                     <div class="bb-custom-wrapper">
                         <div id="slogan_game_wrapper_easy">
-                            <div  class="bb-bookblock producting" id="bbEasy">
+                            <div  class="bb-bookblock" id="bbEasy">
 
                                 <div class="bb-item"><a href="#"><img src="assets/images/easy/serious_games_ppt_easy_Page_1.jpg"/></a></div>
                                 <div class="bb-item"><a href="#"><img src="assets/images/easy/serious_games_ppt_easy_Page_2.jpg"/></a></div>
@@ -452,8 +452,8 @@
                         </div>
                         <br>
                         <nav>
-                            <span class="bb-nav-prev" id="navEasyPrev">prev</span>
-                            <span class="bb-nav-next" id="navEasyNext">next</span>
+                            <span class="bb-nav-prev" id="navEasyPrev" style="z-index: 999999">prev</span>
+                            <span class="bb-nav-next" id="navEasyNext" style="z-index: 999999">next</span>
                         </nav>
                     </div>
                 </div>
@@ -464,7 +464,7 @@
                         <div id="slogan_game_wrapper_hard">
 
 
-                            <div  class="bb-bookblock producting" id="bbHard">
+                            <div  class="bb-bookblock" id="bbHard">
                                 <div class="bb-item"><a href="#"><img src="assets/images/hard/serious_games_ppt_hard_Page_1.jpg"/></a></div>
                                 <div class="bb-item"><a href="#"><img src="assets/images/hard/serious_games_ppt_hard_Page_2.jpg"/></a></div>
                                 <div class="bb-item"><a href="#"><img src="assets/images/hard/serious_games_ppt_hard_Page_3.jpg"/></a></div>
@@ -475,8 +475,8 @@
                         </div>
                         <br>
                         <nav>
-                            <span class="bb-nav-prev" id="navHardPrev">prev</span>
-                            <span class="bb-nav-next" id="navHardNext">next</span>
+                            <span class="bb-nav-prev" id="navHardPrev" style="z-index: 999999">prev</span>
+                            <span class="bb-nav-next" id="navHardNext" style="z-index: 999999">next</span>
                         </nav>
                     </div>
                 </div>
@@ -514,12 +514,6 @@
 <script type="text/javascript" src="assets/js/jquery.windy.js"></script>
 <script type="text/javascript">
     $(function () {
-        Page.init();
-        Page1.init1();
-        Page2.init();
-        Page3.init();
-        $('.producting').hide();
-
         $("#close_parallax_btn").hide();
         var $el = $('#wi-el'),
                 windy = $el.windy(),
@@ -921,10 +915,10 @@ $(function () {
     });
     $('#productsLink').on('click', function () {
         $(this).hide();
-//        Page2.init()
+        Page2.init()
         flipside('products');
         $('#gamify').css("pointer-events","none");
-        $('.producting').show()
+
 //            Page.init();
     });
     $('#home').on('click', function () {
@@ -963,7 +957,6 @@ $(function () {
         $('#buttons').show();
 //            $('.gameView').fadeIn();
 //            Page.init();
-        $('.producting').show()
     });
 
 
@@ -982,8 +975,7 @@ $(function () {
                 $('#slogan').fadeIn();
                 $('#trigger_button').trigger('click');
 //                $('#slogan_hard').hide();
-//                Page.init();
-                $('.producting').show()
+                Page.init();
 
                 var colors = ["#ff0000","#ffff00","#0000ff","#000000","#008000","#800080","#ff6600","#663300","#ffffff","#808080"];
                 var c1=0;
@@ -1073,14 +1065,14 @@ $(function () {
                     $('#slogan_game').show();
                     $('#slogan_game_easy').hide();
                     $('.spinner').unbind('click');
-//                    Page3.init()
+                    Page3.init()
                 }
             }
             }
             else if($(this).attr('id')=='hard_game') {
                 $('#slogan_game_hard').fadeIn();
                 $('#slogan').fadeIn();
-//                Page1.init1();
+                Page1.init1();
                 $('#trigger_button').trigger('click');
 
                 var colors = ["#ff0000","#ffff00","#0000ff","#000000","#008000","#800080","#ff6600","#663300","#ffffff","#808080"];
@@ -1172,7 +1164,7 @@ $(function () {
                     $('#slogan_game').show();
                     $('#slogan_game_hard').hide();
                     $('.spinner').unbind('click');
-//                    Page3.init()
+                    Page3.init()
                 }
 
 
