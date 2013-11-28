@@ -100,6 +100,7 @@
 <script type="text/javascript">
 
     $(document).ready(function(){
+        $('.bubble').css('opacity','0');
 
         $('#enterbutton').click(function(){
             $('#intropanel').fadeOut(1000);
@@ -117,6 +118,7 @@
         // });
 
         $('#changebutton').click(function(){
+            $('.bubble').css('opacity','1');
             if (click===states.length-1) {
                 $('#changebutton').hide();
                 $('#linkbutton').show();
