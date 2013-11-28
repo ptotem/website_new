@@ -937,9 +937,9 @@ $(function () {
     });
     $('#gamify').on('click', function (e) {
         $('#menu_overlay').css('pointer-events', 'auto');
-        $("#menu_overlay").css('zIndex','0');
+        $("#menu_overlay").css('z-index','0');
         //$("#menu_overlay").css('position','absolute');
-        $("#menu").css('zIndex','0');
+        $("#menu").css('z-index','0');
         $('#menu').css({
             'background': '#aaa',
             'color': '#ccc'
@@ -956,11 +956,11 @@ $(function () {
 
 
         $('.button_click').click(function(){
-            $("#parallax_view").css('zIndex','9999');
+            $("#parallax_view").css('z-index','9999');
             $("#close_parallax_btn").css('left','593px');
             $("#close_parallax_btn").show();
             $("#close_parallax_btn_text").show();
-            $("#menu_overlay").css('zIndex','0');
+            $("#menu_overlay").css('z-index','0');
 //            $("#menu_overlay").css('position','');
             $('.row').css('pointer-events','auto');
             $(".layer").css("z-index",'0');
@@ -1192,15 +1192,15 @@ $(function () {
 //        $('#with_text').hide();
 //        $('#games_text').hide();
 //
-//        $("#menu_overlay").css('zIndex','999999');
+//        $("#menu_overlay").css('z-index','999999');
 //        $("#menu_overlay").css('position','absolute');
-//        $("#menu").css('zIndex',"9999999");
+//        $("#menu").css('z-index',"9999999");
 //        $("#menu").css('position','absolute');
 //        $("#menu").css('opacity','1');
 //        $("#menu").css('background','');
 //
-//        $('.bb-custom-wrapper>nav').css('zIndex',"10000");
-//        $('#aboutUs').css('zIndex','100000');
+//        $('.bb-custom-wrapper>nav').css('z-index',"10000");
+//        $('#aboutUs').css('z-index','100000');
         //$('#parallax_view').hide();
 
     });
