@@ -406,7 +406,7 @@
                 <div id="slogan_game" class="gameView">
                     <div class="bb-custom-wrapper">
                         <div id="slogan_game_wrapper">
-                            <div id="bb-bookblock" class="bb-bookblock">
+                            <div id="gameWin" class="bb-bookblock">
                                 <div class="bb-item"><a href="#"><img src="assets/images/products/Slide1.JPG"/></a></div>
                                 <div class="bb-item"><a href="#"><img src="assets/images/products/Slide2.JPG"/></a></div>
                                 <div class="bb-item"><a href="#"><img src="assets/images/products/Slide3.JPG"/></a></div>
@@ -429,8 +429,8 @@
                         </div>
                         <br>
                         <nav>
-                            <span class="bb-nav-prev">prev</span>
-                            <span class="bb-nav-next">next</span>
+                            <span class="bb-nav-prev" id="gameWinPrev">prev</span>
+                            <span class="bb-nav-next" id="gameWinNext">next</span>
                         </nav>
                     </div>
                 </div>
@@ -777,6 +777,77 @@
 
     })();
 </script>
+<script>
+    var Page3 = (function () {
+
+        var config = {
+                    $bookBlock:$('#gameWin'),
+                    $navNext: $('#gameWinNext'),
+                    $navPrev: $('#gameWinPrev')
+                },
+
+                init = function () {
+                    config.$bookBlock.bookblock({
+                        speed: 800,
+                        shadowSides: 0.8,
+                        shadowFlip: 0.7
+                    });
+                    initEvents();
+                },
+
+                initEvents = function () {
+
+                    var $slides = config.$bookBlock.children();
+
+                    // add navigation events
+                    config.$navNext.on('click touchstart', function () {
+
+                        config.$bookBlock.bookblock('next');
+                        return false;
+                    });
+
+                    config.$navPrev.on('click touchstart', function () {
+                        config.$bookBlock.bookblock('prev');
+                        return false;
+                    });
+
+                    // add swipe events
+                    $slides.on({
+                        'swipeleft': function (event) {
+                            config.$bookBlock.bookblock('next');
+                            return false;
+                        },
+                        'swiperight': function (event) {
+                            config.$bookBlock.bookblock('prev');
+                            return false;
+                        }
+                    });
+
+                    // add keyboard events
+                    $(document).keydown(function (e) {
+                        var keyCode = e.keyCode || e.which,
+                                arrow = {
+                                    left: 37,
+                                    up: 38,
+                                    right: 39,
+                                    down: 40
+                                };
+
+                        switch (keyCode) {
+                            case arrow.left:
+                                config.$bookBlock.bookblock('prev');
+                                break;
+                            case arrow.right:
+                                config.$bookBlock.bookblock('next');
+                                break;
+                        }
+                    });
+                };
+
+        return { init: init };
+
+    })();
+</script>
 
 <script>
 
@@ -986,6 +1057,7 @@ $(function () {
                     $('#slogan_game').show();
                     $('#slogan_game_easy').hide();
                     $('.spinner').unbind('click');
+                    Page3.init()
                 }
             }
             }
@@ -1012,6 +1084,11 @@ $(function () {
                     else {
                         $(this).removeClass("Orange");
                     }
+                    c1++;
+                    if (c1==colors.length){
+                        c1=0;
+                    }
+                    matching_colors();
                 });
                 $('#it').click(function(){
                     $(this).css("background-color", colors[c2]);
@@ -1079,6 +1156,7 @@ $(function () {
                     $('#slogan_game').show();
                     $('#slogan_game_hard').hide();
                     $('.spinner').unbind('click');
+                    Page3.init()
                 }
 
 
