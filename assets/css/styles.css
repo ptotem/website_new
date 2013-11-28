@@ -392,15 +392,43 @@ ul.wi-container li.wi-move {
 }
 
 
-#buttons{
-    display: none;
-    margin-top: 30%;
-    margin-left: 20%;
-    background: #ffffff;
-    width:200px;
-    padding: 15px;
+@media all and (min-width: 1024px){
+    #buttons{
+        display: none;
+        margin-top: 55%;
+        margin-left: 60%;
+        background: #ffffff;
+        opacity: 0.8;
+        width: 180px;
+        border-radius: 10px;
+        padding: 15px;
+    }
+}
+@media all and (min-width:768px) and (max-width: 1024px){
+    #buttons{
+        display: none;
+        margin-top: 95%;
+        margin-left: 58%;
+        background: #ffffff;
+        opacity: 0.8;
+        width: 180px;
+        border-radius: 10px;
+        padding: 15px;
+    }
 }
 
+@media all and (max-width:768px){
+    #buttons{
+        display: none;
+        margin-top: 150%;
+        margin-left: 50%;
+        background: #ffffff;
+        opacity: 0.8;
+        width: 180px;
+        border-radius: 10px;
+        padding: 15px;
+    }
+}
 
 .colors{
     margin-top: 50%;
