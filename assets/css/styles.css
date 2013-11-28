@@ -173,7 +173,7 @@ ul#xsmenu li {
     top: 32px;
     font-size: 32px;
     z-index: 9999999;
-    display: none;
+    /*display: none;*/
 }
 
 /*--------------------------------------------------*/
