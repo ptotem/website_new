@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
 
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,156 +11,155 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
-      <script src="assets/js/respond.min.js"></script>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
     <![endif]-->
 
-  </head>
+</head>
 
-  <body>
-    <div class="container">
-      <!-- Master Row -->
-      <div class="row">
+<body>
+<div class="container">
+    <!-- Master Row -->
+    <div class="row">
 
-      <!-- Intro Panel -->
-            <div class="col-lg-12 intropanel" id="intropanel">
+        <!-- Intro Panel -->
+        <div class="col-lg-12 col-md-12 col-sm-12 intropanel" id="intropanel">
 
-              <div class="row">
-                <div class="col-lg-9 intropaneltext">
-                   So you want to learn about how to build a resume? There's a lot of information on that out there, especially if you type in "how to build a resume" on google. This little game we have out here, however, focuses on what you should'nt have on your resume. We call them the 10 commandments. Go  through the examples so that you get an idea of what the commandments are and then play the game to really perfect what you've read.
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 intropaneltext">
+                    So you want to learn about how to build a resume? There's a lot of information on that out there, especially if you type in "how to build a resume" on google. This little game we have out here, however, focuses on what you should'nt have on your resume. We call them the 10 commandments. Go  through the examples so that you get an idea of what the commandments are and then play the game to really perfect what you've read.
                 </div>
-              </div>
+            </div>
 
-              <div class="row">
+            <div class="row">
                 <div class="col-lg-12">
-                 <button id="enterbutton" class="enterbutton">Enter</button> 
+                    <button id="enterbutton" class="enterbutton">Enter</button>
                 </div>
-              </div>
-              
             </div>
 
-      <!-- Left Panel For Header Box and Response Box -->
+        </div>
+        <!-- Header Box   -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-10 headerbox" id="header1">
+
+            </div>
+        </div>
+        <!-- Left Panel For Header Box and Response Box -->
         <div class="col-lg-7 col-md-7 col-sm-7">
-           <!-- Row 1 Commandment Block -->
-           <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 headerbox" id="header1">
-                
-              </div>              
-           </div>
-           <!-- Row 2 Specch Bubble -->
-           <div class="row">
-            <div class="col-lg-12 col-md-12">
-              <div class="bubble speechbox" id="speech1">
-              
-              </div>
 
-              <article class="blurry-text" id="paperstack">
-                <img src="assets/images/demo_page/Resume-Blurred.jpg" style="width:90%;" />
-              </article>
-              
+            <!-- Row 2 Specch Bubble -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="bubble speechbox" id="speech1">
+
+                    </div>
+
+                    <article class="blurry-text" id="paperstack">
+                        <img src="assets/images/demo_page/Resume-Blurred.jpg" style="width:90%;" />
+                    </article>
+                </div>
             </div>
-          </div>
 
         </div>
 
-      <!-- Right Panel For Speechbox and Buttons -->
+        <!-- Right Panel For Speechbox and Buttons -->
         <div class="col-lg-5  col-md-5 col-sm-5 hidden-xs">
-           <!-- Row 1 Thought Bubble  -->
-           <div class="row">
-              <div class="col-lg-12 thought" id="response1">
-              </div>
-           </div>
-           <!-- Row 2 Character Image -->
-           <div class="row characterrow">
-             <div class="col-lg-12 col-md-12 col-sm-12" id="character1">
-               <img src="assets/images/demo_page/stylch2.png" class="charimg">
-             </div>
-           </div>
-           <!-- Row 3 Button -->
-           <div class="row">
-            <div class="col-lg-12">
-              <button class="changebutton" id="changebutton">Next Example</button>
-              <button class="linkbutton" id="linkbutton">Play The Game</button>
+            <!-- Row 1 Thought Bubble  -->
+            <div class="row">
+                <div class="col-lg-12 thought" id="response1">
+                </div>
             </div>
-           </div>
+            <!-- Row 2 Character Image -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12" id="character1">
+                    <img src="assets/images/demo_page/stylch2.png" class="charimg">
+                </div>
+            </div>
+            <!-- Row 3 Button -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <button class="changebutton" id="changebutton">Next Example</button>
+                    <button class="linkbutton" id="linkbutton">Play The Game</button>
+                </div>
+            </div>
 
         </div>
 
-      </div>         
-          
-    </div> 
-    <!-- /container -->
+    </div>
+
+</div>
+<!-- /container -->
 
 
-   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/storage.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/storage.js"></script>
 
-  <script type="text/javascript">
+<script type="text/javascript">
 
     $(document).ready(function(){
 
-      $('#enterbutton').click(function(){
-        $('#intropanel').fadeOut(1000);
-        $('#changebutton').show();
-        $('#header1').text("Welcome")
-        $('#response1').text("Click on the button to check out what people say in their resume's and what I think about them...")
-      });
+        $('#enterbutton').click(function(){
+            $('#intropanel').fadeOut(1000);
+            $('#changebutton').show();
+            $('#header1').text("Welcome")
+            $('#response1').text("Click on the button to check out what people say in their resume's and what I think about them...")
+        });
 
-      $('#character1').mouseenter(function(){
-        $('.thought').hide();
-      });
+        // $('#character1').mouseenter(function(){
+        //   $('.thought').hide();
+        // });
 
-      $('#character1').mouseleave(function(){
-        $('.thought').show();
-      });
+        // $('#character1').mouseleave(function(){
+        //   $('.thought').show();
+        // });
 
-      $('#changebutton').click(function(){
-        if (click===states.length-1) {
-          $('#changebutton').hide();
-          $('#linkbutton').show();
-        }
-        for (i = 0; i <= click; i++)
-        {
-        	var a = states[click].type;
-        	switch(a)
+        $('#changebutton').click(function(){
+            if (click===states.length-1) {
+                $('#changebutton').hide();
+                $('#linkbutton').show();
+            }
+            for (i = 0; i <= click; i++)
+            {
+                var a = states[click].type;
+                switch(a)
 
-   			{
+                {
 
-    		case "regular":
-    		$('#header1').text(states[i].header);
-            $('#speech1').empty().removeClass().addClass('bubble speechbox').text(states[i].example);
-            $('#paperstack').removeClass().addClass('blurry-text');
-            $('#response1').text(states[i].response);
-            break;
+                    case "regular":
+                        $('#header1').text(states[i].header);
+                        $('#speech1').empty().removeClass().addClass('bubble speechbox').text(states[i].example);
+                        $('#paperstack').removeClass().addClass('blurry-text');
+                        $('#response1').text(states[i].response);
+                        break;
 
-            case "big":
-            $('#header1').text(states[i].header);
-            $('#speech1').empty().removeClass().addClass('bubble speechbox bigspeech').text(states[i].example);
-            $('#paperstack').removeClass().addClass('blurry-text bigpaperstack');
-            $('#response1').text(states[i].response);
-            break;
+                    case "big":
+                        $('#header1').text(states[i].header);
+                        $('#speech1').empty().removeClass().addClass('bubble speechbox bigspeech').text(states[i].example);
+                        $('#paperstack').removeClass().addClass('blurry-text bigpaperstack');
+                        $('#response1').text(states[i].response);
+                        break;
 
-            case "image":
-            var source = states[i].source;
-            $('#header1').text(states[i].header);
-            $('#speech1').empty().removeClass().addClass('bubble speechbox imgspeech').prepend('<img src='+source+' height="300px" width="300px" style="margin-left:6%"/>');
-            $('#paperstack').removeClass().addClass('blurry-text imgpaperstack');
-            $('#response1').text(states[i].response);
-            break;
+                    case "image":
+                        var source = states[i].source;
+                        $('#header1').text(states[i].header);
+                        $('#speech1').empty().removeClass().addClass('bubble speechbox imgspeech').prepend('<img src='+source+' class=boxImg >');
+                        $('#paperstack').removeClass().addClass('blurry-text imgpaperstack');
+                        $('#response1').text(states[i].response);
+                        break;
 
-   		 	}
+                }
 
-        };
-        click=click+1;
-      });
+            };
+            click=click+1;
+        });
 
-      $('#linkbutton').click(function(){
+        $('#linkbutton').click(function(){
             window.location.href='resume_builder_game.html';
-      });
-      
+        });
+
     });
 
     // function textchange(){
@@ -179,10 +178,10 @@
 
 
 
-      
-
-  </script>
 
 
-  </body>
+</script>
+
+
+</body>
 </html>
