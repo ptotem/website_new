@@ -174,7 +174,7 @@ $(function () {
                 if (c1 == colors.length) {
                     c1 = 0;
                 }
-                matching_colors();
+                matching_colors_easy();
 
             });
 
@@ -193,7 +193,7 @@ $(function () {
                 if (c2 == colors.length) {
                     c2 = 0;
                 }
-                matching_colors();
+                matching_colors_easys();
             });
 
             $('#with').click(function () {
@@ -210,7 +210,7 @@ $(function () {
                 if (c3 == colors.length) {
                     c3 = 0;
                 }
-                matching_colors();
+                matching_colors_easy();
             });
 
             $('#games').click(function () {
@@ -227,10 +227,10 @@ $(function () {
                 if (c4 == colors.length) {
                     c4 = 0;
                 }
-                matching_colors();
+                matching_colors_easy();
             });
 
-            function matching_colors() {
+            function matching_colors_easy() {
                 if (($('#do_text').hasClass('Red')) && ($('#it_text').hasClass('Yellow')) && ($('#with_text').hasClass('Blue')) && ($('#games_text').hasClass('Black'))) {
                     $('#do_text').show();
                     $('#it_text').show();
@@ -274,7 +274,7 @@ $(function () {
                 if (c1 == colors.length) {
                     c1 = 0;
                 }
-                matching_colors();
+                match_colors_hard();
             });
 
             $('#it').click(function () {
@@ -292,7 +292,7 @@ $(function () {
                 if (c2 == colors.length) {
                     c2 = 0;
                 }
-                matching_colors();
+                match_colors_hard();
             });
 
             $('#with').click(function () {
@@ -309,7 +309,7 @@ $(function () {
                 if (c3 == colors.length) {
                     c3 = 0;
                 }
-                matching_colors();
+                match_colors_hard();
             });
 
             $('#games').click(function () {
@@ -326,11 +326,11 @@ $(function () {
                 if (c4 == colors.length) {
                     c4 = 0;
                 }
-                matching_colors();
+                match_colors_hard();
             });
 
 
-            function matching_colors() {
+            function match_colors_hard() {
                 var correct = ["Orange", "Gray", "Brown", "Green"];
 
                 if (($('#do_text').hasClass('Orange')) && ($('#it_text').hasClass('Gray')) && ($('#with_text').hasClass('Brown')) && ($('#games_text').hasClass('Green'))) {
