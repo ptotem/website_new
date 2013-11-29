@@ -24,6 +24,7 @@ img {
 
 a{
     color: #ffffff;
+    text-decoration: none;
 }
 
 a:hover {
@@ -385,22 +386,26 @@ ul.wi-container li.wi-move {
 #do {
     /*background: black;*/
     height: 200px;
+    outline: none;
 }
 
 #it {
     /*background: green;*/
     height: 100px;
+    outline: none;
 
 }
 
 #with {
     /*background: yellow;*/
     height: 100px;
+    outline: none;
 }
 
 #games {
     /*background: blue;*/
     height: 100px;
+    outline: none;
 }
 
 
