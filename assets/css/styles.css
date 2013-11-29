@@ -22,17 +22,36 @@ img {
     height: 100%;
 }
 
-a{
+/*a{*/
+    /*text-decoration: none;*/
+    /*color: #ffffff;*/
+/*}*/
+
+/*a:hover {*/
+    /*text-decoration: none;*/
+    /*font-weight: bold;*/
+    /*color: #ffffff;*/
+/*}*/
+
+a:link {
     text-decoration: none;
     color: #ffffff;
+}      /* unvisited link */
 
-}
+a:visited {
+    color: #ffffff;
+}  /* visited link */
 
 a:hover {
     text-decoration: none;
     /*font-weight: bold;*/
     color: #ffffff;
-}
+}  /* mouse over link */
+
+a:active {
+    color: #ffffff;
+}  /* selected link */
+
 
 .scene {
     width: 100%;
