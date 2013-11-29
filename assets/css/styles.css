@@ -19,7 +19,7 @@ body {
 img {
     display: block;
     width: 100%;
-    /*height: 100%;*/
+    height: 100%;
 }
 
 a{
@@ -52,6 +52,17 @@ a:hover {
     position: absolute;
     background: transparent;
     pointer-events: none;
+    box-shadow: none;
+}
+
+.appleinstructions{
+    background-color: #eda233;
+    color: #a52a2a;
+    opacity: 0.8;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+
 }
 
 #catchphrase {
@@ -168,10 +179,20 @@ ul#xsmenu li {
     width: 100%;
 }
 
-#close_parallax_btn{
+.close_parallax_btn{
     position: absolute;
     cursor: pointer;
-    right: 86px;
+    right: 5px;
+    top: 32px;
+    font-size: 32px;
+    z-index: 9999999;
+    /*display: none;*/
+}
+
+.close_slogan_btn{
+    position: absolute;
+    cursor: pointer;
+    right: 5px;
     top: 32px;
     font-size: 32px;
     z-index: 9999999;
@@ -350,10 +371,10 @@ ul.wi-container li.wi-move {
     margin-top: 10%;
 }
 
-#slogan_text,#slogan_text_hard {
-    font-size: 80px;
-    line-height: 80px;
-}
+/*#slogan_text,#slogan_text_hard {*/
+    /*font-size: 80px;*/
+    /*line-height: 120px;*/
+/*}*/
 
 .spinner {
     border: 5px solid white;
@@ -382,6 +403,12 @@ ul.wi-container li.wi-move {
     height: 100px;
 }
 
+
+.doitwithgames{
+    font-family: 'Impact'
+}
+
+
 #slogan_game,#slogan_game_easy,#slogan_game_easy {
     position: absolute;
     right: 60px;
@@ -405,6 +432,32 @@ ul.wi-container li.wi-move {
         border-radius: 10px;
         padding: 15px;
     }
+
+    #do_text{
+        display: none;
+        color: #000000;
+        font-size: 6.2em;
+        line-height: 184px;
+        transform: scale(1, 2);
+    }
+
+    #it_text{
+        display: none;
+        color: #000000;
+        font-size: 5em;
+    }
+
+    #with_text{
+        display: none;
+        color: #000000;
+        font-size: 5em;
+    }
+
+    #games_text{
+        display: none;
+        color: #000000;
+        font-size: 5em;
+    }
 }
 @media all and (min-width:768px) and (max-width: 1024px){
     #buttons{
@@ -416,6 +469,32 @@ ul.wi-container li.wi-move {
         width: 180px;
         border-radius: 10px;
         padding: 15px;
+    }
+
+    #do_text{
+        display: none;
+        color: #000000;
+        font-size: 5.2em;
+        line-height: 184px;
+        transform: scale(1, 2);
+    }
+
+    #it_text{
+        display: none;
+        color: #000000;
+        font-size: 4.5em;
+    }
+
+    #with_text{
+        display: none;
+        color: #000000;
+        font-size: 4.1em;
+    }
+
+    #games_text{
+        display: none;
+        color: #000000;
+        font-size: 4.5em;
     }
 }
 
@@ -429,6 +508,38 @@ ul.wi-container li.wi-move {
         width: 180px;
         border-radius: 10px;
         padding: 15px;
+    }
+
+    #do_text{
+        display: none;
+        color: #000000;
+        font-size: 3.5em;
+        line-height: 184px;
+        transform: scale(1, 3);
+    }
+
+    #it_text{
+        display: none;
+        color: #000000;
+        font-size: 2em;
+        line-height: 3em;
+        transform: scale(1, 3);
+    }
+
+    #with_text{
+        display: none;
+        color: #000000;
+        font-size: 3em;
+        line-height: 1.8em;
+        transform: scale(1, 1.5);
+    }
+
+    #games_text{
+        display: none;
+        color: #000000;
+        font-size: 3em;
+        line-height: 2em;
+        transform: scale(1, 2);
     }
 }
 
