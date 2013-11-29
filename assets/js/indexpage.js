@@ -20,6 +20,10 @@ var text_array = ['Arijit Lahiri aka "Lolly" says he is a dreamer, thinker and a
 
 //For About Us Windy Array End
 
+//For Product Bookblock Array Start
+var product_img_array = ["assets/images/products/Slide1.JPG", "assets/images/products/Slide2.JPG", "assets/images/products/Slide3.JPG", "assets/images/products/Slide4.JPG", "assets/images/products/Slide5.JPG", "assets/images/products/Slide6.JPG", "assets/images/products/Slide7.JPG", "assets/images/products/Slide8.JPG", "assets/images/products/Slide9.JPG", "assets/images/products/Slide10.JPG", "assets/images/products/Slide11.JPG", "assets/images/products/Slide12.JPG", "assets/images/products/Slide13.JPG", "assets/images/products/Slide14.JPG", "assets/images/products/Slide15.JPG", "assets/images/products/Slide16.JPG", "assets/images/products/Slide17.JPG", "assets/images/products/Slide18.JPG"]
+//For Product Bookblock Array End
+
 
 
 
@@ -72,7 +76,7 @@ $(function () {
         flipside('products');
         $('#gamify').css("pointer-events", "none");
 
-
+        products_bookblock(product_img_array);
     });
 
     $('#home').on('click', function () {
@@ -447,6 +451,26 @@ $(function () {
     }
 
 
+    function products_bookblock(product_img_array){
+        var seplen=product_img_array.length;   //images array
+        var carus = $('#bookblockProduct');        //will append images to this element
+        var imglist='';                    //we use this variable for optimization..
+
+        for(var i=0;i<seplen;i++){
+            if (i>0){
+                imglist+='<div class="bb-item"><a href="#"><img src="'+product_img_array[i]+'"/></a></div>';
+            }
+            else
+            {
+                imglist+='<div class="bb-item" style="display: block;"><a href="#"><img src="'+product_img_array[i]+'"/></a></div>';
+            }
+
+        }
+
+        carus.html(imglist);
+
+        Page2.init()
+    }
 
 
 
