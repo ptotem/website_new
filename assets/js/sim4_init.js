@@ -7,6 +7,7 @@ var total_sections;
 var pos_count = 0;
 var inactivesection = 0;
 var score1, score2, score3;
+var gm_ovr=false;
 
 $(function () {
     load_db();
@@ -15,6 +16,7 @@ $(function () {
 
 
 function scoring() {
+    if(!gm_ovr){
     $('.correct').each(function (index, ele) {
 
         if ($(ele).hasClass('selected') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('correct')) {
@@ -71,8 +73,8 @@ function scoring() {
     });
 
     review(input, new_data);
-
-
+    gm_ovr=true;
+    }
 }
 
 function review(in1, nd) {
