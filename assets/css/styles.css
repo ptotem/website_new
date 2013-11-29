@@ -23,8 +23,9 @@ img {
 }
 
 a{
-    color: #ffffff;
     text-decoration: none;
+    color: #ffffff;
+
 }
 
 a:hover {
