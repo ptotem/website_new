@@ -6,6 +6,7 @@ body {
     font-family: "Arial", sans-serif;
     background: url('../images/background.jpg');
     background-repeat: repeat;
+    display: none;
 }
 
 #footer {
@@ -83,6 +84,10 @@ a:active {
 #logo .panel {
     left: 10%;
     top: 5%;
+}
+
+#logopic{
+    height: auto;
 }
 
 #sky .panel {
