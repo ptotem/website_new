@@ -136,18 +136,19 @@ $(function () {
         $('.row').css('pointer-events', 'auto');
         $(".layer").css("z-index", '0');
 
+
         if ($(this).attr('id') == 'easy_game') {
             setTimeout(function () {
                 $("#slogan_game_easy").parent().css("z-index", "9999");
             }, 1000)
+            setTimeout(function(){
+                $('#tree').css('z-index',-1);
+                $('#buttons').parent().css('z-index',-1);
+            },2000);
             $('#slogan_game_easy').fadeIn();
-
-
-
             $('#slogan').fadeIn();
             $('#trigger_button').trigger('click');
             products_bookblock(easy_game_img_array,"bbEasy");
-            //                $('#slogan_hard').hide();
             Page.init();
 
             var colors = ["#ff0000", "#ffff00", "#0000ff", "#000000", "#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
@@ -251,7 +252,10 @@ $(function () {
             products_bookblock(hard_game_img_array,'bbHard')
             Page1.init1();
             $('#trigger_button').trigger('click');
-
+            setTimeout(function(){
+                $('#tree').css('z-index',-1);
+                $('#buttons').parent().css('z-index',-1);
+            },2000);
             var colors = ["#ff0000", "#ffff00", "#0000ff", "#000000", "#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
             var c1 = 0;
             var c2 = 0;
