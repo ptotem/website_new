@@ -34,16 +34,17 @@ var hard_game_img_array = ["assets/images/hard/serious_games_ppt_hard_Page_1.jpg
 
 $(function () {
 
+    //Home page animation start
 
     $('#logopic').hide();
     $('#buttons').hide();
 
-    $('#sky .panel').css('left','670px');
+    $('#sky .panel').css('left','100%');
     $('body').css("background-image","url('assets/images/background.jpg')").fadeIn(3000);
     setTimeout(function(){
         $('#logopic').fadeIn(5000);
     },2000,setTimeout(function(){
-        $('#sky .panel').animate({left: '0px'}, 2000);
+        $('#sky .panel').animate({left: '0%'}, 2000);
     },4000),setTimeout(function(){
         $("#tree").animate({top:'-109%'}, 1000);
         $('#menu_overlay').animate({right: '0px'}, 2000);
@@ -52,6 +53,8 @@ $(function () {
         $('#catchphrase').hatchShow('catchphrase');
         $('#catchphrase').animate({opacity: 1}, 1000);
     },8000));
+    //Home page animation end
+
 
     $(".close_parallax_btn").hide();
 
@@ -287,6 +290,7 @@ $(function () {
                     $("#menu").css({
                         'background':'',
                         'z-index':'9999'})
+
                 }
             }
         }
