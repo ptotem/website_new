@@ -200,7 +200,7 @@ function start_sim() {
 
         var input = myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields;
         $.each(input, function (index, value) {
-            $('#form').append('<div class="correct" onclick="disp($(this)); " style="position:absolute;background: #FFF;opacity:0.0; filter:alpha(opacity=0); font-size:11px;top:' + value.Field.top + 'px;left:' + value.Field.left + 'px;height:' + value.Field.height + 'px;width:' + value.Field.width + 'px;" >.</div>');
+            $('#form').append('<div class="correct" onclick="disp($(this)); " style="cursor:pointer;position:absolute;background: #FFF;opacity:0.0; filter:alpha(opacity=0); font-size:11px;top:' + value.Field.top + 'px;left:' + value.Field.left + 'px;height:' + value.Field.height + 'px;width:' + value.Field.width + 'px;" >.</div>');
         });
 
     total_sections = myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields.length;

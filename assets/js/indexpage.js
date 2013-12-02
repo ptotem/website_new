@@ -99,6 +99,25 @@ $(function () {
         $('#gamify').css("pointer-events", "none");
 
         products_bookblock(product_img_array,"bookblockProduct");
+
+        $('#bookblockProduct').on({
+            'swipe' : function(ev) {
+                console.log('Swiping');
+            },
+            'swipeleft' : function(ev) {
+                console.log('Swiping left');
+            },
+            'swiperight' : function(ev) {
+                console.log('Swiping right');
+            },
+            'swipeup' : function(ev) {
+                console.log('Swiping up');
+            },
+            'swipedown' : function(ev) {
+                console.log('Swiping down');
+            }
+        });
+
     });
 
     $('#home').on('click', function () {
