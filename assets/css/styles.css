@@ -4,9 +4,10 @@ body {
     height: 98%;
     overflow: hidden;
     font-family: "Arial", sans-serif;
-    background: url('../images/background.jpg');
-    background-repeat: repeat;
+    /*background-image: url('../images/background.jpg');*/
+    /*background-repeat: repeat;*/
     display: none;
+
 }
 
 #footer {
@@ -79,6 +80,7 @@ a:active {
 
 #catchphrase {
     line-height: 1;
+    opacity: 0;
 }
 
 #logo .panel {
@@ -88,19 +90,24 @@ a:active {
 
 #logopic{
     height: auto;
+    /*display: none;*/
 }
 
 #sky .panel {
-    right: -5%;
+    /*right: -5%;*/
+    /*left: 630px;*/
     top: -10%;
     width: 100%;
     height: 120%;
     opacity: 0.8;
+    /*display: none;*/
 }
 
 #tree .panel {
     right: -10%;
-    bottom: -10%;
+    bottom: -120%;
+    /*top:600px;*/
+    /*position: absolute;*/
     width: 150%;
 }
 
@@ -125,7 +132,8 @@ a:active {
 
 ul#menu {
     position: absolute;
-    right: 0%;
+    /*right: 0%;*/
+    right: -490px;
     top: 20px;
     list-style-type: none;
     padding: 5px;
@@ -137,7 +145,8 @@ ul#menu {
 
 #menu_overlay {
     position: absolute;
-    right: 0;
+    /*right: 0;*/
+    right: -490px;
     top: 10px;
     height: 80px;
     width: 100%;
@@ -388,8 +397,8 @@ ul.wi-container li.wi-move {
 }
 
 /*#slogan_text,#slogan_text_hard {*/
-    /*font-size: 80px;*/
-    /*line-height: 120px;*/
+/*font-size: 80px;*/
+/*line-height: 120px;*/
 /*}*/
 
 .spinner {

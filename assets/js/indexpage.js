@@ -32,9 +32,26 @@ var hard_game_img_array = ["assets/images/hard/serious_games_ppt_hard_Page_1.jpg
 //For easy game intro Bookblock Array End
 
 
-
 $(function () {
-    $('body').fadeIn(5000);
+
+    $('#logopic').hide();
+    $('#sky .panel').css('left','670px');
+    $('body').css("background-image","url('assets/images/background.jpg')").fadeIn(3000);
+    setTimeout(function(){
+        $('#logopic').fadeIn(5000);
+    },2000,setTimeout(function(){
+        $('#sky .panel').animate({left: '0px'}, 2000);
+    },4000),setTimeout(function(){
+        $("#tree").animate({top:'-109%'}, 1000);
+        $('#menu_overlay').animate({right: '0px'}, 2000);
+        $('#menu').animate({right: '0px'}, 2000);
+    },6000),setTimeout(function(){
+        $('#catchphrase').hatchShow('catchphrase');
+        $('#catchphrase').animate({opacity: 1}, 1000);
+    },8000));
+
+
+
 
     $(".close_parallax_btn").hide();
 
