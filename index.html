@@ -280,10 +280,34 @@
 
             <li class="layer">
                 <div id="buttons">
-                    <p>Choose a Game Mode</p>
-                    <a href="#" id="easy_game" class="button_click" style="pointer-events:auto;"><button type="button" class="btn btn-danger">Easy</button></a>
-                    <a href="#" id="hard_game" class="button_click" style="pointer-events:auto;margin-left: 18%;"><button type="button" class="btn btn-danger">Hard</button></a>
-                    <a href="#" id="trigger_button" class="button_click" style="pointer-events:auto;display: none;"><button type="button" class="btn btn-danger">Trigger</button></a>
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                            <p>Choose a Game Mode</p>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <a href="#" class="close_game_select_btn button_click" data-toggle="modal" data-target="#confGameModeModal" style="pointer-events:auto;">
+                            <button type="button" class="btn btn-danger">X</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <a href="#" id="easy_game" class="button_click" style="pointer-events:auto;"><button type="button" class="btn btn-danger">Easy</button></a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <a href="#" id="hard_game" class="button_click" style="pointer-events:auto;margin-left: 18%;"><button type="button" class="btn btn-danger">Hard</button></a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <a href="#" id="trigger_button" class="button_click" style="pointer-events:auto;display: none;"><button type="button" class="btn btn-danger">Trigger</button></a>
+                        </div>
+                    </div>
+                    <!--<p>Choose a Game Mode</p>-->
+                    <!--<a href="#" class="close_game_select_btn button_click" style="pointer-events:auto;">-->
+                        <!--<button type="button" class="btn btn-danger">X</button>-->
+                    <!--</a>-->
+                    <!--<a href="#" id="easy_game" class="button_click" style="pointer-events:auto;"><button type="button" class="btn btn-danger">Easy</button></a>-->
+                    <!--<a href="#" id="hard_game" class="button_click" style="pointer-events:auto;margin-left: 18%;"><button type="button" class="btn btn-danger">Hard</button></a>-->
+                    <!--<a href="#" id="trigger_button" class="button_click" style="pointer-events:auto;display: none;"><button type="button" class="btn btn-danger">Trigger</button></a>-->
                 </div>
             </li>
 
@@ -399,6 +423,41 @@
 </div><!-- /.modal -->
 
 <button onclick="myFunction()" id="try_it" style="display: none">Try it</button>
+
+<div class="modal fade" id="confGameModeModal" tabindex="-1" role="dialog" aria-labelledby="confModalLabel" aria-hidden="true" style="z-index: 9999;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Quit Game</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to wimp out? It’s not that tough…</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Give it a Shot</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.reload()">Wimp Out</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="congModal" tabindex="-1" role="dialog" aria-labelledby="congModalLabel" aria-hidden="true" style="z-index: 9999;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Congratulation</h4>
+            </div>
+            <div class="modal-body">
+                <p>Congratulation, you have cracked it.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 </body>
 </html>

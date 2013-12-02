@@ -34,7 +34,10 @@ var hard_game_img_array = ["assets/images/hard/serious_games_ppt_hard_Page_1.jpg
 
 $(function () {
 
+
     $('#logopic').hide();
+    $('#buttons').hide();
+
     $('#sky .panel').css('left','670px');
     $('body').css("background-image","url('assets/images/background.jpg')").fadeIn(3000);
     setTimeout(function(){
@@ -50,11 +53,7 @@ $(function () {
         $('#catchphrase').animate({opacity: 1}, 1000);
     },8000));
 
-
-
-
     $(".close_parallax_btn").hide();
-
 
     $('.superpanel').css({
         height:window.innerHeight + 'px'
@@ -63,7 +62,6 @@ $(function () {
     $('.scene').parallax().fadeIn();
 
     $(window).load(function () {
-        //$().hatchShow();
         $('#catchphrase').hatchShow('catchphrase');
     });
 
@@ -79,6 +77,7 @@ $(function () {
 
     $('#teamLink').on('click', function () {
         $(this).hide();
+        $('.windy>nav').css('z-index','1');
         flipside('aboutUs');
         $('#gamify').css("pointer-events", "none");
         $('.coordinate_block').popover({
@@ -140,6 +139,10 @@ $(function () {
             $('#buttons').parent().css('z-index', '999999');
         }, 2500)
 
+//        $(".close_game_select_btn").on('click', function (e) {
+//
+//        });
+
     });
 
 
@@ -152,7 +155,7 @@ $(function () {
 //            $("#menu_overlay").css('position','');
         $('.row').css('pointer-events', 'auto');
         $(".layer").css("z-index", '0');
-
+        $('#buttons').hide();
 
         if ($(this).attr('id') == 'easy_game') {
             setTimeout(function () {
@@ -163,6 +166,7 @@ $(function () {
                 $('#buttons').parent().css('z-index',-1);
             },2000);
             $('#slogan_game_easy').fadeIn();
+            $('#sky').css('opacity','0');
             $('#slogan').fadeIn();
             $('#trigger_button').trigger('click');
             products_bookblock(easy_game_img_array,"bbEasy");
@@ -211,7 +215,7 @@ $(function () {
                 if (c2 == colors.length) {
                     c2 = 0;
                 }
-                matching_colors_easys();
+                matching_colors_easy();
             });
 
             $('#with').click(function () {
@@ -254,18 +258,25 @@ $(function () {
                     $('#it_text').show();
                     $('#with_text').show();
                     $('#games_text').show();
-                    $('#slogan_game').show();
+                    //$('#slogan_game').show();
                     $('#slogan_game_easy').hide();
                     $("#slogan_game").parent().css("z-index", "999999");
                     $('.spinner').unbind('click');
-                    products_bookblock(product_img_array,'gameWin');
-                    Page3.init()
+                    //products_bookblock(product_img_array,'gameWin');
+                    //Page3.init()
+                    $("#congModal").modal('show');
+                    $("#menu").css({
+                        'background':'',
+                        'z-index':'9999'})
                 }
             }
         }
         else if ($(this).attr('id') == 'hard_game') {
+            $('#buttons').hide();
             $('#slogan_game_hard').fadeIn();
             $('#slogan').fadeIn();
+            $('#sky').css('opacity','0');
+            $('#slogan_game_wrapper_hard').css('width','95%');
             products_bookblock(hard_game_img_array,'bbHard')
             Page1.init1();
             $('#trigger_button').trigger('click');
@@ -359,12 +370,16 @@ $(function () {
                     $('#it_text').show();
                     $('#with_text').show();
                     $('#games_text').show();
-                    $('#slogan_game').show();
+                    //$('#slogan_game').show();
                     $('#slogan_game_hard').hide();
                     $("#slogan_game").parent().css("z-index", "999999");
                     $('.spinner').unbind('click');
-                    products_bookblock(product_img_array,'gameWin');
-                    Page3.init()
+                    $("#congModal").modal('show');
+                    $("#menu").css({
+                        'background':'',
+                        'z-index':'9999'})
+                    //products_bookblock(product_img_array,'gameWin');
+                    //Page3.init()
                 }
 
 
@@ -403,9 +418,9 @@ $(function () {
             $("#games_text").hide();
         }, 2500)
 
-        setTimeout(function () {
-            $('#buttons').show();
-        }, 3000)
+//        setTimeout(function () {
+//            $('#buttons').show();
+//        }, 3000)
 
     });
 
@@ -414,6 +429,22 @@ $(function () {
         window.location.reload();
     });
 
+    $('#confGameModeModal').on('hidden.bs.modal', function () {
+        $("#buttons").parent().css('z-index', '99999');
+        $("#buttons").show();
+    });
+
+    $('#congModal').on('shown.bs.modal', function () {
+        $('#sky').css('opacity','0');
+    })
+
+
+    $('#congModal').on('hidden.bs.modal', function () {
+        $("#tree").css('z-index','9999999');
+        $('#sky').css('opacity','0.8');
+    })
+
+
 
     function img_windy(img_array,text_array,name_array){
         var seplen=img_array.length;   //images array
@@ -421,18 +452,10 @@ $(function () {
         var imglist='';                    //we use this variable for optimization..
 
         for(var i=0;i<seplen;i++){
-            if (i>0){
-                imglist+='<li><img src="'+img_array[i]+'" alt="image1"/><h4>'+ name_array[i] +'</h4><p>'+text_array[i]+'</p></li>';    //add all images what we have (actually there 2 or 3 images)
-            }
-            else
-            {
-                imglist+='<li style="display: list-item;"><img src="'+img_array[i]+'" alt="image1"/><h4>'+ name_array[i] +'</h4><p>'+text_array[i]+'</p></li>';    //add all images what we have (actually there 2 or 3 images)
-            }
-
+                imglist+='<li><img src="'+img_array[i]+'" alt="image'+[i+1]+'"/><h4>'+ name_array[i] +'</h4><p>'+text_array[i]+'</p></li>';    //add all images what we have (actually there 2 or 3 images)
         }
 
         carus.html(imglist);
-
 
         var $el = $('#wi-el'),
             windy = $el.windy(),
@@ -486,11 +509,16 @@ $(function () {
 
 
     function products_bookblock(img_array,div_id){
+    $('.bb-custom-wrapper>nav').css('z-index','9999');
         var seplen=img_array.length;   //images array
         var carus = $('#'+div_id);        //will append images to this element
         var imglist='';                    //we use this variable for optimization..
-
-        if(div_id=="bookblockProduct" || div_id=="gameWin"){
+        if(div_id=="bookblockProduct"){
+            for(var i=0;i<seplen;i++){
+                    imglist+='<div class="bb-item" style="display: block;"><a href="#"><img src="'+img_array[i]+'"/></a></div>';
+            }
+        }
+        else if(div_id=="gameWin"){
             for(var i=0;i<seplen;i++){
                 if (i>0){
                     imglist+='<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="'+img_array[i]+'"/></a></div>';
@@ -825,14 +853,14 @@ function myFunction()
     var r=confirm("Are you sure you want to wimp out? It’s not that tough…");
     if (r==true)
     {
-//x="You pressed OK!";
+        //x="You pressed OK!";
         window.location.reload()
     }
     else
     {
-//x="You pressed Cancel!";
+        //x="You pressed Cancel!";
     }
-//document.getElementById("demo").innerHTML=x;
+    //document.getElementById("demo").innerHTML=x;
 }
 
 function flipside(newState) {

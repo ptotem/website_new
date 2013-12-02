@@ -121,10 +121,10 @@ function review(in1, nd) {
             //$(ele).css('filter','alpha(opacity='+50+')');
         }
         if (in1[index] == 1) {
-            $(ele).append('<img src="images/nilesh/thumbsup.gif" style="display: none; height:34px;max-height: 32px; margin-left: 36px;" alt="' + reason + '">');
+            $(ele).append('<img src="assets/images/thumbsup.gif" style="display: none; height:34px;max-height: 32px; margin-left: 36px;" alt="' + reason + '">');
         }
         else {
-            $(ele).append('<img src="images/nilesh/thumbsdown.gif" style="display: none; height:34px;max-height: 32px; margin-left: 36px;" alt="' + reason + '">');
+            $(ele).append('<img src="assets/images/thumbsdown.gif" style="display: none; height:34px;max-height: 32px; margin-left: 36px;" alt="' + reason + '">');
         }
         $(ele).hover(
             function () {

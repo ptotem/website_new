@@ -1,5 +1,5 @@
 body{
-    background-image: url('../images/demo_page/background.png');
+    background-image: url('../images/demo_page/background.jpg');
 }
 
 /*=================================Intro Panel====================================*/
@@ -7,7 +7,7 @@ body{
 @media all and (min-width: 1024px){
     .intropanel{
         /*background: #CB473A;*/
-        background-image: url('../images/demo_page/background.png');
+        background-image: url('../images/demo_page/background.jpg');
         color: #ffffff;
         font-size: 1.5em;
         width: 90%;
