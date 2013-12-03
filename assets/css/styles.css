@@ -18,6 +18,12 @@ body {
     pointer-events: none;
 }
 
+#footer-xs {
+    bottom: 0;
+    pointer-events: none;
+    margin-left: 3%
+}
+
 img {
     display: block;
     width: 100%;
