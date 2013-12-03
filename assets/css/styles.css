@@ -169,6 +169,7 @@ ul#xsmenu {
     margin-top: 1em;
     list-style-type: none;
     padding: 2em;
+    margin-left: 2em;
 }
 
 ul#xsmenu li {
