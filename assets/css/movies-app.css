@@ -41,8 +41,15 @@ body {
 }
 
 .swiper-content .movie-text {
-	margin-left: 120px;
+	/*margin-left: 120px;*/
+    float: left;
 }
+
+.clearing-text{
+    clear: both;
+    margin-top: 10px;
+}
+
 .swiper-nav {
 	height: 95px;
 	position: absolute;
