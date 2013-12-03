@@ -103,23 +103,23 @@ $(function () {
 
         products_bookblock(product_img_array,"bookblockProduct");
 
-        $('#bookblockProduct').on({
-            'swipe' : function(ev) {
-                console.log('Swiping');
-            },
-            'swipeleft' : function(ev) {
-                console.log('Swiping left');
-            },
-            'swiperight' : function(ev) {
-                console.log('Swiping right');
-            },
-            'swipeup' : function(ev) {
-                console.log('Swiping up');
-            },
-            'swipedown' : function(ev) {
-                console.log('Swiping down');
-            }
-        });
+//        $('#bookblockProduct').on({
+//            'swipe' : function(ev) {
+//                console.log('Swiping');
+//            },
+//            'swipeleft' : function(ev) {
+//                console.log('Swiping left');
+//            },
+//            'swiperight' : function(ev) {
+//                console.log('Swiping right');
+//            },
+//            'swipeup' : function(ev) {
+//                console.log('Swiping up');
+//            },
+//            'swipedown' : function(ev) {
+//                console.log('Swiping down');
+//            }
+//        });
 
     });
 
@@ -144,9 +144,9 @@ $(function () {
     });
 
     $('#gamify').on('click', function (e) {
-        $('#slogan').show();
-        $('#buttons').hide().delay(1000);
-        $('#trigger_button').trigger('click').delay(2000);
+        //$('#slogan').show();
+        //$('#buttons').hide().delay(1000);
+        //$('#trigger_button').trigger('click').delay(2000);
         $('#menu_overlay').css('pointer-events', 'auto');
         $("#menu_overlay").css('z-index', '0');
         //$("#menu_overlay").css('position','absolute');
@@ -155,11 +155,11 @@ $(function () {
             'background':'#aaa',
             'color':'#ccc'
         });
-        $('#catchphrase').hide();
+        //$('#catchphrase').hide();
         setTimeout(function () {
             $('#buttons').show();
             $('#buttons').parent().css('z-index', '999999');
-        }, 2500)
+        }, 800)
 
 //        $(".close_game_select_btn").on('click', function (e) {
 //
@@ -178,6 +178,7 @@ $(function () {
         $('.row').css('pointer-events', 'auto');
         $(".layer").css("z-index", '0');
         $('#buttons').hide();
+        $('#catchphrase').hide();
 
         if ($(this).attr('id') == 'easy_game') {
             setTimeout(function () {
@@ -289,7 +290,10 @@ $(function () {
                     $("#congModal").modal('show');
                     $("#menu").css({
                         'background':'',
+                        'color':'white',
                         'z-index':'9999'})
+                    $('#slogan').hide();
+                    $('#catchphrase').show();
 
                 }
             }
@@ -400,9 +404,12 @@ $(function () {
                     $("#congModal").modal('show');
                     $("#menu").css({
                         'background':'',
+                        'color':'white',
                         'z-index':'9999'})
                     //products_bookblock(product_img_array,'gameWin');
                     //Page3.init()
+                    $('#slogan').hide();
+                    $('#catchphrase').show();
                 }
 
 
@@ -598,7 +605,8 @@ var Page1 = (function () {
             config1.$bookBlock.bookblock({
                 speed:800,
                 shadowSides:0.8,
-                shadowFlip:0.7
+                shadowFlip:0.7,
+                circular    : true
             });
             initEvents1();
         },
@@ -739,7 +747,8 @@ var Page2 = (function () {
             config.$bookBlock.bookblock({
                 speed:800,
                 shadowSides:0.8,
-                shadowFlip:0.7
+                shadowFlip:0.7,
+                circular : true
             });
             initEvents();
         },
@@ -750,7 +759,6 @@ var Page2 = (function () {
 
             // add navigation events
             config.$navNext.on('click touchstart', function () {
-
                 config.$bookBlock.bookblock('next');
                 return false;
             });
@@ -809,7 +817,8 @@ var Page3 = (function () {
             config.$bookBlock.bookblock({
                 speed:800,
                 shadowSides:0.8,
-                shadowFlip:0.7
+                shadowFlip:0.7,
+                circular    : true
             });
             initEvents();
         },
