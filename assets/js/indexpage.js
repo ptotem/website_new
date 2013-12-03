@@ -1,7 +1,7 @@
 //For About Us Windy Array Start
 
-var img_array = ["assets/images/arijit.jpg","assets/images/kamalika.jpg","assets/images/arun.jpg","assets/images/dipanwita.jpg","assets/images/rushabh.jpg","assets/images/sunny.jpg","assets/images/ashwin.jpg","assets/images/amol.jpg","assets/images/rakesh.jpg","assets/images/nilesh.jpg","assets/images/perseus.jpg","assets/images/deepak.jpg","assets/images/swapnil.jpg","assets/images/nikunj.jpg"]
-var name_array=["Arijit Lahiri","Kamalika Bhattacharya","Arunkumar Balasubramanian","Dipanwita Kar","Rushabh Hathi","Sunny Singh","Ashwin Kumar","Amol Bhor","Rakesh Rengaraj","Nilesh Panchal","Perseus Vazifdar","Deepak Gawas","Swapnil Domade","Nikunj Thakkar"]
+var img_array = ["assets/images/arijit.jpg", "assets/images/kamalika.jpg", "assets/images/arun.jpg", "assets/images/dipanwita.jpg", "assets/images/rushabh.jpg", "assets/images/sunny.jpg", "assets/images/ashwin.jpg", "assets/images/amol.jpg", "assets/images/rakesh.jpg", "assets/images/nilesh.jpg", "assets/images/perseus.jpg", "assets/images/deepak.jpg", "assets/images/swapnil.jpg", "assets/images/nikunj.jpg"]
+var name_array = ["Arijit Lahiri", "Kamalika Bhattacharya", "Arunkumar Balasubramanian", "Dipanwita Kar", "Rushabh Hathi", "Sunny Singh", "Ashwin Kumar", "Amol Bhor", "Rakesh Rengaraj", "Nilesh Panchal", "Perseus Vazifdar", "Deepak Gawas", "Swapnil Domade", "Nikunj Thakkar"]
 var text_array = ["Arijit is an alumnus of the prestigious IIM, Calcutta, Arijit has over ten years of experience spanning a myriad of functions within Corporate Banking & Wealth Management. He has held national level positions at large Private & Investment Banks. Together with Kamalika, Ptotem is his initiative.",
     "Kamalika is an MBA from the Indian School of Business, Hyderabad. She currently holds a senior position with a large-cap Investment Bank. Ptotem Learning Projects is essentially her brain-child. She remains a strategic partner of the firm.",
     "Arun is an MBA from NMIMS. Arun has a work experience of almost a decade & half spanning senior positions in International Trade Finance & Consumer Banking. Arun is a partner at the firm h&ling its Finance & Operations.",
@@ -20,7 +20,7 @@ var text_array = ["Arijit is an alumnus of the prestigious IIM, Calcutta, Arijit
 //For About Us Windy Array End
 
 //For Product Bookblock Array Start
-var product_img_array = ["assets/images/products/Slide01.jpg", "assets/images/products/Slide02.jpg", "assets/images/products/Slide03.jpg", "assets/images/products/Slide04.jpg","assets/images/products/Slide05.jpg","assets/images/products/Slide06.jpg","assets/images/products/Slide07.jpg","assets/images/products/Slide08.jpg","assets/images/products/Slide09.jpg","assets/images/products/Slide10.jpg","assets/images/products/Slide11.jpg","assets/images/products/Slide12.jpg","assets/images/products/Slide13.jpg","assets/images/products/Slide14.jpg","assets/images/products/Slide15.jpg","assets/images/products/Slide16.jpg","assets/images/products/Slide17.jpg","assets/images/products/Slide18.jpg","assets/images/products/Slide19.jpg","assets/images/products/Slide20.jpg","assets/images/products/Slide21.jpg","assets/images/products/Slide22.jpg","assets/images/products/Slide23.jpg"]
+var product_img_array = ["assets/images/products/Slide01.jpg", "assets/images/products/Slide02.jpg", "assets/images/products/Slide03.jpg", "assets/images/products/Slide04.jpg", "assets/images/products/Slide05.jpg", "assets/images/products/Slide06.jpg", "assets/images/products/Slide07.jpg", "assets/images/products/Slide08.jpg", "assets/images/products/Slide09.jpg", "assets/images/products/Slide10.jpg", "assets/images/products/Slide11.jpg", "assets/images/products/Slide12.jpg", "assets/images/products/Slide13.jpg", "assets/images/products/Slide14.jpg", "assets/images/products/Slide15.jpg", "assets/images/products/Slide16.jpg", "assets/images/products/Slide17.jpg", "assets/images/products/Slide18.jpg", "assets/images/products/Slide19.jpg", "assets/images/products/Slide20.jpg", "assets/images/products/Slide21.jpg", "assets/images/products/Slide22.jpg", "assets/images/products/Slide23.jpg"]
 //For Product Bookblock Array End
 
 //For easy game intro Bookblock Array Start
@@ -40,11 +40,20 @@ var c1_hard = 0;
 var c2_hard = 0;
 var c3_hard = 0;
 var c4_hard = 0;
-
+var opacity_value = 0.5;
 
 $(function () {
-
     //Home page animation start
+    $(".gamify").css('opacity', 0.4);
+    setInterval(function () {
+        if ($('#buttons').is(':visible'))
+            $('.glower').css('opacity', 0.2);
+        else {
+            $('.glower').fadeIn(3000, function () {
+                $('.glower').fadeOut(3000)
+            });
+        }
+    }, 6000);
 
     $('#logopic').hide();
     $('#buttons').hide();
@@ -52,31 +61,31 @@ $(function () {
     $('#cloud2 img').hide();
     $('#cloud3 img').hide();
 
-    $('#sky .panel').css('left','100%');
-    $('body').css("background-image","url('assets/images/background.jpg')").fadeIn(3000);
-    setTimeout(function(){
+    $('#sky .panel').css('left', '100%');
+    $('body').css("background-image", "url('assets/images/background.jpg')").fadeIn(3000);
+    setTimeout(function () {
         $('#logopic').fadeIn(5000);
-    },2000,setTimeout(function(){
+    }, 2000, setTimeout(function () {
         $('#sky .panel').animate({left: '0%'}, 2000);
-    },4000),setTimeout(function(){
+    }, 4000), setTimeout(function () {
         $('#cloud1 img').fadeIn(2000);
         $('#cloud2 img').fadeIn(2000);
         $('#cloud3 img').fadeIn(2000);
-    },6000),setTimeout(function(){
-        $("#tree").animate({top:'-109%'}, 1000);
+    }, 6000), setTimeout(function () {
+        $("#tree").animate({top: '-109%'}, 1000);
         $('#menu_overlay').animate({right: '0px'}, 2000);
         $('#menu').animate({right: '0px'}, 2000);
-    },8000),setTimeout(function(){
+    }, 8000), setTimeout(function () {
         $('#catchphrase').hatchShow('catchphrase');
         $('#catchphrase').animate({opacity: 1}, 1000);
-    },10000));
+    }, 10000));
     //Home page animation end
 
 
     $(".close_parallax_btn").hide();
 
     $('.superpanel').css({
-        height:window.innerHeight + 'px'
+        height: window.innerHeight + 'px'
     });
 
     $('.scene').parallax().fadeIn();
@@ -89,7 +98,7 @@ $(function () {
 
     $(window).resize(function () {
         $('.superpanel').css({
-            height:window.innerHeight + 'px'
+            height: window.innerHeight + 'px'
         });
         $('#catchphrase').hatchShow('catchphrase');
     });
@@ -97,28 +106,27 @@ $(function () {
 
     $('#teamLink').on('click', function () {
         $(this).hide();
-        $('.windy>nav').css('z-index','1');
+        $('.windy>nav').css('z-index', '1');
         flipside('aboutUs');
-        $('#gamify').css("pointer-events", "none");
+        $('.glower').css("pointer-events", "none");
         $('.coordinate_block').popover({
-            container:'body',
-            placement:'top',
-            trigger:'hover',
-            html:'true'
+            container: 'body',
+            placement: 'top',
+            trigger: 'hover',
+            html: 'true'
         });
 
-        img_windy(img_array,text_array,name_array)
+        img_windy(img_array, text_array, name_array)
     });
-
 
 
     $('#productsLink').on('click', function () {
         $(this).hide();
         Page2.init()
         flipside('products');
-        $('#gamify').css("pointer-events", "none");
+        $('.glower').css("pointer-events", "none");
 
-        products_bookblock(product_img_array,"bookblockProduct");
+        products_bookblock(product_img_array, "bookblockProduct");
 
 //        $('#bookblockProduct').on({
 //            'swipe' : function(ev) {
@@ -145,13 +153,13 @@ $(function () {
         $('#aboutUs').fadeOut('fast');
         $('#products').fadeOut('fast');
         $('#second_logo').fadeOut('fast');
-        $('#gamify').css("pointer-events", "auto");
+        $('.glower').css("pointer-events", "auto");
         $('#parallax_view').animate({
-            left:"+=" + window.innerWidth * 0.55 + "px"
+            left: "+=" + window.innerWidth * 0.55 + "px"
         });
 
         $('#sky').animate({
-            left:"+=" + window.innerWidth * 0.05 + "px"
+            left: "+=" + window.innerWidth * 0.05 + "px"
         });
         $('#logo').fadeIn();
         $(this).hide();
@@ -160,9 +168,14 @@ $(function () {
         state = 'home';
     });
 
-    $('#gamify').on('click', function (e) {
-        //$('#slogan').show();
-        //$('#buttons').hide().delay(1000);
+    $('.glower').on('click', function (e) {
+        $('#slogan').show();
+        $('#do_text').hide();
+        $('#it_text').hide();
+        $('#with_text').hide();
+        $('#games_text').hide();
+
+        $('#buttons').hide().delay(1000);
         //$('#trigger_button').trigger('click').delay(2000);
         $('#menu_overlay').css('pointer-events', 'auto');
         $('#slogan_game').parent().css('z-index', '0');
@@ -170,18 +183,15 @@ $(function () {
         //$("#menu_overlay").css('position','absolute');
         $("#menu").css('z-index', '0');
         $('#menu').css({
-            'background':'#aaa',
-            'color':'#ccc'
+            'background': '#aaa',
+            'color': '#ccc'
         });
         //$('#catchphrase').hide();
         setTimeout(function () {
             $('#buttons').show();
             $('#buttons').parent().css('z-index', '999999');
+            $('#buttons').css('z-index', '999999');
         }, 800)
-
-//        $(".close_game_select_btn").on('click', function (e) {
-//
-//        });
 
     });
 
@@ -202,15 +212,15 @@ $(function () {
             setTimeout(function () {
                 $("#slogan_game_easy").parent().css("z-index", "9999");
             }, 1000)
-            setTimeout(function(){
-                $('#tree').css('z-index',-1);
-                $('#buttons').parent().css('z-index',-1);
-            },2000);
+            setTimeout(function () {
+                $('#tree').css('z-index', -1);
+                $('#buttons').parent().css('z-index', -1);
+            }, 2000);
             $('#slogan_game_easy').fadeIn();
-            $('#sky').css('opacity','0');
+            $('#sky').css('opacity', '0');
             $('#slogan').fadeIn();
             $('#trigger_button').trigger('click');
-            products_bookblock(easy_game_img_array,"bbEasy");
+            products_bookblock(easy_game_img_array, "bbEasy");
             Page.init();
 
             var colors = ["#ff0000", "#ffff00", "#0000ff", "#000000", "#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
@@ -301,24 +311,28 @@ $(function () {
                     $('.spinner').unbind('click');
                     //products_bookblock(product_img_array,'gameWin');
                     //Page3.init()
-                    $("#congModal").modal('show');
+
                     $("#menu").css({
-                        'background':'',
-                        'color':'white',
-                        'z-index':'9999'})
-                    $('#slogan').hide();
-                    $('#catchphrase').show();
+                        'background': '',
+                        'color': 'white',
+                        'z-index': '9999'})
+                    //$('#slogan').hide();
+                    //$('#catchphrase').show();
+
+                    setTimeout(function () {
+                        $("#congModal").modal('show');
+                    }, 800);
 
                     $('#do_text').removeClass("Red");
                     $('#it_text').removeClass("Yellow");
                     $('#with_text').removeClass("Blue");
                     $('#games_text').removeClass("Black");
-                    setTimeout(function(){
-                        $('#do_text').css('color','black');
-                        $('#it_text').css('color','black');
-                        $('#with_text').css('color','black');
-                        $('#games_text').css('color','black');
-                    },5000);
+                    setTimeout(function () {
+                        $('#do_text').css('color', 'black');
+                        $('#it_text').css('color', 'black');
+                        $('#with_text').css('color', 'black');
+                        $('#games_text').css('color', 'black');
+                    }, 5000);
 
 
                 }
@@ -330,15 +344,15 @@ $(function () {
             $('#buttons').hide();
             $('#slogan_game_hard').fadeIn();
             $('#slogan').fadeIn();
-            $('#sky').css('opacity','0');
-            $('#slogan_game_wrapper_hard').css('width','95%');
-            products_bookblock(hard_game_img_array,'bbHard')
+            $('#sky').css('opacity', '0');
+            $('#slogan_game_wrapper_hard').css('width', '95%');
+            products_bookblock(hard_game_img_array, 'bbHard')
             Page1.init1();
             $('#trigger_button').trigger('click');
-            setTimeout(function(){
-                $('#tree').css('z-index',-1);
-                $('#buttons').parent().css('z-index',-1);
-            },2000);
+            setTimeout(function () {
+                $('#tree').css('z-index', -1);
+                $('#buttons').parent().css('z-index', -1);
+            }, 2000);
             var colors = ["#ff0000", "#ffff00", "#0000ff", "#000000", "#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
             var correct = ["#ff6600", "#808080", "#663300", "#008000"];
             var correct_color = [];
@@ -423,27 +437,31 @@ $(function () {
                     $('#slogan_game_hard').hide();
                     $("#slogan_game").parent().css("z-index", "999999");
                     $('.spinner').unbind('click');
-                    $("#congModal").modal('show');
+
+                    setTimeout(function () {
+                        $("#congModal").modal('show');
+                    }, 800);
+
                     $("#menu").css({
-                        'background':'',
-                        'color':'white',
-                        'z-index':'9999'})
+                        'background': '',
+                        'color': 'white',
+                        'z-index': '9999'})
 
                     //products_bookblock(product_img_array,'gameWin');
                     //Page3.init()
-                    $('#slogan').hide();
-                    $('#catchphrase').show();
+                    //$('#slogan').hide();
+                    //$('#catchphrase').show();
 
                     $('#do_text').removeClass("Orange");
                     $('#it_text').removeClass("Gray");
                     $('#with_text').removeClass("Brown");
                     $('#games_text').removeClass("Green");
-                    setTimeout(function(){
-                        $('#do_text').css('color','black');
-                        $('#it_text').css('color','black');
-                        $('#with_text').css('color','black');
-                        $('#games_text').css('color','black');
-                    },5000);
+                    setTimeout(function () {
+                        $('#do_text').css('color', 'black');
+                        $('#it_text').css('color', 'black');
+                        $('#with_text').css('color', 'black');
+                        $('#games_text').css('color', 'black');
+                    }, 5000);
 
                 }
 
@@ -451,7 +469,6 @@ $(function () {
             }
         }
     });
-
 
 
     var cur = 0;
@@ -497,25 +514,25 @@ $(function () {
     });
 
     $('#congModal').on('shown.bs.modal', function () {
-        $('#sky').css('opacity','0');
+        $('#sky').css('opacity', '0');
     });
 
 
     $('#congModal').on('hidden.bs.modal', function () {
-        $("#tree").css('z-index','9999999');
-        $('#sky').css('opacity','0.8');
-
+        $("#tree").css('z-index', '9999999');
+        $('#sky').css('opacity', '0.8');
+        $('#slogan').hide();
+        $('#catchphrase').show();
     });
 
 
-
-    function img_windy(img_array,text_array,name_array){
-        var seplen=img_array.length;   //images array
+    function img_windy(img_array, text_array, name_array) {
+        var seplen = img_array.length;   //images array
         var carus = $('#wi-el');        //will append images to this element
-        var imglist='';                    //we use this variable for optimization..
+        var imglist = '';                    //we use this variable for optimization..
 
-        for(var i=0;i<seplen;i++){
-            imglist+='<li><img src="'+img_array[i]+'" alt="image'+[i+1]+'"/><h4>'+ name_array[i] +'</h4><p>'+text_array[i]+'</p></li>';    //add all images what we have (actually there 2 or 3 images)
+        for (var i = 0; i < seplen; i++) {
+            imglist += '<li><img src="' + img_array[i] + '" alt="image' + [i + 1] + '"/><h4>' + name_array[i] + '</h4><p>' + text_array[i] + '</p></li>';    //add all images what we have (actually there 2 or 3 images)
         }
 
         carus.html(imglist);
@@ -571,36 +588,34 @@ $(function () {
     }
 
 
-    function products_bookblock(img_array,div_id){
-        $('.bb-custom-wrapper>nav').css('z-index','9999');
-        var seplen=img_array.length;   //images array
-        var carus = $('#'+div_id);        //will append images to this element
-        var imglist='';                    //we use this variable for optimization..
-        if(div_id=="bookblockProduct"){
-            for(var i=0;i<seplen;i++){
-                imglist+='<div class="bb-item" style="display: block;"><a href="#"><img src="'+img_array[i]+'"/></a></div>';
+    function products_bookblock(img_array, div_id) {
+        $('.bb-custom-wrapper>nav').css('z-index', '9999');
+        var seplen = img_array.length;   //images array
+        var carus = $('#' + div_id);        //will append images to this element
+        var imglist = '';                    //we use this variable for optimization..
+        if (div_id == "bookblockProduct") {
+            for (var i = 0; i < seplen; i++) {
+                imglist += '<div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
             }
         }
-        else if(div_id=="gameWin"){
-            for(var i=0;i<seplen;i++){
-                if (i>0){
-                    imglist+='<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="'+img_array[i]+'"/></a></div>';
+        else if (div_id == "gameWin") {
+            for (var i = 0; i < seplen; i++) {
+                if (i > 0) {
+                    imglist += '<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
                 }
-                else
-                {
-                    imglist+='<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="'+img_array[i]+'"/></a></div>';
+                else {
+                    imglist += '<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
                 }
 
             }
         }
-        else{
-            for(var i=0;i<seplen;i++){
-                if (i>0){
-                    imglist+='<a href="#" class="close_parallax_btn" data-toggle="modal" data-target="#confModal" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="'+img_array[i]+'"/></a></div>';
+        else {
+            for (var i = 0; i < seplen; i++) {
+                if (i > 0) {
+                    imglist += '<a href="#" class="close_parallax_btn" data-toggle="modal" data-target="#confModal" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
                 }
-                else
-                {
-                    imglist+='<a href="#" class="close_parallax_btn" data-toggle="modal" data-target="#confModal" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="'+img_array[i]+'"/></a></div>';
+                else {
+                    imglist += '<a href="#" class="close_parallax_btn" data-toggle="modal" data-target="#confModal" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
                 }
 
             }
@@ -617,29 +632,23 @@ $(function () {
     }
 
 
-
-
-
-
-
-
 });
 
 
 var Page1 = (function () {
 
     var config1 = {
-            $bookBlock:$('#bbHard'),
-            $navNext:$('#navHardNext'),
-            $navPrev:$('#navHardPrev')
+            $bookBlock: $('#bbHard'),
+            $navNext: $('#navHardNext'),
+            $navPrev: $('#navHardPrev')
         },
         init1 = function () {
 
             config1.$bookBlock.bookblock({
-                speed:800,
-                shadowSides:0.8,
-                shadowFlip:0.7,
-                circular    : true
+                speed: 800,
+                shadowSides: 0.8,
+                shadowFlip: 0.7,
+                circular: true
             });
             initEvents1();
         },
@@ -662,11 +671,11 @@ var Page1 = (function () {
 
             // add swipe events
             $slides.on({
-                'swipeleft':function (event) {
+                'swipeleft': function (event) {
                     config1.$bookBlock.bookblock('next');
                     return false;
                 },
-                'swiperight':function (event) {
+                'swiperight': function (event) {
                     config1.$bookBlock.bookblock('prev');
                     return false;
                 }
@@ -676,10 +685,10 @@ var Page1 = (function () {
             $(document).keydown(function (e) {
                 var keyCode = e.keyCode || e.which,
                     arrow = {
-                        left:37,
-                        up:38,
-                        right:39,
-                        down:40
+                        left: 37,
+                        up: 38,
+                        right: 39,
+                        down: 40
                     };
 
                 switch (keyCode) {
@@ -693,23 +702,23 @@ var Page1 = (function () {
             });
         };
 
-    return { init1:init1 };
+    return { init1: init1 };
 
 })();
 
 var Page = (function () {
 
     var config = {
-            $bookBlock:$('#bbEasy'),
-            $navNext:$('#navEasyNext'),
-            $navPrev:$('#navEasyPrev')
+            $bookBlock: $('#bbEasy'),
+            $navNext: $('#navEasyNext'),
+            $navPrev: $('#navEasyPrev')
         },
 
         init = function () {
             config.$bookBlock.bookblock({
-                speed:800,
-                shadowSides:0.8,
-                shadowFlip:0.7
+                speed: 800,
+                shadowSides: 0.8,
+                shadowFlip: 0.7
             });
             initEvents();
         },
@@ -732,11 +741,11 @@ var Page = (function () {
 
             // add swipe events
             $slides.on({
-                'swipeleft':function (event) {
+                'swipeleft': function (event) {
                     config.$bookBlock.bookblock('next');
                     return false;
                 },
-                'swiperight':function (event) {
+                'swiperight': function (event) {
                     config.$bookBlock.bookblock('prev');
                     return false;
                 }
@@ -746,10 +755,10 @@ var Page = (function () {
             $(document).keydown(function (e) {
                 var keyCode = e.keyCode || e.which,
                     arrow = {
-                        left:37,
-                        up:38,
-                        right:39,
-                        down:40
+                        left: 37,
+                        up: 38,
+                        right: 39,
+                        down: 40
                     };
 
                 switch (keyCode) {
@@ -763,7 +772,7 @@ var Page = (function () {
             });
         };
 
-    return { init:init };
+    return { init: init };
 
 })();
 
@@ -771,17 +780,17 @@ var Page = (function () {
 var Page2 = (function () {
 
     var config = {
-            $bookBlock:$('#bookblockProduct'),
-            $navNext:$('#navPrdNext'),
-            $navPrev:$('#navPrdPrev')
+            $bookBlock: $('#bookblockProduct'),
+            $navNext: $('#navPrdNext'),
+            $navPrev: $('#navPrdPrev')
         },
 
         init = function () {
             config.$bookBlock.bookblock({
-                speed:800,
-                shadowSides:0.8,
-                shadowFlip:0.7,
-                circular : true
+                speed: 800,
+                shadowSides: 0.8,
+                shadowFlip: 0.7,
+                circular: true
             });
             initEvents();
         },
@@ -803,11 +812,11 @@ var Page2 = (function () {
 
             // add swipe events
             $slides.on({
-                'swipeleft':function (event) {
+                'swipeleft': function (event) {
                     config.$bookBlock.bookblock('next');
                     return false;
                 },
-                'swiperight':function (event) {
+                'swiperight': function (event) {
                     config.$bookBlock.bookblock('prev');
                     return false;
                 }
@@ -817,10 +826,10 @@ var Page2 = (function () {
             $(document).keydown(function (e) {
                 var keyCode = e.keyCode || e.which,
                     arrow = {
-                        left:37,
-                        up:38,
-                        right:39,
-                        down:40
+                        left: 37,
+                        up: 38,
+                        right: 39,
+                        down: 40
                     };
 
                 switch (keyCode) {
@@ -834,24 +843,24 @@ var Page2 = (function () {
             });
         };
 
-    return { init:init };
+    return { init: init };
 
 })();
 
 var Page3 = (function () {
 
     var config = {
-            $bookBlock:$('#gameWin'),
-            $navNext:$('#gameWinNext'),
-            $navPrev:$('#gameWinPrev')
+            $bookBlock: $('#gameWin'),
+            $navNext: $('#gameWinNext'),
+            $navPrev: $('#gameWinPrev')
         },
 
         init = function () {
             config.$bookBlock.bookblock({
-                speed:800,
-                shadowSides:0.8,
-                shadowFlip:0.7,
-                circular    : true
+                speed: 800,
+                shadowSides: 0.8,
+                shadowFlip: 0.7,
+                circular: true
             });
             initEvents();
         },
@@ -874,11 +883,11 @@ var Page3 = (function () {
 
             // add swipe events
             $slides.on({
-                'swipeleft':function (event) {
+                'swipeleft': function (event) {
                     config.$bookBlock.bookblock('next');
                     return false;
                 },
-                'swiperight':function (event) {
+                'swiperight': function (event) {
                     config.$bookBlock.bookblock('prev');
                     return false;
                 }
@@ -888,10 +897,10 @@ var Page3 = (function () {
             $(document).keydown(function (e) {
                 var keyCode = e.keyCode || e.which,
                     arrow = {
-                        left:37,
-                        up:38,
-                        right:39,
-                        down:40
+                        left: 37,
+                        up: 38,
+                        right: 39,
+                        down: 40
                     };
 
                 switch (keyCode) {
@@ -905,24 +914,21 @@ var Page3 = (function () {
             });
         };
 
-    return { init:init };
+    return { init: init };
 
 })();
 
 
 var state = 'home';
 
-function myFunction()
-{
+function myFunction() {
     var x;
-    var r=confirm("Are you sure you want to wimp out? It’s not that tough…");
-    if (r==true)
-    {
+    var r = confirm("Are you sure you want to wimp out? It’s not that tough…");
+    if (r == true) {
         //x="You pressed OK!";
         window.location.reload()
     }
-    else
-    {
+    else {
         //x="You pressed Cancel!";
     }
     //document.getElementById("demo").innerHTML=x;
@@ -933,10 +939,10 @@ function flipside(newState) {
         $('#logo').fadeOut('fast');
         $('#second_logo').fadeIn();
         $('#parallax_view').animate({
-            left:"-=" + window.innerWidth * 0.55 + "px"
+            left: "-=" + window.innerWidth * 0.55 + "px"
         });
         $('#sky').animate({
-            left:"-=" + window.innerWidth * 0.05 + "px"
+            left: "-=" + window.innerWidth * 0.05 + "px"
         });
         $('#home').fadeIn();
     } else {
