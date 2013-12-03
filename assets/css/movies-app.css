@@ -42,8 +42,8 @@ body {
 }
 
 .swiper-content .movie-text {
-	margin-left: 120px;
-    /*float: left;*/
+	/*margin-left: 120px;*/
+    float: left;
 }
 
 .clearing-text{
