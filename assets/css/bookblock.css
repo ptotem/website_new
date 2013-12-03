@@ -21,6 +21,17 @@
     }
 }
 
+ /*Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    .bb-custom-wrapper {
+        width: 80%;
+        position: relative;
+        margin-top: 0;
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
  @media all and (max-width:768px) {
      .bb-custom-wrapper {
          width: 90%;
