@@ -187,12 +187,20 @@ ul#xsmenu li {
     margin-bottom: 0.2em;
 }
 
-#gamify {
+.gamify {
     opacity: 0.8;
+    z-index: 9999;
     -webkit-transition: all 0.2s ease-in-out;
 }
 
-#gamify:hover {
+.gamify:hover {
+    opacity: 1;
+}
+
+.glower{
+    z-index: 1;
+}
+.glower:hover{
     opacity: 1;
 }
 
