@@ -21,17 +21,6 @@
     }
 }
 
- /* Landscape phone to portrait tablet */
- @media (max-width: 767px) {
-    .bb-custom-wrapper {
-        width: 80%;
-        position: relative;
-        margin-top: -10%;
-        margin-left: -2%;
-        text-align: center;
-    }
-}
-
  @media all and (max-width:768px) {
      .bb-custom-wrapper {
          width: 90%;
