@@ -5,13 +5,43 @@
     <meta name="viewport" content="initial-scale=1">
     <title>Ptotem | A Serious Gaming Company</title>
 
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"/>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="assets/css/idangerous.swiper.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/movies-app.css">
 </head>
 <body>
+
+<nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="assets/images/logo_with_name.png"
+                                              style="margin-top: 1%;width: 35%;"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li style="color: #808080;font-weight: bolder;"><a href="mobteam.html">About Us</a></li>
+            <li style="color: #808080;font-weight: bolder;"><a href="mobproduct.html">Products</a></li>
+            <li style="color: #808080;font-weight: bolder;"><a href="#">Demos</a></li>
+            <li style="color: #808080;font-weight: bolder;"><a href="http://ptotemtalk.wordpress.com">Blog</a></li>
+            <li style="color: #808080;font-weight: bolder;"><a href="mobcontact.html">Contact Us</a></li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+
 <div class="swiper-container swiper-content">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper" style="background-image: url('assets/images/background.jpg')">
         <div class="swiper-slide">
             <div class="inner">
                 <img class="movie-pic_product" src="assets/images/products/Slide01.jpg" height="150" width="150" alt="">
@@ -274,5 +304,10 @@
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/idangerous.swiper-2.0.min.js"></script>
 <script src="assets/js/movies-app.js"></script>
+<script>
+    $(function(){
+        $('.navbar-brand').css('float','none');
+    })
+</script>
 </body>
 </html>
