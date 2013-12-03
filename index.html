@@ -527,8 +527,7 @@
 
 <div class="row">
     <div class="col-xs-12 visible-xs">
-        <a href="#" style=""><img src="assets/images/logo_with_name.png"
-                                  style="width: 80%; margin-left: 10%;margin-top: 3%;"></a>
+        <a href="#" style=""><img src="assets/images/logo_with_name.png" style="width: 80%; margin-left: 10%;margin-top: 3%;"></a>
     </div>
 </div>
 <div class="row">
@@ -551,8 +550,8 @@
     <ul id="xsmenu" class="visible-xs">
         <li onclick="window.location='mobteam.html' " style="cursor: pointer;">About Us</li>
         <li onclick="window.location='mobproduct.html' " style="cursor: pointer;">Products</li>
-        <li>Demos</li>
-        <li onclick="window.location='http://ptotemtalk.wordpress.com/' " style="cursor: pointer;">Blog</li>
+        <li onclick="$('#demoModal').modal('show');" style="cursor: pointer;">Demos</li>
+        <li onclick="window.open('http://ptotemtalk.wordpress.com/')" style="cursor: pointer;">Blog</li>
         <li onclick="window.location='mobcontact.html' " style="cursor: pointer;">Contact Us</li>
     </ul>
 </div>
@@ -560,6 +559,24 @@
 <footer class="bs-footer visible-xs" role="contentinfo" id="footer-xs">
     Ptotem &copy; 2013
 </footer>
+
+
+<div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="congModalLabel" aria-hidden="true"
+     style="z-index: 9999;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>To view our demo and game please visit us using a tablet or pc.</p>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
 
 </body>
 </html>
