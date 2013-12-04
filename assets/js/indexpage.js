@@ -108,7 +108,7 @@ $(function () {
         $(this).hide();
         $('.windy>nav').css('z-index', '1');
         flipside('aboutUs');
-        $('.glower').css("pointer-events", "none");
+        //$('.glower').css("pointer-events", "none");
         $('.coordinate_block').popover({
             container: 'body',
             placement: 'top',
@@ -124,7 +124,7 @@ $(function () {
         $(this).hide();
         Page2.init()
         flipside('products');
-        $('.glower').css("pointer-events", "none");
+        //$('.glower').css("pointer-events", "none");
 
         products_bookblock(product_img_array, "bookblockProduct");
 
@@ -169,6 +169,16 @@ $(function () {
     });
 
     $('.glower').on('click', function (e) {
+
+        var p = $('#parallax_view');
+        var position = p.position();
+        //alert(position.left);
+        if (position.left<15){
+            //alert(state);
+            //flipside(state);
+            $("#home").trigger('click');
+        }
+
         $('#slogan').show();
         $('#do_text').hide();
         $('#it_text').hide();
@@ -960,6 +970,7 @@ function flipside(newState) {
     }
     state = newState;
     $('#' + newState).fadeIn();
+
 }
 
 
