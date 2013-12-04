@@ -1,0 +1,44 @@
+body{
+    background-image: url('../images/background.jpg')
+}
+
+
+.mobile_li{
+    color: #808080;
+    font-weight: bolder;
+    border-bottom-style: groove;
+    border-width: 0.1em
+}
+
+.mobile_li_last{
+    color: #808080;
+    font-weight: bolder;
+}
+
+
+.team_logo{
+    margin-top: 6px;
+    width: 100px;
+}
+
+
+
+.contact_col  {
+    margin-left: 4%;
+    margin-top: 4%;
+}
+
+.contact_card{
+    background:#ffffff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.contact_col_one{
+    margin-top: 2%;
+}
+
+.contact_mobile_logo{
+    margin-top: -8px;
+    width: 100px;
+}
