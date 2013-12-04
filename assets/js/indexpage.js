@@ -172,10 +172,7 @@ $(function () {
 
         var p = $('#parallax_view');
         var position = p.position();
-        //alert(position.left);
         if (position.left<15){
-            //alert(state);
-            //flipside(state);
             $("#home").trigger('click');
         }
 
