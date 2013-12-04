@@ -65,15 +65,15 @@ $(function () {
 
     $('#sky .panel').css('left', '100%');
     $('body').css("background-image", "url('assets/images/background.jpg')").fadeIn(2000);
+
     setTimeout(function () {
         $('#logopic').fadeIn(3000);
         $('#logopic').css({
-            left: ($(window).width() - $('#logopic').outerWidth())/2,
-            top: ($(window).height() - $('#logopic').outerHeight())/2
+            left: (($(window).width() - $('#logopic').outerWidth())/2)-100,
+            top: (($(window).height() - $('#logopic').outerHeight())/2)-100
         });
         $('#logopic').animate({'left': '0%', 'top': '0%'}, 1000);
     }, 2000, setTimeout(function () {
-
         $('#sky .panel').animate({left: '0%'}, 1000);
     }, 5000), setTimeout(function () {
         $('#cloud1 img').fadeIn(1000);
@@ -135,24 +135,6 @@ $(function () {
         //$('.glower').css("pointer-events", "none");
 
         products_bookblock(product_img_array, "bookblockProduct");
-
-//        $('#bookblockProduct').on({
-//            'swipe' : function(ev) {
-//                console.log('Swiping');
-//            },
-//            'swipeleft' : function(ev) {
-//                console.log('Swiping left');
-//            },
-//            'swiperight' : function(ev) {
-//                console.log('Swiping right');
-//            },
-//            'swipeup' : function(ev) {
-//                console.log('Swiping up');
-//            },
-//            'swipedown' : function(ev) {
-//                console.log('Swiping down');
-//            }
-//        });
 
     });
 
