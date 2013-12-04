@@ -43,6 +43,7 @@ var c4_hard = 0;
 var opacity_value = 0.5;
 
 $(function () {
+
     //Home page animation start
     $(".gamify").css('opacity', 0.4);
     setInterval(function () {
@@ -193,7 +194,7 @@ $(function () {
             'background': '#aaa',
             'color': '#ccc'
         });
-        //$('#catchphrase').hide();
+        $('#catchphrase').hide();
         setTimeout(function () {
             $('#buttons').show();
             $('#buttons').parent().css('z-index', '999999');
@@ -609,9 +610,11 @@ $(function () {
             for (var i = 0; i < seplen; i++) {
                 if (i > 0) {
                     imglist += '<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+                    //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
                 }
                 else {
                     imglist += '<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+                    //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
                 }
 
             }
@@ -620,9 +623,11 @@ $(function () {
             for (var i = 0; i < seplen; i++) {
                 if (i > 0) {
                     imglist += '<a href="#" class="close_parallax_btn" data-toggle="modal" data-target="#confModal" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+                    //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
                 }
                 else {
                     imglist += '<a href="#" class="close_parallax_btn" data-toggle="modal" data-target="#confModal" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+                    //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
                 }
 
             }
@@ -632,8 +637,36 @@ $(function () {
         carus.html(imglist);
 
 //        $('.close_parallax_btn').on('click', function(){
-//            $("#try_it").trigger('click');
-//        })
+//            $("#confModal").modal('show');
+//        });
+//
+//
+//        $('#close_game').on('click', function(){
+//            $("#confModal").modal('hide');
+//            $(".layer").css('height','100%');
+//            $("#parallax_view").css('pointer-events', 'none');
+//            $('#catchphrase').show();
+//            $('#slogan').hide();
+//            $('#slogan_game').hide();
+//            $('#slogan_game_easy').hide();
+//            $('#slogan_game_hard').hide();
+//            $('#buttons').hide();
+//
+//            $('#do_text').hide();
+//            $('#it_text').hide();
+//            $('#with_text').hide();
+//            $('#games_text').hide();
+//
+//            $("#menu_overlay").css('z-index','999999');
+//            $("#menu_overlay").css('position','absolute');
+//            $("#menu").css('z-index',"9999999");
+//            $("#menu").css('position','absolute');
+//            $("#menu").css('opacity','1');
+//            $("#menu").css('background','');
+//
+//            $('.bb-custom-wrapper>nav').css('z-index',"10000");
+//            $('#aboutUs').css('z-index','100000');
+//        });
 
         Page2.init()
     }
