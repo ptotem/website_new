@@ -62,24 +62,31 @@ $(function () {
     $('#cloud2 img').hide();
     $('#cloud3 img').hide();
 
+
     $('#sky .panel').css('left', '100%');
-    $('body').css("background-image", "url('assets/images/background.jpg')").fadeIn(3000);
+    $('body').css("background-image", "url('assets/images/background.jpg')").fadeIn(2000);
     setTimeout(function () {
-        $('#logopic').fadeIn(5000);
+        $('#logopic').fadeIn(3000);
+        $('#logopic').css({
+            left: ($(window).width() - $('#logopic').outerWidth())/2,
+            top: ($(window).height() - $('#logopic').outerHeight())/2
+        });
+        $('#logopic').animate({'left': '0%', 'top': '0%'}, 1000);
     }, 2000, setTimeout(function () {
-        $('#sky .panel').animate({left: '0%'}, 2000);
-    }, 4000), setTimeout(function () {
-        $('#cloud1 img').fadeIn(2000);
-        $('#cloud2 img').fadeIn(2000);
-        $('#cloud3 img').fadeIn(2000);
-    }, 6000), setTimeout(function () {
-        $("#tree").animate({top: '-109%'}, 1000);
-        $('#menu_overlay').animate({right: '0px'}, 2000);
-        $('#menu').animate({right: '0px'}, 2000);
+
+        $('#sky .panel').animate({left: '0%'}, 1000);
+    }, 5000), setTimeout(function () {
+        $('#cloud1 img').fadeIn(1000);
+        $('#cloud2 img').fadeIn(1000);
+        $('#cloud3 img').fadeIn(1000);
     }, 8000), setTimeout(function () {
+        $("#tree").animate({top: '-109%'}, 1000);
+        $('#menu_overlay').animate({right: '0px'}, 1000);
+        $('#menu').animate({right: '0px'}, 1000);
+    }, 10000), setTimeout(function () {
         $('#catchphrase').hatchShow('catchphrase');
         $('#catchphrase').animate({opacity: 1}, 1000);
-    }, 10000));
+    }, 12000));
     //Home page animation end
 
 
