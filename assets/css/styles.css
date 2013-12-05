@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    width: 100%;
+    width: 98.9%;
     height: 98%;
     overflow: hidden;
     font-family: "Arial", sans-serif;
@@ -316,7 +316,9 @@ ul#xsmenu li {
 .windy nav {
     position: relative;
     width: 96px;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+    top: -10px;
+    left: 30px;
 }
 
 .windy nav span {
@@ -353,7 +355,9 @@ ul#xsmenu li {
 
 ul.wi-container {
     width: 260px;
-    height: 395px;
+    /*height: 395px;*/
+    height: 370px;
+    bottom: 11px;
     margin: 0 auto 30px -45px;
     position: relative;
     padding: 0;
@@ -392,13 +396,15 @@ ul.wi-container li.wi-move {
 }
 
 .nopad {
-    margin: 0;
+    margin: 0 0 0 4%;
     padding: 0;
+    width: 15%;
 }
 
 #coordinates {
     width: 90%;
     margin-left: 10%;
+    margin-top: -2%;
 }
 
 .coordinate_block {
@@ -460,9 +466,15 @@ ul.wi-container li.wi-move {
 }
 
 
-#slogan_game,#slogan_game_easy,#slogan_game_easy {
+#slogan_game, #slogan_game_easy {
     position: absolute;
     right: 60px;
+    top: 33px;
+}
+
+#slogan_game_hard {
+    position: absolute;
+    top: 33px;
 }
 
 #slogan_game_wrapper,#slogan_game_wrapper_easy,#slogan_game_wrapper_hard {

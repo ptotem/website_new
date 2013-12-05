@@ -2,25 +2,25 @@
 
 var img_array = ["assets/images/arijit.jpg", "assets/images/kamalika.jpg", "assets/images/arun.jpg", "assets/images/dipanwita.jpg", "assets/images/rushabh.jpg", "assets/images/sunny.jpg", "assets/images/ashwin.jpg", "assets/images/amol.jpg", "assets/images/rakesh.jpg", "assets/images/nilesh.jpg", "assets/images/perseus.jpg", "assets/images/deepak.jpg", "assets/images/swapnil.jpg", "assets/images/nikunj.jpg"]
 var name_array = ["Arijit Lahiri", "Kamalika Bhattacharya", "Arunkumar Balasubramanian", "Dipanwita Kar", "Rushabh Hathi", "Sunny Singh", "Ashwin Kumar", "Amol Bhor", "Rakesh Rengaraj", "Nilesh Panchal", "Perseus Vazifdar", "Deepak Gawas", "Swapnil Domade", "Nikunj Thakkar"]
-var text_array = ["Arijit is an alumnus of the prestigious IIM, Calcutta, Arijit has over ten years of experience spanning a myriad of functions within Corporate Banking & Wealth Management. He has held national level positions at large Private & Investment Banks. Together with Kamalika, Ptotem is his initiative.",
-    "Kamalika is an MBA from the Indian School of Business, Hyderabad. She currently holds a senior position with a large-cap Investment Bank. Ptotem Learning Projects is essentially her brain-child. She remains a strategic partner of the firm.",
-    "Arun is an MBA from NMIMS. Arun has a work experience of almost a decade & half spanning senior positions in International Trade Finance & Consumer Banking. Arun is a partner at the firm h&ling its Finance & Operations.",
-    "Dipanwita is an MBA from the Indian School of Business, Hyderabad. Dipanwita heads the Sales & Business Development for Ptotem. Her career has involved stints with Infosys, Nokia, Alchemy Capital Management & Religare Macquarie Private Wealth in development & sales.",
-    "Rushabh holds a Post Graduate degree in Artificial Intelligence from the University of Edinburgh. He is Ptotem’s technology wizard & is in charge of technology initiatives for new product development.",
-    "Sunny is an engineering graduate in Computer Science from the Mumbai University. Prior to joining us he worked with Patni Computer Systems. Sunny heads the Development Team at Ptotem.",
-    "Ashwin majored in Botany & is also a Certified Financial Analyst. Apart from being instrumental in initiating several startups, Ashwin has experience in the field of Equity Analysis. At Ptotem, Ashwin heads Product Development & Marketing.",
-    "Amol is an engineering graduate in Computer Science. Amol spearheads the workflow management of the firm. He also manages the Human Resources,Coding, General Administration & Accounts.",
-    "Rakesh is an engineering graduate in Electronics & Telecommunication. After a brief stint with Reliance Infocom, he has joined the team of Ptotem's software developers.",
-    "Nilesh is an engineering graduate who started his career with Ptotem Learning Projects. Nilesh is a part of the firm's software developers.",
-    "Perseus is a Post Graduate in commerce & holds a diploma in multimedia from ‘Arena Multimedia’. He joined the ranks of Ptotem as a Designer & is now a Project Manager.",
-    "Deepak is a graduate in mass media with a specialization in advertising. He tried his hands in the corporate world with a very short stint with Bank of Maharashtra before moving to Ptotem as a Business Development Manager.",
-    "Swapnil graduated in the field of Fine Arts from Central India School of Fine Arts. Before joining Ptotem as the Lead designer, he played an instrumental role at a startup that specializes in Advertising & Design.",
-    "Nikunj is an engineering graduate in Computer Science. Prior to joining Ptotem as a Senior Software Developer, Nikunj has worked with Accenture. Nikunj is also a founding partner of ‘Yuva Beat’ – a student driven startup."]
+var text_array = ["Arijit is an alumnus of the prestigious IIM, Calcutta with over ten years of experience at various national level positions in Corporate Banking & Wealth Management. Together with Kamalika, Ptotem is his initiative.",
+                  "Kamalika is an MBA from ISB, Hyderabad. She currently holds a senior position with a large-cap Investment Bank. Ptotem is essentially her brain-child. She remains a strategic partner of the firm.",
+                  "Arun, an MBA from NMIMS, has over 15 years of experience spanning senior positions in International Trade Finance & Consumer Banking. He is a partner at Ptotem, handling its Finance & Operations." ,
+                  "Dipanwita, an MBA from ISB, Hyderabad, heads the Business Development for Ptotem. Her career has involved stints with Infosys, Nokia & Religare Macquarie in development & sales.",
+                  "Rushabh holds a Post Graduate degree in Artificial Intelligence from the University of Edinburgh. He is Ptotem’s technology wizard & is in charge of technology initiatives for new product development.",
+                  "Sunny is an engineering graduate in Computer Science from the Mumbai University .Prior to joining us, he worked with Patni Computer Systems. Sunny heads the Development Team at Ptotem.",
+                  "Ashwin majored in Botany and also, has experience in the field of Equity Analysis. At Ptotem, Ashwin heads Product Development & Marketing.",
+                  "Amol is an engineering graduate in Computer Science. Amol spearheads the workflow management of the firm. He also manages the Human Resources, Coding, General Administration & Accounts.",
+                  "Rakesh is an engineering graduate in Electronics & Telecommunication. After a brief stint with Reliance Infocom, he has joined the team of Ptotem's software developers.",
+                  "Nilesh is an engineering graduate who started his career with Ptotem Learning Projects. Nilesh is a part of the firm's software developers.",
+                  "Perseus is a Post Graduate in commerce &holds a diploma in multimedia from ‘ArenaMultimedia’. He joined the ranks of Ptotem as a Designer & is now a Project Manager.",
+                  "Deepak is a media graduate with over 4 years of experience in advertising and use to work as a Sr. Account Manager before he decided to join Ptotem as a Business Development Manager.",
+                  "Swapnil graduated in the field of Fine Arts from Central India School of Fine Arts.Before joining Ptotem as the Lead designer, he played an instrumental role at a startup that specializes in Advertising & Design.",
+                  "Nikunj is an engineering graduate in Computer Science. Prior to joining Ptotem as a Senior Software Developer, Nikunj has worked with Accenture."]
 
 //For About Us Windy Array End
 
 //For Product Bookblock Array Start
-var product_img_array = ["assets/images/products/Slide01.jpg", "assets/images/products/Slide02.jpg", "assets/images/products/Slide03.jpg", "assets/images/products/Slide04.jpg", "assets/images/products/Slide05.jpg", "assets/images/products/Slide06.jpg", "assets/images/products/Slide07.jpg", "assets/images/products/Slide08.jpg", "assets/images/products/Slide09.jpg", "assets/images/products/Slide10.jpg", "assets/images/products/Slide11.jpg", "assets/images/products/Slide12.jpg", "assets/images/products/Slide13.jpg", "assets/images/products/Slide14.jpg", "assets/images/products/Slide15.jpg", "assets/images/products/Slide16.jpg", "assets/images/products/Slide17.jpg", "assets/images/products/Slide18.jpg", "assets/images/products/Slide19.jpg", "assets/images/products/Slide20.jpg", "assets/images/products/Slide21.jpg", "assets/images/products/Slide22.jpg", "assets/images/products/Slide23.jpg"]
+var product_img_array = ["assets/images/products/Slide01.jpg", "assets/images/products/Slide02.jpg", "assets/images/products/Slide03.jpg", "assets/images/products/Slide04.jpg", "assets/images/products/Slide05.jpg", "assets/images/products/Slide06.jpg", "assets/images/products/Slide07.jpg", "assets/images/products/Slide08.jpg", "assets/images/products/Slide09.jpg", "assets/images/products/Slide10.jpg", "assets/images/products/Slide11.jpg", "assets/images/products/Slide12.jpg", "assets/images/products/Slide13.jpg", "assets/images/products/Slide14.jpg", "assets/images/products/Slide15.jpg", "assets/images/products/Slide16.jpg", "assets/images/products/Slide17.jpg", "assets/images/products/Slide18.jpg", "assets/images/products/Slide19.jpg", "assets/images/products/Slide20.jpg", "assets/images/products/Slide21.jpg", "assets/images/products/Slide22.jpg"]
 //For Product Bookblock Array End
 
 //For easy game intro Bookblock Array Start
@@ -67,26 +67,26 @@ $(function () {
     $('body').css("background-image", "url('assets/images/background.jpg')").fadeIn(2000);
 
     setTimeout(function () {
-        $('#logopic').fadeIn(3000);
+        $('#logopic').fadeIn(1000)
         $('#logopic').css({
             left: (($(window).width() - $('#logopic').outerWidth())/2)-100,
             top: (($(window).height() - $('#logopic').outerHeight())/2)-100
         });
-        $('#logopic').animate({'left': '0%', 'top': '0%'}, 1000);
-    }, 2000, setTimeout(function () {
-        $('#sky .panel').animate({left: '0%'}, 1000);
+        $('#logopic').animate({'left': '0', 'top': '0'}, 1500);
+    }, 800), setTimeout(function () {
+        $('#sky .panel').animate({left: '0%'}, 600);
+    }, 2800), setTimeout(function () {
+        $('#cloud1 img').fadeIn(800);
+        $('#cloud2 img').fadeIn(800);
+        $('#cloud3 img').fadeIn(800);
+    }, 4000), setTimeout(function () {
+        $("#tree").animate({top: '-109%'}, 800);
+        $('#menu_overlay').animate({right: '0px'}, 800);
+        $('#menu').animate({right: '0px'}, 800);
     }, 5000), setTimeout(function () {
-        $('#cloud1 img').fadeIn(1000);
-        $('#cloud2 img').fadeIn(1000);
-        $('#cloud3 img').fadeIn(1000);
-    }, 8000), setTimeout(function () {
-        $("#tree").animate({top: '-109%'}, 1000);
-        $('#menu_overlay').animate({right: '0px'}, 1000);
-        $('#menu').animate({right: '0px'}, 1000);
-    }, 10000), setTimeout(function () {
         $('#catchphrase').hatchShow('catchphrase');
-        $('#catchphrase').animate({opacity: 1}, 1000);
-    }, 12000));
+        $('#catchphrase').animate({opacity: 1}, 800);
+    }, 6000);
     //Home page animation end
 
 
@@ -124,9 +124,18 @@ $(function () {
             html: 'true'
         });
 
-        img_windy(img_array, text_array, name_array)
+        img_windy(img_array, text_array, name_array);
     });
 
+    $('.nopad').hover(function()
+    {
+        $('#coordinates').prev().prev().animate({ 'opacity': 0.5 });
+    });
+
+    $('.nopad').mouseout(function()
+    {
+        $('#coordinates').prev().prev().animate({ 'opacity': 1 });
+    });
 
     $('#productsLink').on('click', function () {
         $(this).hide();
@@ -172,20 +181,20 @@ $(function () {
         $('#with_text').hide();
         $('#games_text').hide();
 
-        $('#buttons').hide().delay(1000);
-        //$('#trigger_button').trigger('click').delay(2000);
+        $('#buttons').show();
         $('#menu_overlay').css('pointer-events', 'auto');
         $('#slogan_game').parent().css('z-index', '0');
         $("#menu_overlay").css('z-index', '0');
-        //$("#menu_overlay").css('position','absolute');
         $("#menu").css('z-index', '0');
         $('#menu').css({
-            'background': '#aaa',
+            'color': '#ccc',
+            'opacity': '0.4'
+        });
+        $('#menu>li>a').css({
             'color': '#ccc'
         });
         $('#catchphrase').hide();
         setTimeout(function () {
-            $('#buttons').show();
             $('#buttons').parent().css('z-index', '999999');
             $('#buttons').css('z-index', '999999');
         }, 800)
@@ -342,7 +351,7 @@ $(function () {
             $('#slogan_game_hard').fadeIn();
             $('#slogan').fadeIn();
             $('#sky').css('opacity', '0');
-            $('#slogan_game_wrapper_hard').css('width', '95%');
+            //$('#slogan_game_wrapper_hard').css('width', '95%');
             products_bookblock(hard_game_img_array, 'bbHard')
             Page1.init1();
             $('#trigger_button').trigger('click');
@@ -520,6 +529,7 @@ $(function () {
         $('#sky').css('opacity', '0.8');
         $('#slogan').hide();
         $('#catchphrase').show();
+        $('#menu').css('opacity', '0.7');
     });
 
 
@@ -677,7 +687,15 @@ var Page1 = (function () {
                 speed: 800,
                 shadowSides: 0.8,
                 shadowFlip: 0.7,
-                circular: true
+                onEndFlip   : function( page, isLimit ) {
+                    if (isLimit==(hard_game_img_array.length-1)){
+                        config1.$navNext.css('pointer-events','none');
+                    }
+                    else{
+                        config1.$navNext.css('pointer-events','auto');
+                    }
+                    //return false;
+                }
             });
             initEvents1();
         },
@@ -747,7 +765,16 @@ var Page = (function () {
             config.$bookBlock.bookblock({
                 speed: 800,
                 shadowSides: 0.8,
-                shadowFlip: 0.7
+                shadowFlip: 0.7,
+                onEndFlip   : function( page, isLimit ) {
+                    if (isLimit==(easy_game_img_array.length-1)){
+                        config.$navNext.css('pointer-events','none');
+                    }
+                    else{
+                        config.$navNext.css('pointer-events','auto');
+                    }
+                    //return false;
+                }
             });
             initEvents();
         },
@@ -819,7 +846,15 @@ var Page2 = (function () {
                 speed: 800,
                 shadowSides: 0.8,
                 shadowFlip: 0.7,
-                circular: true
+                onEndFlip   : function( page, isLimit ) {
+                    if (isLimit==(product_img_array.length-1)){
+                        config.$navNext.css('pointer-events','none');
+                    }
+                    else{
+                        config.$navNext.css('pointer-events','auto');
+                    }
+                    //return false;
+                }
             });
             initEvents();
         },
@@ -888,8 +923,7 @@ var Page3 = (function () {
             config.$bookBlock.bookblock({
                 speed: 800,
                 shadowSides: 0.8,
-                shadowFlip: 0.7,
-                circular: true
+                shadowFlip: 0.7
             });
             initEvents();
         },
