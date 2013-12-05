@@ -19,9 +19,10 @@ body {
 }
 
 #footer-xs {
-    bottom: 0;
+    margin-left: 6%;
+    margin-top: -4%;
     pointer-events: none;
-    margin-left: 3%
+
 }
 
 img {
@@ -175,7 +176,7 @@ ul#xsmenu {
     margin-top: 1em;
     list-style-type: none;
     padding: 2em;
-    margin-left: 2em;
+    /*margin-left: 2em;*/
 }
 
 ul#xsmenu li {
@@ -614,8 +615,9 @@ ul.wi-container li.wi-move {
 
 .mobile_text{
     font-family: 'Impact';
-    font-size: 2.5em;
+    font-size: 2.4em;
     margin-left: 10%;
+    line-height: 1.8em;
 }
 
 .mob_landing_logo{

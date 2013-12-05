@@ -44,6 +44,7 @@ var opacity_value = 0.5;
 
 $(function () {
 
+    var logo_width= $('#logopic').width();
     //Home page animation start
     $(".gamify").css('opacity', 0.4);
     setInterval(function () {
@@ -72,6 +73,7 @@ $(function () {
             left: (($(window).width() - $('#logopic').outerWidth())/2)-100,
             top: (($(window).height() - $('#logopic').outerHeight())/2)-100
         });
+
         $('#logopic').animate({'left': '0', 'top': '0'}, 1500);
     }, 800), setTimeout(function () {
         $('#sky .panel').animate({left: '0%'}, 600);
@@ -87,6 +89,7 @@ $(function () {
         $('#catchphrase').hatchShow('catchphrase');
         $('#catchphrase').animate({opacity: 1}, 800);
     }, 6000);
+
     //Home page animation end
 
 

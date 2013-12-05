@@ -34,6 +34,12 @@ body{
     padding: 10px;
 }
 
+#contact_connect{
+    border-radius: 10px;
+    padding: 15px;
+    float: right;
+}
+
 .contact_col_one{
     margin-top: 2%;
 }
@@ -41,4 +47,18 @@ body{
 .contact_mobile_logo{
     margin-top: -8px;
     width: 100px;
+}
+
+.custom-style {
+    margin-top: 3%;
+    margin-left: 10%;
+    font-size: 1.4em;
+    padding: 0;
+    margin-bottom: -16px;
+    line-height: 1.4em;
+}
+
+#mobsoltext {
+    font-size: 1.4em;
+    line-height: 1.4em;
 }

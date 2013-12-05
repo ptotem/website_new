@@ -15,19 +15,14 @@
     <!--<link rel="stylesheet" type="text/css" href="css/demo1.css" />-->
 
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/mobileview.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.icon-large.min.css"/>
 
     <script type="text/javascript" src="assets/js/modernizr.custom.79639.js"></script>
     <!--<script src="js/modernizr.custom.js"></script>-->
-    <style>
-        .custom-style {
-            margin-top: 3%;
-            margin-left: 10%;
-            font-size: 1.5em;
-            padding: 0;
-            margin-bottom: -16px;
-        }
-    </style>
+
+
+
 </head>
 <body>
 <div class="row hidden-xs" id="footer">
@@ -450,6 +445,7 @@
 <script src="assets/js/jquery.bookblock.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.windy.js"></script>
 <script type="text/javascript" src="assets/js/indexpage.js"></script>
+<script type="text/javascript" src="assets/js/mobileview.js"></script>
 
 <!--<script src="js/jquerypp.custom.js"></script>-->
 <!--<script src="js/jquery.bookblock.js"></script>-->
@@ -529,22 +525,25 @@
 
 <div class="row">
     <div class="col-xs-12 visible-xs">
-        <a href="#" style=""><img class="mob_landing_logo" src="assets/images/logo_with_name.png"></a>
+        <a href="#" style=""><img id="mobile_logo" class="mob_landing_logo" src="assets/images/logo_with_name.png"></a>
     </div>
 </div>
-<div class="row">
-    <div class="col-xs-12 visible-xs">
-        <p class="custom-style">TRAINING AND MARKETING</p>
+
+<div id="text_phrase">
+    <div class="row" >
+        <div class="col-xs-12 visible-xs">
+            <p class="custom-style">TRAINING AND MARKETING</p>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-xs-12 visible-xs">
-        <p class="custom-style" style="font-size: 1.6em;">SOLUTIONS POWERED BY</p>
+    <div class="row">
+        <div class="col-xs-12 visible-xs">
+            <p class="custom-style" id="mobsoltext">SOLUTIONS POWERED BY</p>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-xs-12 visible-xs">
-        <p class="mobile_text">SERIOUS GAMES</p>
+    <div class="row">
+        <div class="col-xs-12 visible-xs">
+            <p id="mob_serious" class="mobile_text">SERIOUS GAMES</p>
+        </div>
     </div>
 </div>
 
@@ -558,9 +557,12 @@
     </ul>
 </div>
 
-<footer class="bs-footer visible-xs" role="contentinfo" id="footer-xs">
-    Ptotem &copy; 2013
-</footer>
+<div id="mob_footer">
+    <footer class="bs-footer visible-xs" role="contentinfo" id="footer-xs">
+        Ptotem &copy; 2013
+    </footer>
+
+</div>
 
 
 <div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="congModalLabel" aria-hidden="true">
