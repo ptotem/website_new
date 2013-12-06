@@ -119,14 +119,11 @@ $(function () {
 
     //Home page animation start
 
-    alert($(window).width());
-    alert($(window).height());
-
     if ($(window).width() <= 1024){
         $('.aboutPtotem').css('width','290px');
     }
-    else if ($(window).width() <= 768){
-        $('.bookblockProduct').css({
+    if ($(window).width() <= 768){
+        $('#bookblockProduct').css({
             width: '405px',
             marginLeft: '-38px'
         });
