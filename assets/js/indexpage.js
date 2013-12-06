@@ -118,6 +118,11 @@ $(function () {
 
 
     //Home page animation start
+
+    if ($(window).width() < 1024){
+        $('.aboutPtotem').css('width','290px');
+    }
+
     $(".gamify").css('opacity', 0.4);
     setInterval(function () {
         if ($('#buttons').is(':visible'))
