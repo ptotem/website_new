@@ -111,6 +111,8 @@ function img_windy(img_array, text_array, name_array) {
 
 $(function () {
 
+
+
     var logo_width= $('#logopic').width();
     //Home page animation start
     $(".gamify").css('opacity', 0.4);
@@ -239,7 +241,34 @@ $(function () {
     });
 
     $('.glower').on('click', function (e) {
-        $(".shutter").find("img").slideDown(1000);
+        $(".shutter").slideDown(1000);
+        $(".knob").show();
+
+        $('.knob').trigger('configure', {
+            "min": 10,
+            "max": 40,
+            "fgColor": "#FF0000",
+            "skin": "tron",
+            "cursor": true
+        });
+        var colors = ["#ff0000", "#ffff00", "#0000ff", "#000000", "#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
+        $(".knob").knob({
+
+            'min':0,
+            'max':100,
+            'step':10 ,
+            'bgColor':"#333",
+            'fgColor':"rgb(127, 255, 0)" ,
+            'displayInput':false,
+            'change':function(val){
+               color = colors[val/10];
+               this.o.fgColor = color
+            }
+
+        });
+
+
+
 
         var p = $('#parallax_view');
         var position = p.position();
