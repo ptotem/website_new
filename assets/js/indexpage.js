@@ -42,6 +42,68 @@ var c3_hard = 0;
 var c4_hard = 0;
 var opacity_value = 0.5;
 
+
+function img_windy(img_array, text_array, name_array) {
+    var seplen = img_array.length;   //images array
+    var carus = $('#wi-el');        //will append images to this element
+    var imglist = '';                    //we use this variable for optimization..
+
+    for (var i = 0; i < seplen; i++) {
+        imglist += '<li><img src="' + img_array[i] + '" alt="image' + [i + 1] + '"/><h4>' + name_array[i] + '</h4><p>' + text_array[i] + '</p></li>';    //add all images what we have (actually there 2 or 3 images)
+    }
+
+    carus.html(imglist);
+
+    var $el = $('#wi-el'),
+        windy = $el.windy(),
+        allownavnext = false,
+        allownavprev = false;
+
+    $('#nav-prev').on('mousedown',
+        function (event) {
+
+            allownavprev = true;
+            navprev();
+
+        }).on('mouseup mouseleave', function (event) {
+
+            allownavprev = false;
+
+        });
+
+    $('#nav-next').on('mousedown',
+        function (event) {
+
+            allownavnext = true;
+            navnext();
+
+        }).on('mouseup mouseleave', function (event) {
+
+            allownavnext = false;
+
+        });
+
+    function navnext() {
+        if (allownavnext) {
+            windy.next();
+            setTimeout(function () {
+                navnext();
+            }, 150);
+        }
+    }
+
+    function navprev() {
+        if (allownavprev) {
+            windy.prev();
+            setTimeout(function () {
+                navprev();
+            }, 150);
+        }
+    }
+
+
+}
+
 $(function () {
 
     var logo_width= $('#logopic').width();
@@ -142,11 +204,12 @@ $(function () {
 
     $('#productsLink').on('click', function () {
         $(this).hide();
-        Page2.init()
+
         flipside('products');
         //$('.glower').css("pointer-events", "none");
 
         products_bookblock(product_img_array, "bookblockProduct");
+        Page2.init()
 
     });
 
@@ -536,107 +599,53 @@ $(function () {
     });
 
 
-    function img_windy(img_array, text_array, name_array) {
-        var seplen = img_array.length;   //images array
-        var carus = $('#wi-el');        //will append images to this element
-        var imglist = '';                    //we use this variable for optimization..
 
+
+
+
+
+
+});
+
+function products_bookblock(img_array, div_id) {
+    $('.bb-custom-wrapper>nav').css('z-index', '9999');
+    var seplen = img_array.length;   //images array
+    var carus = $('#' + div_id);        //will append images to this element
+    var imglist = '';                    //we use this variable for optimization..
+    if (div_id == "bookblockProduct") {
         for (var i = 0; i < seplen; i++) {
-            imglist += '<li><img src="' + img_array[i] + '" alt="image' + [i + 1] + '"/><h4>' + name_array[i] + '</h4><p>' + text_array[i] + '</p></li>';    //add all images what we have (actually there 2 or 3 images)
+            imglist += '<div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
         }
-
-        carus.html(imglist);
-
-        var $el = $('#wi-el'),
-            windy = $el.windy(),
-            allownavnext = false,
-            allownavprev = false;
-
-        $('#nav-prev').on('mousedown',
-            function (event) {
-
-                allownavprev = true;
-                navprev();
-
-            }).on('mouseup mouseleave', function (event) {
-
-                allownavprev = false;
-
-            });
-
-        $('#nav-next').on('mousedown',
-            function (event) {
-
-                allownavnext = true;
-                navnext();
-
-            }).on('mouseup mouseleave', function (event) {
-
-                allownavnext = false;
-
-            });
-
-        function navnext() {
-            if (allownavnext) {
-                windy.next();
-                setTimeout(function () {
-                    navnext();
-                }, 150);
+    }
+    else if (div_id == "gameWin") {
+        for (var i = 0; i < seplen; i++) {
+            if (i > 0) {
+                imglist += '<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+                //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
             }
-        }
-
-        function navprev() {
-            if (allownavprev) {
-                windy.prev();
-                setTimeout(function () {
-                    navprev();
-                }, 150);
+            else {
+                imglist += '<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+                //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
             }
+
         }
+    }
+    else {
+        for (var i = 0; i < seplen; i++) {
+            if (i > 0) {
+                imglist += '<a href="#" class="close_parallax_btn" data-toggle="modal" data-target="#confModal" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+                //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+            }
+            else {
+                imglist += '<a href="#" class="close_parallax_btn" data-toggle="modal" data-target="#confModal" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+                //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+            }
 
-
+        }
     }
 
 
-    function products_bookblock(img_array, div_id) {
-        $('.bb-custom-wrapper>nav').css('z-index', '9999');
-        var seplen = img_array.length;   //images array
-        var carus = $('#' + div_id);        //will append images to this element
-        var imglist = '';                    //we use this variable for optimization..
-        if (div_id == "bookblockProduct") {
-            for (var i = 0; i < seplen; i++) {
-                imglist += '<div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-            }
-        }
-        else if (div_id == "gameWin") {
-            for (var i = 0; i < seplen; i++) {
-                if (i > 0) {
-                    imglist += '<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-                    //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-                }
-                else {
-                    imglist += '<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-                    //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-                }
-
-            }
-        }
-        else {
-            for (var i = 0; i < seplen; i++) {
-                if (i > 0) {
-                    imglist += '<a href="#" class="close_parallax_btn" data-toggle="modal" data-target="#confModal" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-                    //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-                }
-                else {
-                    imglist += '<a href="#" class="close_parallax_btn" data-toggle="modal" data-target="#confModal" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-                    //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-                }
-
-            }
-        }
-
-
-        carus.html(imglist);
+    carus.html(imglist);
 
 //        $('.close_parallax_btn').on('click', function(){
 //            $("#confModal").modal('show');
@@ -670,12 +679,8 @@ $(function () {
 //            $('#aboutUs').css('z-index','100000');
 //        });
 
-        Page2.init()
-    }
-
-
-});
-
+//    Page2.init()
+}
 
 var Page1 = (function () {
 
