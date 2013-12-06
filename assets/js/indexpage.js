@@ -141,22 +141,36 @@ $(function () {
     $('#sky .panel').css('left', '100%');
     $('body').css("background-image", "url('assets/images/background.jpg')").fadeIn(2000);
 
-    $('#logopic').css('width','85%');
-    //for desktops
-    //768px
-    //979px
+
+    if ($(window).width() > 1024){
+        $('#logopic').css('width','85%');
+    }
+    else{
+        $('#logopic').css('width','100%');
+    }
 
     setTimeout(function () {
         $('#logopic').fadeIn(1000)
-        $('#logopic').css({
-            left: (($(window).width() - $('#logopic').outerWidth())/2)-100,
-            top: (($(window).height() - $('#logopic').outerHeight())/2)-100
-        });
+        if ($(window).width() < 1024){
+
+            $('#logopic').css({
+                left: (($(window).width())/2)-136,
+                top: (($(window).height())/3)
+            });
+        }
+        else{
+            $('#logopic').css({
+                left: (($(window).width())/2)-280,
+                top: (($(window).height())/2)-100
+            });
+        }
+
         if ($(window).width() > 1024){
             $('#logopic').animate({'left': '0', 'top': '0', 'width': '58%'}, 1500);
         }
         else{
-            $('#logopic').animate({'left': '0', 'top': '-66', 'width' :percentage_added}, 1500);
+            $('#logopic').animate({'left': '0', 'top': '0', 'width' :percentage_added, 'paddingTop': '0'}, 1500);
+            $('#logo .panel').css('top', '25px');
         }
     }, 800), setTimeout(function () {
         $('#sky .panel').animate({left: '0%'}, 600);
