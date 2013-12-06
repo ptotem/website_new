@@ -554,6 +554,13 @@ ul.wi-container li.wi-move {
 }
 
 @media all and (min-width:768px) and (max-width: 1024px){
+
+    body {
+        margin: 0;
+        width: 98.9%;
+        height: 98%;
+    }
+
     #buttons{
         display: none;
         margin-top: 95%;
@@ -592,7 +599,7 @@ ul.wi-container li.wi-move {
     }
 
     .aboutPtotem{
-        width:250px;
+        width:290px;
     }
 
 }
