@@ -47,7 +47,7 @@ function img_windy(img_array, text_array, name_array) {
     var seplen = img_array.length;   //images array
     var carus = $('#wi-el');        //will append images to this element
     var imglist = '';                    //we use this variable for optimization..
-
+    var counter =0;
     for (var i = 0; i < seplen; i++) {
         imglist += '<li><img src="' + img_array[i] + '" alt="image' + [i + 1] + '"/><h4>' + name_array[i] + '</h4><p>' + text_array[i] + '</p></li>';    //add all images what we have (actually there 2 or 3 images)
     }
@@ -73,6 +73,11 @@ function img_windy(img_array, text_array, name_array) {
 
     $('#nav-next').on('mousedown',
         function (event) {
+            counter++;
+            if(counter === seplen)
+            {
+                img_windy(img_array, text_array, name_array)
+            }
 
             allownavnext = true;
             navnext();
