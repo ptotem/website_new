@@ -239,6 +239,7 @@ $(function () {
     });
 
     $('.glower').on('click', function (e) {
+        $(".shutter").find("img").slideDown(1000);
 
         var p = $('#parallax_view');
         var position = p.position();
