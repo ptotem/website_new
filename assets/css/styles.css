@@ -595,7 +595,7 @@ ul.wi-container li.wi-move {
     }
 
     .aboutPtotem{
-        width:290px;
+        width:260px;
     }
 
 }
@@ -653,9 +653,9 @@ ul.wi-container li.wi-move {
         transform: scale(1, 2);
     }
 
-    .ptotem_text{
-        margin-left: -31px;
-    }
+    /*.ptotem_text{*/
+        /*margin-left: -31px;*/
+    /*}*/
 
 }
 /* tablet portrait ends */
