@@ -563,6 +563,11 @@ ul.wi-container li.wi-move {
         color: #000000;
         font-size: 4.5em;
     }
+
+    .aboutPtotem{
+        width:290px;
+    }
+
 }
 
 @media all and (max-width:768px){
@@ -608,6 +613,11 @@ ul.wi-container li.wi-move {
         line-height: 2em;
         transform: scale(1, 2);
     }
+
+    .ptotem_text{
+        margin-left: -31px;
+    }
+
 }
 
 .colors{
