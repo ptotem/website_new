@@ -114,6 +114,11 @@ $(function () {
 
 
     var logo_width= $('#logopic').width();
+    var percentage_added = logo_width+'%';
+
+    //alert(percentage_added);
+    //alert($(window).width());
+
     //Home page animation start
     $(".gamify").css('opacity', 0.4);
     setInterval(function () {
@@ -136,14 +141,23 @@ $(function () {
     $('#sky .panel').css('left', '100%');
     $('body').css("background-image", "url('assets/images/background.jpg')").fadeIn(2000);
 
+    $('#logopic').css('width','85%');
+    //for desktops
+    //768px
+    //979px
+
     setTimeout(function () {
         $('#logopic').fadeIn(1000)
         $('#logopic').css({
             left: (($(window).width() - $('#logopic').outerWidth())/2)-100,
             top: (($(window).height() - $('#logopic').outerHeight())/2)-100
         });
-
-        $('#logopic').animate({'left': '0', 'top': '0'}, 1500);
+        if ($(window).width() > 1024){
+            $('#logopic').animate({'left': '0', 'top': '0', 'width': '58%'}, 1500);
+        }
+        else{
+            $('#logopic').animate({'left': '0', 'top': '-66', 'width' :percentage_added}, 1500);
+        }
     }, 800), setTimeout(function () {
         $('#sky .panel').animate({left: '0%'}, 600);
     }, 2800), setTimeout(function () {
