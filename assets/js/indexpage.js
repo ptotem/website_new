@@ -119,8 +119,9 @@ $(function () {
 
     //Home page animation start
 
-    if ($(window).width() < 1024){
+    if ($(window).width() == 1024){
         $('.aboutPtotem').css('width','290px');
+        alert($(window).width());
     }
 
     $(".gamify").css('opacity', 0.4);

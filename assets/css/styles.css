@@ -557,12 +557,6 @@ ul.wi-container li.wi-move {
 /* tablet landscape starts */
 @media all and (min-width:768px) and (max-width: 1024px){
 
-    html, body{
-        overflow: hidden;
-        height: 98%;
-        width: 98%;
-    }
-
     #buttons{
         display: none;
         margin-top: 95%;
@@ -609,12 +603,6 @@ ul.wi-container li.wi-move {
 
 /* tablet portrait starts */
 @media all and (max-width:768px){
-
-    html, body{
-        overflow: hidden;
-        height: 98%;
-        width: 98%;
-    }
 
     #buttons{
         display: none;
