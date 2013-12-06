@@ -119,10 +119,21 @@ $(function () {
 
     //Home page animation start
 
-    if ($(window).width() == 1024){
+    alert($(window).width());
+    alert($(window).height());
+
+    if ($(window).width() <= 1024){
         $('.aboutPtotem').css('width','290px');
-        alert($(window).width());
     }
+    else if ($(window).width() <= 768){
+        $('.bookblockProduct').css({
+            width: '405px',
+            marginLeft: '-38px'
+        });
+        $('.bb-custom-wrapper nav').css('margin-left','105px');
+    }
+
+
 
     $(".gamify").css('opacity', 0.4);
     setInterval(function () {
