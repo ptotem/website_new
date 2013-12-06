@@ -116,8 +116,8 @@ $(function () {
     var logo_width= $('#logopic').width();
     var percentage_added = logo_width+'%';
 
-    //alert(percentage_added);
-    //alert($(window).width());
+
+    alert($(window).width());
 
     //Home page animation start
     $(".gamify").css('opacity', 0.4);
