@@ -247,7 +247,7 @@
 		next : function() {
 
 			if( this.current < this.itemsCount - 1 ) {
-				
+
 				var idx = this.current + 1;
 				this.navigate( idx );
 

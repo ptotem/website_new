@@ -7,6 +7,7 @@ var total_sections;
 var pos_count = 0;
 var inactivesection = 0;
 var score1, score2, score3;
+var gm_ovr=false;
 
 $(function () {
     load_db();
@@ -15,6 +16,7 @@ $(function () {
 
 
 function scoring() {
+    if(!gm_ovr){
     $('.correct').each(function (index, ele) {
 
         if ($(ele).hasClass('selected') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('correct')) {
@@ -43,7 +45,6 @@ function scoring() {
         var $this = $(this);
         //var myVal = $this.attr("rel");
         var myVal = score3*100;
-        // alert(myVal);
         $this.knob({
             width: '120',
             height: '120',
@@ -71,15 +72,14 @@ function scoring() {
     });
 
     review(input, new_data);
-
-
+    gm_ovr=true;
+    }
 }
 
 function review(in1, nd) {
     answered = true;
     var reason;
     $('.correct').each(function (index, ele) {
-        //console.log("nd.charAt(index) :- " + nd.charAt(index));
         if (nd.charAt(index) == 'P') {
             $(ele).empty();
             $(ele).css("background-color", "#569279");
@@ -120,12 +120,11 @@ function review(in1, nd) {
             $(ele).css("opacity", "0.65");
             //$(ele).css('filter','alpha(opacity='+50+')');
         }
-        //console.log("in1[index] :- " + in1[index]);
         if (in1[index] == 1) {
-            $(ele).append('<img src="images/nilesh/thumbsup.gif" style="display: none; height:34px;max-height: 32px; margin-left: 36px;" alt="' + reason + '">');
+            $(ele).append('<img src="assets/images/thumbsup.gif" style="display: none; height:34px;max-height: 32px; margin-left: 36px;" alt="' + reason + '">');
         }
         else {
-            $(ele).append('<img src="images/nilesh/thumbsdown.gif" style="display: none; height:34px;max-height: 32px; margin-left: 36px;" alt="' + reason + '">');
+            $(ele).append('<img src="assets/images/thumbsdown.gif" style="display: none; height:34px;max-height: 32px; margin-left: 36px;" alt="' + reason + '">');
         }
         $(ele).hover(
             function () {
@@ -136,7 +135,6 @@ function review(in1, nd) {
             }
         );
         $(ele).on('click', function(){
-            //console.log($("#ans").text());
             $(".instructionbox").css({
                 'border': '1px solid green'
             });
@@ -202,7 +200,7 @@ function start_sim() {
 
         var input = myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields;
         $.each(input, function (index, value) {
-            $('#form').append('<div class="correct" onclick="disp($(this)); " style="position:absolute;background: #FFF;opacity:0.0; filter:alpha(opacity=0); font-size:11px;top:' + value.Field.top + 'px;left:' + value.Field.left + 'px;height:' + value.Field.height + 'px;width:' + value.Field.width + 'px;" >.</div>');
+            $('#form').append('<div class="correct" onclick="disp($(this)); " style="cursor:pointer;position:absolute;background: #FFF;opacity:0.0; filter:alpha(opacity=0); font-size:11px;top:' + value.Field.top + 'px;left:' + value.Field.left + 'px;height:' + value.Field.height + 'px;width:' + value.Field.width + 'px;" >.</div>');
         });
 
     total_sections = myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields.length;

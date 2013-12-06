@@ -1,11 +1,13 @@
 body {
     margin: 0;
-    width: 100%;
+    width: 98.9%;
     height: 98%;
     overflow: hidden;
     font-family: "Arial", sans-serif;
-    background: url('../images/background.jpg');
-    background-repeat: repeat;
+    /*background-image: url('../images/background.jpg');*/
+    /*background-repeat: repeat;*/
+    display: none;
+
 }
 
 #footer {
@@ -16,21 +18,39 @@ body {
     pointer-events: none;
 }
 
+#footer-xs {
+    margin-left: 6%;
+    margin-top: -4%;
+    pointer-events: none;
+
+}
+
 img {
     display: block;
     width: 100%;
-    /*height: 100%;*/
+    height: 100%;
 }
 
-a{
+
+a:link {
+    text-decoration: none;
     color: #ffffff;
-}
+}      /* unvisited link */
+
+a:visited {
+    color: #ffffff;
+}  /* visited link */
 
 a:hover {
     text-decoration: none;
     /*font-weight: bold;*/
     color: #ffffff;
-}
+}  /* mouse over link */
+
+a:active {
+    color: #ffffff;
+}  /* selected link */
+
 
 .scene {
     width: 100%;
@@ -52,10 +72,22 @@ a:hover {
     position: absolute;
     background: transparent;
     pointer-events: none;
+    box-shadow: none;
+}
+
+.appleinstructions{
+    background-color: #eda233;
+    color: #a52a2a;
+    opacity: 0.8;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+
 }
 
 #catchphrase {
     line-height: 1;
+    opacity: 0;
 }
 
 #logo .panel {
@@ -63,17 +95,26 @@ a:hover {
     top: 5%;
 }
 
+#logopic{
+    height: auto;
+    /*display: none;*/
+}
+
 #sky .panel {
-    right: -5%;
+    /*right: -5%;*/
+    /*left: 630px;*/
     top: -10%;
     width: 100%;
     height: 120%;
     opacity: 0.8;
+    /*display: none;*/
 }
 
 #tree .panel {
     right: -10%;
-    bottom: -10%;
+    bottom: -120%;
+    /*top:600px;*/
+    /*position: absolute;*/
     width: 150%;
 }
 
@@ -98,7 +139,8 @@ a:hover {
 
 ul#menu {
     position: absolute;
-    right: 0%;
+    /*right: 0%;*/
+    right: -490px;
     top: 20px;
     list-style-type: none;
     padding: 5px;
@@ -110,7 +152,8 @@ ul#menu {
 
 #menu_overlay {
     position: absolute;
-    right: 0;
+    /*right: 0;*/
+    right: -490px;
     top: 10px;
     height: 80px;
     width: 100%;
@@ -133,6 +176,7 @@ ul#xsmenu {
     margin-top: 1em;
     list-style-type: none;
     padding: 2em;
+    /*margin-left: 2em;*/
 }
 
 ul#xsmenu li {
@@ -142,13 +186,23 @@ ul#xsmenu li {
     font-weight: bold;
     border-left: 5px solid gray;
     margin-bottom: 0.2em;
+    cursor: pointer;
 }
 
-#gamify {
+.gamify {
     opacity: 0.8;
+    z-index: 9999;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
-#gamify:hover {
+.gamify:hover {
+    opacity: 1;
+}
+
+.glower{
+    z-index: 1;
+}
+.glower:hover{
     opacity: 1;
 }
 
@@ -168,10 +222,25 @@ ul#xsmenu li {
     width: 100%;
 }
 
-#close_parallax_btn{
+.close_parallax_btn{
     position: absolute;
     cursor: pointer;
-    right: 86px;
+    right: 5px;
+    top: 0px;
+    font-size: 32px;
+    z-index: 9999999;
+    /*display: none;*/
+}
+
+.close_game_select_btn {
+    position: relative;
+    cursor: pointer;
+}
+
+.close_slogan_btn{
+    position: absolute;
+    cursor: pointer;
+    right: 5px;
     top: 32px;
     font-size: 32px;
     z-index: 9999999;
@@ -248,7 +317,9 @@ ul#xsmenu li {
 .windy nav {
     position: relative;
     width: 96px;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+    top: -10px;
+    left: 30px;
 }
 
 .windy nav span {
@@ -285,7 +356,9 @@ ul#xsmenu li {
 
 ul.wi-container {
     width: 260px;
-    height: 390px;
+    /*height: 395px;*/
+    height: 370px;
+    bottom: 11px;
     margin: 0 auto 30px -45px;
     position: relative;
     padding: 0;
@@ -324,13 +397,15 @@ ul.wi-container li.wi-move {
 }
 
 .nopad {
-    margin: 0;
+    margin: 0 0 0 4%;
     padding: 0;
+    width: 15%;
 }
 
 #coordinates {
     width: 90%;
     margin-left: 10%;
+    margin-top: -2%;
 }
 
 .coordinate_block {
@@ -350,10 +425,10 @@ ul.wi-container li.wi-move {
     margin-top: 10%;
 }
 
-#slogan_text,#slogan_text_hard {
-    font-size: 80px;
-    line-height: 80px;
-}
+/*#slogan_text,#slogan_text_hard {*/
+/*font-size: 80px;*/
+/*line-height: 120px;*/
+/*}*/
 
 .spinner {
     border: 5px solid white;
@@ -364,27 +439,43 @@ ul.wi-container li.wi-move {
 #do {
     /*background: black;*/
     height: 200px;
+    outline: none;
 }
 
 #it {
     /*background: green;*/
     height: 100px;
+    outline: none;
 
 }
 
 #with {
     /*background: yellow;*/
     height: 100px;
+    outline: none;
 }
 
 #games {
     /*background: blue;*/
     height: 100px;
+    outline: none;
 }
 
-#slogan_game,#slogan_game_easy,#slogan_game_easy {
+
+.doitwithgames{
+    font-family: 'Impact'
+}
+
+
+#slogan_game, #slogan_game_easy {
     position: absolute;
     right: 60px;
+    top: 33px;
+}
+
+#slogan_game_hard {
+    position: absolute;
+    top: 33px;
 }
 
 #slogan_game_wrapper,#slogan_game_wrapper_easy,#slogan_game_wrapper_hard {
@@ -395,17 +486,45 @@ ul.wi-container li.wi-move {
 
 
 @media all and (min-width: 1024px){
-    #buttons{
+    #buttons {
         display: none;
         margin-top: 55%;
         margin-left: 60%;
         background: #ffffff;
         opacity: 0.8;
         width: 180px;
+        /*width: 32%;*/
         border-radius: 10px;
         padding: 15px;
     }
+
+    #do_text{
+        display: none;
+        color: #000000;
+        font-size: 6.2em;
+        line-height: 184px;
+        transform: scale(1, 2);
+    }
+
+    #it_text{
+        display: none;
+        color: #000000;
+        font-size: 5em;
+    }
+
+    #with_text{
+        display: none;
+        color: #000000;
+        font-size: 5em;
+    }
+
+    #games_text{
+        display: none;
+        color: #000000;
+        font-size: 5em;
+    }
 }
+
 @media all and (min-width:768px) and (max-width: 1024px){
     #buttons{
         display: none;
@@ -417,6 +536,32 @@ ul.wi-container li.wi-move {
         border-radius: 10px;
         padding: 15px;
     }
+
+    #do_text{
+        display: none;
+        color: #000000;
+        font-size: 5.2em;
+        line-height: 184px;
+        transform: scale(1, 2);
+    }
+
+    #it_text{
+        display: none;
+        color: #000000;
+        font-size: 4.5em;
+    }
+
+    #with_text{
+        display: none;
+        color: #000000;
+        font-size: 4.1em;
+    }
+
+    #games_text{
+        display: none;
+        color: #000000;
+        font-size: 4.5em;
+    }
 }
 
 @media all and (max-width:768px){
@@ -426,12 +571,57 @@ ul.wi-container li.wi-move {
         margin-left: 50%;
         background: #ffffff;
         opacity: 0.8;
-        width: 180px;
+        width: 43%;
         border-radius: 10px;
         padding: 15px;
+    }
+
+    #do_text{
+        display: none;
+        color: #000000;
+        font-size: 3.5em;
+        line-height: 184px;
+        transform: scale(1, 3);
+    }
+
+    #it_text{
+        display: none;
+        color: #000000;
+        font-size: 2em;
+        line-height: 3em;
+        transform: scale(1, 3);
+    }
+
+    #with_text{
+        display: none;
+        color: #000000;
+        font-size: 3em;
+        line-height: 1.8em;
+        transform: scale(1, 1.5);
+    }
+
+    #games_text{
+        display: none;
+        color: #000000;
+        font-size: 3em;
+        line-height: 2em;
+        transform: scale(1, 2);
     }
 }
 
 .colors{
     margin-top: 50%;
+}
+
+.mobile_text{
+    font-family: 'Impact';
+    font-size: 2.4em;
+    margin-left: 10%;
+    line-height: 1.8em;
+}
+
+.mob_landing_logo{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3%;
 }
