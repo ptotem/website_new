@@ -555,6 +555,10 @@ ul.wi-container li.wi-move {
 
 @media all and (min-width:768px) and (max-width: 1024px){
 
+    body{
+        overflow:hidden;
+    }
+
     #buttons{
         display: none;
         margin-top: 95%;
