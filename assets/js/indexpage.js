@@ -43,9 +43,9 @@ var c4_hard = 0;
 var opacity_value = 0.5;
 
 
-function img_windy(img_array, text_array, name_array) {
+function img_windy(img_array, text_array, name_array,div_id,nav_prev,nav_next) {
     var seplen = img_array.length;   //images array
-    var carus = $('#wi-el');        //will append images to this element
+    var carus = $(div_id);        //will append images to this element
     var imglist = '';                    //we use this variable for optimization..
     var counter =0;
     for (var i = 0; i < seplen; i++) {
@@ -54,12 +54,12 @@ function img_windy(img_array, text_array, name_array) {
 
     carus.html(imglist);
 
-    var $el = $('#wi-el'),
+    var $el = $(div_id),
         windy = $el.windy(),
         allownavnext = false,
         allownavprev = false;
 
-    $('#nav-prev').on('mousedown',
+    $(nav_prev).on('mousedown',
         function (event) {
 
             allownavprev = true;
@@ -71,12 +71,12 @@ function img_windy(img_array, text_array, name_array) {
 
         });
 
-    $('#nav-next').on('mousedown',
+    $(nav_next).on('mousedown',
         function (event) {
             counter++;
             if(counter === seplen)
             {
-                img_windy(img_array, text_array, name_array)
+                img_windy(img_array, text_array, name_array,div_id,nav_prev,nav_next)
             }
 
             allownavnext = true;
@@ -224,7 +224,7 @@ $(function () {
             html: 'true'
         });
 
-        img_windy(img_array, text_array, name_array);
+        img_windy(img_array, text_array, name_array,"#wi-el","#nav-prev","#nav-next");
     });
 
     $('.nopad').hover(function()
@@ -271,6 +271,9 @@ $(function () {
     $('.glower').on('click', function (e) {
         $(".shutter").slideDown(1000);
         $(".knob").show();
+        $('.windy').show();
+        img_windy(img_array, text_array, name_array,"#windy_shutter","#nav-prev_rules","#nav-next_rules");
+
 
         $('.knob').trigger('configure', {
             "min": 10,
