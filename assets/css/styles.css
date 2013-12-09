@@ -12,7 +12,7 @@ body {
 
 #footer {
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     padding: 10px;
     padding-left: 40px;
     pointer-events: none;
@@ -512,7 +512,7 @@ ul.wi-container li.wi-move {
 }
 
 
-
+/* desktop starts */
 @media all and (min-width: 1024px){
     #buttons {
         display: none;
@@ -552,7 +552,9 @@ ul.wi-container li.wi-move {
         font-size: 5em;
     }
 }
+/* desktop ends */
 
+/* tablet landscape starts */
 @media all and (min-width:768px) and (max-width: 1024px){
 
     #buttons{
@@ -592,13 +594,16 @@ ul.wi-container li.wi-move {
         font-size: 4.5em;
     }
 
-    .aboutPtotem{
-        width:290px;
-    }
+    /*.aboutPtotem{*/
+        /*width:260px;*/
+    /*}*/
 
 }
+/* tablet landscape ends */
 
+/* tablet portrait starts */
 @media all and (max-width:768px){
+
     #buttons{
         display: none;
         margin-top: 150%;
@@ -642,9 +647,9 @@ ul.wi-container li.wi-move {
         transform: scale(1, 2);
     }
 
-    .ptotem_text{
-        margin-left: -31px;
-    }
+    /*.ptotem_text{*/
+        /*margin-left: -31px;*/
+    /*}*/
 
 }
-
+/* tablet portrait ends */
