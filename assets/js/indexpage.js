@@ -41,6 +41,86 @@ var c2_hard = 0;
 var c3_hard = 0;
 var c4_hard = 0;
 var opacity_value = 0.5;
+//#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
+var easy_winner = ["#ff0000", "#ffff00", "#0000ff", "#000000"]  ;
+var hard_winner = ["#ff6600","#808080","#663300","#008000"] ;
+
+
+function test_winner(current_color,winner){
+    return current_color.join(",") === winner.join(",") ;
+
+}
+
+
+function game_choice(){
+    $(".shutter").slideDown(1000);
+    bootbox.dialog({
+        message: "Please Select game type",
+        title: "Game Type",
+        buttons: {
+            success: {
+                label: "Easy!",
+                className: "btn-success",
+                callback: function() {
+                    init_game('easy')
+                }
+            },
+            danger: {
+                label: "Hard!",
+                className: "btn-danger",
+                callback: function() {
+                    init_game('hard')
+                }
+            }
+
+        }
+    });
+}
+function init_game(type){
+
+    $(".knob_container").show()
+//
+    $(".knob").show();
+//        $('.windy').show();
+//        img_windy(img_array, text_array, name_array,"#windy_shutter","#nav-prev_rules","#nav-next_rules");
+        current_color_combo = [];
+        if (type === 'easy')
+           winner = easy_winner ;
+        else
+           winner = hard_winner;
+
+        $('.knob').trigger('configure', {
+            "min": 10,
+            "max": 40,
+            "fgColor": "#FF0000",
+            "skin": "tron",
+            "cursor": true
+        });
+        var colors = ["#ff0000", "#ffff00", "#0000ff", "#000000", "#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
+        $(".knob").knob({
+
+            'min':0,
+            'max':100,
+            'step':10 ,
+            'bgColor':"#333",
+            'fgColor':"rgb(127, 255, 0)" ,
+            'displayInput':false,
+            'change':function(val){
+
+
+               color = colors[val/10];
+               this.o.fgColor = color
+                current_color_combo[(this.$).attr("id")-1] = color;
+                if(test_winner(current_color_combo,winner))
+                setTimeout(function(){
+                    bootbox.alert("You win",function(){
+                        $(".knob_container").hide();
+                        $(".shutter").slideUp(1000);
+                    });
+                },1000)
+            }
+        });
+}
 
 
 function img_windy(img_array, text_array, name_array,div_id,nav_prev,nav_next) {
@@ -269,37 +349,9 @@ $(function () {
     });
 
     $('.glower').on('click', function (e) {
-        $(".shutter").slideDown(1000);
-        $(".knob").show();
-        $('.windy').show();
-        img_windy(img_array, text_array, name_array,"#windy_shutter","#nav-prev_rules","#nav-next_rules");
-
-
-        $('.knob').trigger('configure', {
-            "min": 10,
-            "max": 40,
-            "fgColor": "#FF0000",
-            "skin": "tron",
-            "cursor": true
-        });
-        var colors = ["#ff0000", "#ffff00", "#0000ff", "#000000", "#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
-        $(".knob").knob({
-
-            'min':0,
-            'max':100,
-            'step':10 ,
-            'bgColor':"#333",
-            'fgColor':"rgb(127, 255, 0)" ,
-            'displayInput':false,
-            'change':function(val){
-               color = colors[val/10];
-               this.o.fgColor = color
-            }
-
-        });
-
-
-
+//
+        game_choice()
+//        init_game()
 
         var p = $('#parallax_view');
         var position = p.position();
@@ -313,7 +365,7 @@ $(function () {
         $('#with_text').hide();
         $('#games_text').hide();
 
-        $('#buttons').show();
+
         $('#menu_overlay').css('pointer-events', 'auto');
         $('#slogan_game').parent().css('z-index', '0');
         $("#menu_overlay").css('z-index', '0');
@@ -335,6 +387,7 @@ $(function () {
 
 
     $('.button_click').click(function () {
+
         $("#parallax_view").css('z-index', '9999');
         $(".close_parallax_btn").css('left', '593px');
         $(".close_parallax_btn").show();

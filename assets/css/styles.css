@@ -504,7 +504,7 @@ ul.wi-container li.wi-move {
 }
 
 .shutter{
-    background-image: url('../images/shutter.jpg');
+    background-image: url('../images/blank_shutter.jpg');
     display: none;
     width: 1386px;
     height: 786px;
