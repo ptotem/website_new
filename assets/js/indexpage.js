@@ -53,28 +53,35 @@ function test_winner(current_color,winner){
 
 
 function game_choice(){
-    $(".shutter").slideDown(1000);
-    bootbox.dialog({
-        message: "Please Select game type",
-        title: "Game Type",
-        buttons: {
-            success: {
-                label: "Easy!",
-                className: "btn-success",
-                callback: function() {
-                    init_game('easy')
-                }
-            },
-            danger: {
-                label: "Hard!",
-                className: "btn-danger",
-                callback: function() {
-                    init_game('hard')
-                }
-            }
+    //$(".shutter").slideDown(1000);
+    $('.shutter').fadeIn();
+    $('.shutter').animate({'left': '0', 'top': '0', 'z-index': '1040'}, 1500);
 
-        }
-    });
+    setTimeout(function(){
+        bootbox.dialog({
+            message: "Please Select game type",
+            title: "Game Type",
+            buttons: {
+                success: {
+                    label: "Easy!",
+                    className: "btn-success",
+                    callback: function() {
+                        init_game('easy')
+                    }
+                },
+                danger: {
+                    label: "Hard!",
+                    className: "btn-danger",
+                    callback: function() {
+                        init_game('hard')
+                    }
+                }
+
+            }
+        });
+    },1800);
+
+
 }
 function init_game(type){
 

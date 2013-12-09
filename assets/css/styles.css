@@ -508,6 +508,8 @@ ul.wi-container li.wi-move {
     display: none;
     width: 1386px;
     height: 786px;
+    position: absolute;
+    top: -786px;
     background-size: 1386px 796px;
 }
 
