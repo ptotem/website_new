@@ -53,7 +53,7 @@ function test_winner(current_color,winner){
 
 
 function game_choice(){
-    //$(".shutter").slideDown(1000);
+//    $(".shutter").slideDown(1000);
     $('.shutter').fadeIn();
     $('.shutter').animate({'left': '0', 'top': '0', 'z-index': '1040'}, 1500);
 
@@ -85,48 +85,67 @@ function game_choice(){
 }
 function init_game(type){
 
-    $(".knob_container").show()
+
+
+    $(".knob_container").show();
 //
     $(".knob").show();
 //        $('.windy').show();
 //        img_windy(img_array, text_array, name_array,"#windy_shutter","#nav-prev_rules","#nav-next_rules");
         current_color_combo = [];
         if (type === 'easy')
+        {
+            $("#easy_graffiti").fadeIn('slow');
            winner = easy_winner ;
+        }
         else
+        {
+            $("#hard_graffiti").fadeIn('slow');
            winner = hard_winner;
+        }
 
-        $('.knob').trigger('configure', {
-            "min": 10,
-            "max": 40,
-            "fgColor": "#FF0000",
-            "skin": "tron",
-            "cursor": true
-        });
-        var colors = ["#ff0000", "#ffff00", "#0000ff", "#000000", "#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
+
+        var colors = ["","#ff0000", "#ffff00", "#0000ff", "#000000", "#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
+         console.log("just before");
+    $('.knob')
+        .val(0)
+        .trigger('change');
+
+
+
+
         $(".knob").knob({
 
             'min':0,
             'max':100,
             'step':10 ,
-            'bgColor':"#333",
+            'bgColor':"#635852",
             'fgColor':"rgb(127, 255, 0)" ,
+            'width':"150",
+            'height':'150',
+            'thickness':"0.30",
+             'angleOffset':"0",
             'displayInput':false,
+            'draw':function(){
+                 console.log("this.v");
+            }   ,
             'change':function(val){
-
-
-               color = colors[val/10];
-               this.o.fgColor = color
+               color = colors[(val)/10];
+               this.o.fgColor = color ;
                 current_color_combo[(this.$).attr("id")-1] = color;
                 if(test_winner(current_color_combo,winner))
                 setTimeout(function(){
                     bootbox.alert("You win",function(){
                         $(".knob_container").hide();
                         $(".shutter").slideUp(1000);
+                        $("#easy_graffiti").hide();
+                        $("#hard_graffiti").hide();
+
                     });
                 },1000)
             }
         });
+
 }
 
 
@@ -372,35 +391,35 @@ $(function () {
         game_choice()
 //        init_game()
 
-        var p = $('#parallax_view');
-        var position = p.position();
-        if (position.left<15){
-            $("#home").trigger('click');
-        }
+//        var p = $('#parallax_view');
+//        var position = p.position();
+//        if (position.left<15){
+//            $("#home").trigger('click');
+//        }
+//
+//        $('#slogan').show();
+//        $('#do_text').hide();
+//        $('#it_text').hide();
+//        $('#with_text').hide();
+//        $('#games_text').hide();
 
-        $('#slogan').show();
-        $('#do_text').hide();
-        $('#it_text').hide();
-        $('#with_text').hide();
-        $('#games_text').hide();
 
-
-        $('#menu_overlay').css('pointer-events', 'auto');
-        $('#slogan_game').parent().css('z-index', '0');
-        $("#menu_overlay").css('z-index', '0');
-        $("#menu").css('z-index', '0');
-        $('#menu').css({
-            'color': '#ccc',
-            'opacity': '0.4'
-        });
-        $('#menu>li>a').css({
-            'color': '#ccc'
-        });
-        $('#catchphrase').hide();
-        setTimeout(function () {
-            $('#buttons').parent().css('z-index', '999999');
-            $('#buttons').css('z-index', '999999');
-        }, 800)
+//        $('#menu_overlay').css('pointer-events', 'auto');
+//        $('#slogan_game').parent().css('z-index', '0');
+//        $("#menu_overlay").css('z-index', '0');
+//        $("#menu").css('z-index', '0');
+//        $('#menu').css({
+//            'color': '#ccc',
+//            'opacity': '0.4'
+//        });
+//        $('#menu>li>a').css({
+//            'color': '#ccc'
+//        });
+//        $('#catchphrase').hide();
+//        setTimeout(function () {
+//            $('#buttons').parent().css('z-index', '999999');
+//            $('#buttons').css('z-index', '999999');
+//        }, 800)
 
     });
 
