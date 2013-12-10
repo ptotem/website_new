@@ -54,7 +54,7 @@ function test_winner(current_color,winner){
 
 
 function game_choice(){
-//    $(".shutter").slideDown(1000);
+//    $(".shutter").css('top','-786px');
     $('.shutter').fadeIn();
     $('.shutter').animate({'left': '0', 'top': '0', 'z-index': '1040'}, 1500);
 
@@ -63,7 +63,8 @@ function game_choice(){
             message: "Please Select game type",
             title: "Game Type",
             onEscape: function() {
-                $(".shutter").slideUp(1000);
+//                $(".shutter").slideUp(1000);
+                $(".shutter").animate({'left': '0', 'top': '-786px', 'z-index': '1040'}, 1500);
             },
             buttons: {
                 success: {
@@ -100,11 +101,16 @@ function init_game(type){
         if (type === 'easy')
         {
             $("#easy_graffiti").fadeIn('slow');
+            $('#game_quit').css("cursor","pointer");
+            $("#game_quit").fadeIn('slow');
+
            winner = easy_winner ;
         }
         else
         {
             $("#hard_graffiti").fadeIn('slow');
+            $('#game_quit').css("cursor","pointer");
+            $("#game_quit").fadeIn('slow');
            winner = hard_winner;
         }
 
@@ -142,13 +148,18 @@ function init_game(type){
                 current_color_combo[(this.$).attr("id")-1] = color;
                 if(test_winner(current_color_combo,winner))
                 setTimeout(function(){
+                    $('#game_quit').hide();
                     bootbox.alert("You win",function(){
                         $(".knob_container").hide();
-                        $(".shutter").slideUp(1000);
+                        $(".shutter").animate({'left': '0', 'top': '-786px', 'z-index': '1040'}, 1500);
+//                        $(".shutter").slideUp(1000);
+//                        $(".shutter").css('top','-786px');
                         $("#easy_graffiti").hide();
                         $("#hard_graffiti").hide();
+                        $('#game_quit').hide();
 
                     });
+                    $('.bootbox-body').prev().hide();
                 },200)
             }
         });
@@ -366,8 +377,8 @@ $(function () {
         $(this).hide();
 
         flipside('products');
-        //$('.glower').css("pointer-events", "none");
-
+        $('.glower').css("pointer-events", "none");
+        $('.gamify').css("cursor", "auto");
         products_bookblock(product_img_array, "bookblockProduct");
         Page2.init()
 
@@ -394,350 +405,9 @@ $(function () {
     });
 
     $('.glower').on('click', function (e) {
-//
         game_choice();
-//        init_game()
-
-//        var p = $('#parallax_view');
-//        var position = p.position();
-//        if (position.left<15){
-//            $("#home").trigger('click');
-//        }
-//
-//        $('#slogan').show();
-//        $('#do_text').hide();
-//        $('#it_text').hide();
-//        $('#with_text').hide();
-//        $('#games_text').hide();
-
-
-//        $('#menu_overlay').css('pointer-events', 'auto');
-//        $('#slogan_game').parent().css('z-index', '0');
-//        $("#menu_overlay").css('z-index', '0');
-//        $("#menu").css('z-index', '0');
-//        $('#menu').css({
-//            'color': '#ccc',
-//            'opacity': '0.4'
-//        });
-//        $('#menu>li>a').css({
-//            'color': '#ccc'
-//        });
-//        $('#catchphrase').hide();
-//        setTimeout(function () {
-//            $('#buttons').parent().css('z-index', '999999');
-//            $('#buttons').css('z-index', '999999');
-//        }, 800)
-
     });
 
-
-//    $('.button_click').click(function () {
-//
-//        $("#parallax_view").css('z-index', '9999');
-//        $(".close_parallax_btn").css('left', '593px');
-//        $(".close_parallax_btn").show();
-//        $(".close_parallax_btn_text").show();
-//        $("#menu_overlay").css('z-index', '0');
-////            $("#menu_overlay").css('position','');
-//        $('.row').css('pointer-events', 'auto');
-//        $(".layer").css("z-index", '0');
-//        $('#buttons').hide();
-//        $('#catchphrase').hide();
-//
-//        if ($(this).attr('id') == 'easy_game') {
-//            setTimeout(function () {
-//                $("#slogan_game_easy").parent().css("z-index", "9999");
-//            }, 1000)
-//            setTimeout(function () {
-//                $('#tree').css('z-index', -1);
-//                $('#buttons').parent().css('z-index', -1);
-//            }, 2000);
-//            $('#slogan_game_easy').fadeIn();
-//            $('#sky').css('opacity', '0');
-//            $('#slogan').fadeIn();
-//            $('#trigger_button').trigger('click');
-//            products_bookblock(easy_game_img_array, "bbEasy");
-//            Page.init();
-//
-//            var colors = ["#ff0000", "#ffff00", "#0000ff", "#000000", "#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
-//            var correct = ["#ff0000", "#ffff00", "#0000ff", "#000000"];
-//            var correct_color = [];
-//
-//            $('#do').click(function () {
-//                $('#do_text').show();
-//                $('#do_text').css("color", colors[c1_easy]);
-//                if (colors[c1_easy] == "#ff0000") {
-//                    $('#do_text').addClass("Red");
-//                    correct_color.push("Red");
-//                }
-//                else {
-//                    $('#do_text').removeClass("Red");
-//                }
-//
-//                c1_easy++;
-//
-//                if (c1_easy == colors.length) {
-//                    c1_easy = 0;
-//                }
-//                matching_colors_easy();
-//
-//            });
-//
-//            $('#it').click(function () {
-//                $('#it_text').show();
-//                $('#it_text').css("color", colors[c2_easy]);
-//                if (colors[c2_easy] == "#ffff00") {
-//                    $('#it_text').addClass("Yellow");
-//                    correct_color.push("Yellow");
-//                }
-//                else {
-//                    $('#it_text').removeClass("Yellow");
-//                }
-//                c2_easy++;
-//
-//                if (c2_easy == colors.length) {
-//                    c2_easy = 0;
-//                }
-//                matching_colors_easy();
-//            });
-//
-//            $('#with').click(function () {
-//                $('#with_text').show();
-//                $('#with_text').css("color", colors[c3_easy]);
-//                if (colors[c3_easy] == "#0000ff") {
-//                    $('#with_text').addClass("Blue");
-//                    correct_color.push("Blue");
-//                }
-//                else {
-//                    $('#with_text').removeClass("Blue");
-//                }
-//                c3_easy++;
-//                if (c3_easy == colors.length) {
-//                    c3_easy = 0;
-//                }
-//                matching_colors_easy();
-//            });
-//
-//            $('#games').click(function () {
-//                $('#games_text').show();
-//                $('#games_text').css("color", colors[c4_easy]);
-//                if (colors[c4_easy] == "#000000") {
-//                    $('#games_text').addClass("Black");
-//                    correct_color.push("Black");
-//                }
-//                else {
-//                    $('#games_text').removeClass("Black");
-//                }
-//                c4_easy++;
-//                if (c4_easy == colors.length) {
-//                    c4_easy = 0;
-//                }
-//                matching_colors_easy();
-//            });
-//
-//            function matching_colors_easy() {
-//                if (($('#do_text').hasClass('Red')) && ($('#it_text').hasClass('Yellow')) && ($('#with_text').hasClass('Blue')) && ($('#games_text').hasClass('Black'))) {
-//                    $('#do_text').show();
-//                    $('#it_text').show();
-//                    $('#with_text').show();
-//                    $('#games_text').show();
-//                    //$('#slogan_game').show();
-//                    $('#slogan_game_easy').hide();
-//                    $("#slogan_game").parent().css("z-index", "999999");
-//                    $('.spinner').unbind('click');
-//                    //products_bookblock(product_img_array,'gameWin');
-//                    //Page3.init()
-//
-//                    $("#menu").css({
-//                        'background': '',
-//                        'color': 'white',
-//                        'z-index': '9999'})
-//                    //$('#slogan').hide();
-//                    //$('#catchphrase').show();
-//
-//                    setTimeout(function () {
-//                        $("#congModal").modal('show');
-//                    }, 800);
-//
-//                    $('#do_text').removeClass("Red");
-//                    $('#it_text').removeClass("Yellow");
-//                    $('#with_text').removeClass("Blue");
-//                    $('#games_text').removeClass("Black");
-//                    setTimeout(function () {
-//                        $('#do_text').css('color', 'black');
-//                        $('#it_text').css('color', 'black');
-//                        $('#with_text').css('color', 'black');
-//                        $('#games_text').css('color', 'black');
-//                    }, 5000);
-//
-//
-//                }
-//
-//
-//            }
-//        }
-//        else if ($(this).attr('id') == 'hard_game') {
-//            $('#buttons').hide();
-//            $('#slogan_game_hard').fadeIn();
-//            $('#slogan').fadeIn();
-//            $('#sky').css('opacity', '0');
-//            //$('#slogan_game_wrapper_hard').css('width', '95%');
-//            products_bookblock(hard_game_img_array, 'bbHard')
-//            Page1.init1();
-//            $('#trigger_button').trigger('click');
-//            setTimeout(function () {
-//                $('#tree').css('z-index', -1);
-//                $('#buttons').parent().css('z-index', -1);
-//            }, 2000);
-//            var colors = ["#ff0000", "#ffff00", "#0000ff", "#000000", "#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
-//            var correct = ["#ff6600", "#808080", "#663300", "#008000"];
-//            var correct_color = [];
-//
-//            $('#do').click(function () {
-//                $('#do_text').show();
-//                $('#do_text').css("color", colors[c1_hard]);
-//                if (colors[c1_hard] == "#ff6600") {
-//                    $('#do_text').addClass("Orange");
-//                    correct_color.push("Orange");
-//                }
-//                else {
-//                    $('#do_text').removeClass("Orange");
-//                }
-//                c1_hard++;
-//                if (c1_hard == colors.length) {
-//                    c1_hard = 0;
-//                }
-//                match_colors_hard();
-//            });
-//
-//            $('#it').click(function () {
-//                $('#it_text').show();
-//                $('#it_text').css("color", colors[c2_hard]);
-//                if (colors[c2_hard] == "#808080") {
-//                    $('#it_text').addClass("Gray");
-//                    correct_color.push("Gray");
-//                }
-//                else {
-//                    $('#it_text').removeClass("Gray");
-//                }
-//                c2_hard++;
-//
-//                if (c2_hard == colors.length) {
-//                    c2_hard = 0;
-//                }
-//                match_colors_hard();
-//            });
-//
-//            $('#with').click(function () {
-//                $('#with_text').show();
-//                $('#with_text').css("color", colors[c3_hard]);
-//                if (colors[c3_hard] == "#663300") {
-//                    $('#with_text').addClass("Brown");
-//                    correct_color.push("Brown");
-//                }
-//                else {
-//                    $('#with_text').removeClass("Brown");
-//                }
-//                c3_hard++;
-//                if (c3_hard == colors.length) {
-//                    c3_hard = 0;
-//                }
-//                match_colors_hard();
-//            });
-//
-//            $('#games').click(function () {
-//                $('#games_text').show();
-//                $('#games_text').css("color", colors[c4_hard]);
-//                if (colors[c4_hard] == "#008000") {
-//                    $('#games_text').addClass("Green");
-//                    correct_color.push("Green");
-//                }
-//                else {
-//                    $('#games_text').removeClass("Green");
-//                }
-//                c4_hard++;
-//                if (c4_hard == colors.length) {
-//                    c4_hard = 0;
-//                }
-//                match_colors_hard();
-//            });
-//
-//
-//            function match_colors_hard() {
-//                if (($('#do_text').hasClass('Orange')) && ($('#it_text').hasClass('Gray')) && ($('#with_text').hasClass('Brown')) && ($('#games_text').hasClass('Green'))) {
-//                    $('#do_text').show();
-//                    $('#it_text').show();
-//                    $('#with_text').show();
-//                    $('#games_text').show();
-//                    //$('#slogan_game').show();
-//                    $('#slogan_game_hard').hide();
-//                    $("#slogan_game").parent().css("z-index", "999999");
-//                    $('.spinner').unbind('click');
-//
-//                    setTimeout(function () {
-//                        $("#congModal").modal('show');
-//                    }, 800);
-//
-//                    $("#menu").css({
-//                        'background': '',
-//                        'color': 'white',
-//                        'z-index': '9999'})
-//
-//                    //products_bookblock(product_img_array,'gameWin');
-//                    //Page3.init()
-//                    //$('#slogan').hide();
-//                    //$('#catchphrase').show();
-//
-//                    $('#do_text').removeClass("Orange");
-//                    $('#it_text').removeClass("Gray");
-//                    $('#with_text').removeClass("Brown");
-//                    $('#games_text').removeClass("Green");
-//                    setTimeout(function () {
-//                        $('#do_text').css('color', 'black');
-//                        $('#it_text').css('color', 'black');
-//                        $('#with_text').css('color', 'black');
-//                        $('#games_text').css('color', 'black');
-//                    }, 5000);
-//
-//                }
-//
-//
-//            }
-//        }
-//    });
-
-
-//    var cur = 0;
-//    var colors = ["#008000", "#800080", "#ff6600", "#663300"];
-//
-//    $('#trigger_button').click(function () {
-//        cur = (cur + 1) % colors.length;
-//        setTimeout(function () {
-//            $("#do_text").show();
-//        }, 500);
-//        setTimeout(function () {
-//            $('#it_text').show();
-//        }, 1000);
-//        setTimeout(function () {
-//            $("#with_text").show();
-//        }, 1500);
-//        setTimeout(function () {
-//            $('#games_text').show();
-//        }, 2000);
-//
-//        setTimeout(function () {
-//            $('#do').css('background', "");
-//            $('#it').css('background', "");
-//            $('#with').css('background', "");
-//            $('#games').css('background', "");
-//            $("#do_text").hide();
-//            $("#it_text").hide();
-//            $("#with_text").hide();
-//            $("#games_text").hide();
-//        }, 2500);
-//
-//
-//    });
 
 
     $('#logo_pic_image').click(function () {
@@ -763,7 +433,36 @@ $(function () {
     });
 
 
+   $('#game_quit').click(function(){
+       bootbox.dialog({
+           message: "Do you really want to quit?",
+           title: "Quit Game",
+           buttons: {
+               danger: {
+                   label: "Yes, I give up, I cannot figure it out",
+                   className: "btn-danger",
+                   callback: function() {
+//                       $(".shutter").slideUp(1000);
+                       $(".shutter").animate({'left': '0', 'top': '-786px', 'z-index': '1040'}, 1500);
+                       $("#easy_graffiti").hide();
+                       $("#hard_graffiti").hide();
+                       $(".knob_container").hide();
+                       $("#game_quit").hide();
 
+
+
+                   }
+               },
+               main: {
+                   label: "No, I want to give it another shot",
+                   className: "btn-primary",
+                   callback: function() {
+
+                   }
+               }
+           }
+       });
+   });
 
 
 
