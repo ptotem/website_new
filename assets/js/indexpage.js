@@ -62,7 +62,9 @@ function game_choice(){
         bootbox.dialog({
             message: "Please Select game type",
             title: "Game Type",
-            closeButton: false,
+            onEscape: function() {
+                $(".shutter").slideUp(1000);
+            },
             buttons: {
                 success: {
                     label: "Easy!",
