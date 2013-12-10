@@ -506,11 +506,11 @@ ul.wi-container li.wi-move {
 .shutter{
     background-image: url('../images/blank_shutter.jpg');
     display: none;
-    width: 1386px;
-    height: 786px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: -786px;
-    background-size: 1386px 796px;
+    background-size: 100% 100%;
 }
 
 
