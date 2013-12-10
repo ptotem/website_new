@@ -62,6 +62,7 @@ function game_choice(){
         bootbox.dialog({
             message: "Please Select game type",
             title: "Game Type",
+            closeButton: false,
             buttons: {
                 success: {
                     label: "Easy!",
@@ -392,7 +393,7 @@ $(function () {
 
     $('.glower').on('click', function (e) {
 //
-        game_choice()
+        game_choice();
 //        init_game()
 
 //        var p = $('#parallax_view');
