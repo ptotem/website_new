@@ -28,6 +28,12 @@ body {
 img {
     display: block;
     width: 100%;
+    /*height: 100%;*/
+}
+
+#sky_image{
+    display: block;
+    width: 100%;
     height: 100%;
 }
 
