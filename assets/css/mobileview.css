@@ -3,6 +3,13 @@ body{
 }
 
 
+.mob_container{
+    top: 15%;
+    position: absolute;
+
+}
+
+
 .mobile_li{
     color: #808080;
     font-weight: bolder;
