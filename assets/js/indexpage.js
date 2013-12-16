@@ -64,7 +64,7 @@ function game_choice(){
             title: "Game Type",
             onEscape: function() {
 //                $(".shutter").slideUp(1000);
-                $(".shutter").animate({'left': '0', 'top': '-786px', 'z-index': '1040'}, 1500);
+                $(".shutter").animate({'left': '0', 'top': '-1150px', 'z-index': '1040'}, 1500);
             },
             buttons: {
                 success: {
@@ -151,9 +151,9 @@ function init_game(type){
                     $('#game_quit').hide();
                     bootbox.alert("You win",function(){
                         $(".knob_container").hide();
-                        $(".shutter").animate({'left': '0', 'top': '-786px', 'z-index': '1040'}, 1500);
+                        $(".shutter").animate({'left': '0', 'top': '-1150px', 'z-index': '1040'}, 1500);
 //                        $(".shutter").slideUp(1000);
-//                        $(".shutter").css('top','-786px');
+//                        $(".shutter").css('top','-1150px');
                         $("#easy_graffiti").hide();
                         $("#hard_graffiti").hide();
                         $('#game_quit').hide();
@@ -443,7 +443,7 @@ $(function () {
                    className: "btn-danger",
                    callback: function() {
 //                       $(".shutter").slideUp(1000);
-                       $(".shutter").animate({'left': '0', 'top': '-786px', 'z-index': '1040'}, 1500);
+                       $(".shutter").animate({'left': '0', 'top': '-1150px', 'z-index': '1040'}, 1500);
                        $("#easy_graffiti").hide();
                        $("#hard_graffiti").hide();
                        $(".knob_container").hide();

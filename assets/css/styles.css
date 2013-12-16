@@ -28,7 +28,6 @@ body {
 img {
     display: block;
     width: 100%;
-    /*height: 100%;*/
 }
 
 #sky_image{
@@ -529,7 +528,7 @@ ul.wi-container li.wi-move {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: -786px;
+    top: -1150px;
     background-size: 100% 100%;
 }
 
