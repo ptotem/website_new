@@ -31,15 +31,6 @@ var easy_game_img_array = ["assets/images/easy/serious_games_ppt_easy_Page_1.jpg
 var hard_game_img_array = ["assets/images/hard/serious_games_ppt_hard_Page_1.jpg", "assets/images/hard/serious_games_ppt_hard_Page_2.jpg", "assets/images/hard/serious_games_ppt_hard_Page_3.jpg", "assets/images/hard/serious_games_ppt_hard_Page_4.jpg", "assets/images/hard/serious_games_ppt_hard_Page_5.jpg"]
 //For easy game intro Bookblock Array End
 
-
-var c1_easy = 0;
-var c2_easy = 0;
-var c3_easy = 0;
-var c4_easy = 0;
-var c1_hard = 0;
-var c2_hard = 0;
-var c3_hard = 0;
-var c4_hard = 0;
 var opacity_value = 0.5;
 //#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
 var easy_winner = ["#ff0000", "#ffff00", "#0000ff", "#000000"]  ;
@@ -47,14 +38,11 @@ var hard_winner = ["#ff6600","#808080","#663300","#008000"] ;
 
 
 function test_winner(current_color,winner){
-
     return current_color.join(",") === winner.join(",") ;
-
 }
 
 
 function game_choice(){
-//    $(".shutter").css('top','-786px');
     $('.shutter').fadeIn();
     $('.shutter').animate({'left': '0', 'top': '0', 'z-index': '1040'}, 1500);
 
@@ -85,18 +73,12 @@ function game_choice(){
             }
         });
     },1800);
-
-
 }
+
+
 function init_game(type){
-
-
-
     $(".knob_container").show();
-//
     $(".knob").show();
-//        $('.windy').show();
-//        img_windy(img_array, text_array, name_array,"#windy_shutter","#nav-prev_rules","#nav-next_rules");
         current_color_combo = [];
         if (type === 'easy')
         {
@@ -113,19 +95,12 @@ function init_game(type){
             $("#game_quit").fadeIn('slow');
            winner = hard_winner;
         }
-
-
         var colors = ["","#ff0000", "#ffff00", "#0000ff", "#000000", "#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
 
     $('.knob')
         .val("0")
         .trigger('change');
-
-
-
-
         $(".knob").knob({
-
             'min':0,
             'max':100,
             'step':10 ,
@@ -136,14 +111,11 @@ function init_game(type){
             'thickness':"0.30",
              'angleOffset':"0",
             'displayInput':false,
-
             'change':function(val){
-
                 color = colors[(val)/10];
                 this.o.fgColor = color ;
             },
             'release':function(val){
-
                 color = colors[(val)/10];
                 current_color_combo[(this.$).attr("id")-1] = color;
                 if(test_winner(current_color_combo,winner))
@@ -152,18 +124,14 @@ function init_game(type){
                     bootbox.alert("You win",function(){
                         $(".knob_container").hide();
                         $(".shutter").animate({'left': '0', 'top': '-1150px', 'z-index': '1040'}, 1500);
-//                        $(".shutter").slideUp(1000);
-//                        $(".shutter").css('top','-1150px');
                         $("#easy_graffiti").hide();
                         $("#hard_graffiti").hide();
                         $('#game_quit').hide();
-
                     });
                     $('.bootbox-body').prev().hide();
                 },200)
             }
         });
-
 }
 
 
@@ -175,7 +143,6 @@ function img_windy(img_array, text_array, name_array,div_id,nav_prev,nav_next) {
     for (var i = 0; i < seplen; i++) {
         imglist += '<li><img src="' + img_array[i] + '" alt="image' + [i + 1] + '"/><h4>' + name_array[i] + '</h4><p>' + text_array[i] + '</p></li>';    //add all images what we have (actually there 2 or 3 images)
     }
-
     carus.html(imglist);
 
     var $el = $(div_id),
@@ -234,15 +201,10 @@ function img_windy(img_array, text_array, name_array,div_id,nav_prev,nav_next) {
 }
 
 $(function () {
-
-
-
     var logo_width= $('#logopic').width();
     var percentage_added = logo_width+'%';
 
-
     //Home page animation start
-
     if ($(window).width() <= 1024){
         $('.aboutPtotem').css('width','290px');
     }
@@ -254,8 +216,6 @@ $(function () {
         $('.bb-custom-wrapper nav').css('margin-left','105px');
     }
 
-
-
     $(".gamify").css('opacity', 0.4);
     setInterval(function () {
         if ($('#buttons').is(':visible'))
@@ -266,17 +226,13 @@ $(function () {
             });
         }
     }, 6000);
-
     $('#logopic').hide();
     $('#buttons').hide();
     $('#cloud1 img').hide();
     $('#cloud2 img').hide();
     $('#cloud3 img').hide();
-
-
     $('#sky .panel').css('left', '100%');
     $('body').css("background-image", "url('assets/images/background.jpg')").fadeIn(2000);
-
 
     if ($(window).width() > 1024){
         $('#logopic').css('width','85%');
@@ -288,7 +244,6 @@ $(function () {
     setTimeout(function () {
         $('#logopic').fadeIn(1000)
         if ($(window).width() < 1024){
-
             $('#logopic').css({
                 left: (($(window).width())/2)-136,
                 top: (($(window).height())/3)
@@ -308,6 +263,7 @@ $(function () {
             $('#logopic').animate({'left': '0', 'top': '0', 'width' :percentage_added, 'paddingTop': '0'}, 1500);
             $('#logo .panel').css('top', '25px');
         }
+
     }, 800), setTimeout(function () {
         $('#sky .panel').animate({left: '0%'}, 600);
     }, 2800), setTimeout(function () {
@@ -324,8 +280,6 @@ $(function () {
     }, 6000);
 
     //Home page animation end
-
-
     $(".close_parallax_btn").hide();
 
     $('.superpanel').css({
@@ -352,16 +306,15 @@ $(function () {
         $(this).hide();
         $('.windy>nav').css('z-index', '1');
         flipside('aboutUs');
-        //$('.glower').css("pointer-events", "none");
         $('.coordinate_block').popover({
             container: 'body',
             placement: 'top',
             trigger: 'hover',
             html: 'true'
         });
-
         img_windy(img_array, text_array, name_array,"#wi-el","#nav-prev","#nav-next");
     });
+
 
     $('.nopad').hover(function()
     {
@@ -373,16 +326,16 @@ $(function () {
         $('#coordinates').prev().prev().animate({ 'opacity': 1 });
     });
 
+
     $('#productsLink').on('click', function () {
         $(this).hide();
-
         flipside('products');
         $('.glower').css("pointer-events", "none");
         $('.gamify').css("cursor", "auto");
         products_bookblock(product_img_array, "bookblockProduct");
         Page2.init()
-
     });
+
 
     $('#home').on('click', function () {
         $('.coordinate_block').popover('destroy');
@@ -397,6 +350,7 @@ $(function () {
         $('#sky').animate({
             left: "+=" + window.innerWidth * 0.05 + "px"
         });
+
         $('#logo').fadeIn();
         $(this).hide();
         $('#teamLink').fadeIn();
@@ -407,8 +361,6 @@ $(function () {
     $('.glower').on('click', function (e) {
         game_choice();
     });
-
-
 
     $('#logo_pic_image').click(function () {
         window.location.reload();
@@ -422,7 +374,6 @@ $(function () {
     $('#congModal').on('shown.bs.modal', function () {
         $('#sky').css('opacity', '0');
     });
-
 
     $('#congModal').on('hidden.bs.modal', function () {
         $("#tree").css('z-index', '9999999');
@@ -442,15 +393,11 @@ $(function () {
                    label: "Yes, I give up, I cannot figure it out",
                    className: "btn-danger",
                    callback: function() {
-//                       $(".shutter").slideUp(1000);
                        $(".shutter").animate({'left': '0', 'top': '-1150px', 'z-index': '1040'}, 1500);
                        $("#easy_graffiti").hide();
                        $("#hard_graffiti").hide();
                        $(".knob_container").hide();
                        $("#game_quit").hide();
-
-
-
                    }
                },
                main: {
@@ -475,6 +422,7 @@ function products_bookblock(img_array, div_id) {
     var seplen = img_array.length;   //images array
     var carus = $('#' + div_id);        //will append images to this element
     var imglist = '';                    //we use this variable for optimization..
+
     if (div_id == "bookblockProduct") {
         for (var i = 0; i < seplen; i++) {
             imglist += '<div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
@@ -565,7 +513,6 @@ var Page1 = (function () {
                     else{
                         config1.$navNext.css('pointer-events','auto');
                     }
-                    //return false;
                 }
             });
             initEvents1();
