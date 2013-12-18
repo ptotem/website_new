@@ -2,7 +2,7 @@ $(function(){
     $('#mobile_logo').hide();
     $('.custom-style').hide();
     $('.mobile_text').hide();
-    $("#xsmenu li").each(function(index) {
+    $("#xsmenu li").each(function() {
         $(this).css('opacity',0).animate({'marginLeft': '150%' });
     });
     $('#mob_footer').hide();
