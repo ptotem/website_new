@@ -361,3 +361,12 @@
           margin-left:13%;
       }
   }
+
+
+  /*game classes*/
+.incorrect{
+      cursor:move;position:absolute;opacity:0.65;background: #CB473A; font-size:11px
+  }
+.correct{
+      cursor:move;position:absolute;opacity:0.65;background: #569279; font-size:11px
+  }

@@ -163,24 +163,35 @@ function review(in1, nd) {
 }
 
 function disp(this_obj) {
-    if (answered == false) {
-        //$(this_obj).addClass("selected");
-        if ($(this_obj).hasClass("incorrect")) {
-            $(this_obj).removeClass('selected');
-            $(this_obj).find('img').empty().remove();
-            $(this_obj).removeClass('incorrect');
-            $(this_obj).css('opacity',1.0);
-        }
-        else {
-            $(this_obj).addClass("selected");
-            $(this_obj).addClass('incorrect');
-            $(this_obj).append('<img src="assets/images/errormarker.png" style="height: 30px; position: absolute; right:0px; top:0px; opacity: 1;">');
-            $(this_obj).css('background','none');
-            $(this_obj).css('opacity',1.0);
-            $(this_obj).css('background-size', '16px 16px');
-            $(this_obj).css('background-repeat', 'no-repeat');
-        }
+    if ($(this_obj).hasClass("correct"))
+    {
+        $(this_obj).addClass("incorrect").removeClass("correct")
     }
+    else
+    {
+        $(this_obj).addClass("correct").removeClass("incorrect")
+
+    }
+
+
+//    if (answered == false) {
+//        //$(this_obj).addClass("selected");
+//        if ($(this_obj).hasClass("incorrect")) {
+//            $(this_obj).removeClass('selected');
+//            $(this_obj).find('img').empty().remove();
+//            $(this_obj).removeClass('incorrect');
+//            $(this_obj).css('opacity',1.0);
+//        }
+//        else {
+//            $(this_obj).addClass("selected");
+//            $(this_obj).addClass('incorrect');
+//            $(this_obj).append('<img src="assets/images/errormarker.png" style="height: 30px; position: absolute; right:0px; top:0px; opacity: 1;">');
+//            $(this_obj).css('background','none');
+//            $(this_obj).css('opacity',1.0);
+//            $(this_obj).css('background-size', '16px 16px');
+//            $(this_obj).css('background-repeat', 'no-repeat');
+//        }
+//    }
 }
 
 function time_decrement() {
@@ -200,7 +211,7 @@ function start_sim() {
 
         var input = myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields;
         $.each(input, function (index, value) {
-            $('#form').append('<div class="correct" onclick="disp($(this)); " style="cursor:pointer;position:absolute;background: #FFF;opacity:0.0; filter:alpha(opacity=0); font-size:11px;top:' + value.Field.top + 'px;left:' + value.Field.left + 'px;height:' + value.Field.height + 'px;width:' + value.Field.width + 'px;" >.</div>');
+            $('#form').append('<div class="incorrect" onclick="disp($(this)); " style="top:' + value.Field.top + 'px;left:' + value.Field.left + 'px;height:' + value.Field.height + 'px;width:' + value.Field.width + 'px;" >.</div>');
         });
 
     total_sections = myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields.length;
