@@ -17,27 +17,45 @@ $(function () {
 
 function scoring() {
     if(!gm_ovr){
-    $('.correct').each(function (index, ele) {
+//    $('.correct').each(function (index, ele) {
+//        if ($(ele).hasClass('selected') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('correct')) {
+//            score = score + 0;
+//            input[index] = 1;
+//
+//        } else if ($(ele).hasClass('selected') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('incorrect')) {
+//            score = score + 1;
+//            input[index] = 1;
+//        } else if (!$(ele).hasClass('selected') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('correct')) {
+//            score = score + 1;
+//            input[index] = 1;
+//        } else if (!$(ele).hasClass('selected') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('incorrect')) {
+//            score = score + 0;
+//            input[index] = 1;
+//        }
+//    });
 
-        if ($(ele).hasClass('selected') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('correct')) {
-            score = score + 0;
-            input[index] = 1;
 
-        } else if ($(ele).hasClass('selected') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('incorrect')) {
-            score = score + 1;
-            input[index] = 1;
-        } else if (!$(ele).hasClass('selected') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('correct')) {
-            score = score + 1;
-            input[index] = 1;
-        } else if (!$(ele).hasClass('selected') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('incorrect')) {
-            score = score + 0;
-            input[index] = 1;
-        }
-    });
+//    score1 = score - inactivesection;
+//    score2 = total_sections - inactivesection;
+//    score3 = score1/score2;
 
-    score1 = score - inactivesection;
-    score2 = total_sections - inactivesection;
-    score3 = score1/score2
+        $('.selected').each(function (index, ele) {
+            console.log(myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data);
+            if ($(ele).hasClass('correct') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('correct')) {
+                score = score + 1;
+                $(ele).css('background','green');
+            }
+            else if ($(ele).hasClass('incorrect') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('incorrect')) {
+                score = score + 1;
+            }
+            else{
+                $(ele).css('background','red');
+            }
+        });
+
+        var percentage_score = Math.round((score / $('.selected').length) * 100);
+
+
 
     $('.knob').show();
     $('.knob').each(function () {
@@ -59,7 +77,7 @@ function scoring() {
             value: 0
         }).animate({
 
-                value: myVal
+                value: percentage_score
             }, {
                 duration: 2000,
                 easing: 'swing',
@@ -79,7 +97,7 @@ function scoring() {
 function review(in1, nd) {
     answered = true;
     var reason;
-    $('.correct').each(function (index, ele) {
+    $('.selected').each(function (index, ele) {
         if (nd.charAt(index) == 'P') {
             $(ele).empty();
             $(ele).css("background-color", "#569279");
@@ -156,7 +174,8 @@ function review(in1, nd) {
             else {
                 this_class = "You have not selected"
             }
-            $("#ans").text(this_class + " " + $(ele).find('img').attr('alt'));
+            //$("#ans").text(this_class + " " + $(ele).find('img').attr('alt'));
+            $("#ans").text($(ele).find('img').attr('alt'));
         })
 
     });
@@ -211,7 +230,7 @@ function start_sim() {
 
         var input = myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields;
         $.each(input, function (index, value) {
-            $('#form').append('<div class="incorrect" onclick="disp($(this)); " style="top:' + value.Field.top + 'px;left:' + value.Field.left + 'px;height:' + value.Field.height + 'px;width:' + value.Field.width + 'px;" >.</div>');
+            $('#form').append('<div class="selected incorrect" onclick="disp($(this)); " style="top:' + value.Field.top + 'px;left:' + value.Field.left + 'px;height:' + value.Field.height + 'px;width:' + value.Field.width + 'px;" >.</div>');
         });
 
     total_sections = myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields.length;
