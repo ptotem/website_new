@@ -82,7 +82,7 @@ function init_game(type){
         current_color_combo = [];
         if (type === 'easy')
         {
-            $("#easy_graffiti").fadeIn('slow');
+            //$("#easy_graffiti").fadeIn('slow');
             $('#game_quit').css("cursor","pointer");
             $("#game_quit").fadeIn('slow');
 
@@ -96,6 +96,18 @@ function init_game(type){
            winner = hard_winner;
         }
         var colors = ["","#ff0000", "#ffff00", "#0000ff", "#000000", "#008000", "#800080", "#ff6600", "#663300", "#ffffff", "#808080"];
+
+    $(".inner").knob({
+        'min':-50,
+        'max':50,
+        'width':"80",
+        'height':'80',
+        'bgColor':"#635852",
+        'fgColor':"rgb(127, 255, 0)" ,
+        'thickness':"0.10",
+        'readOnly':"true",
+        'displayInput':false
+    });
 
     $('.knob')
         .val("0")
