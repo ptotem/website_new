@@ -40,22 +40,38 @@ function scoring() {
 //    score3 = score1/score2;
 
         $('.selected').each(function (index, ele) {
-            console.log(myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data);
-            if ($(ele).hasClass('correct') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('correct')) {
-                score = score + 1;
-                $(ele).css('background','green');
+
+
+            if ($(ele).hasClass(myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[$(this).attr("id")].Field.data))
+            {
+              score = score + 1;
+              $(ele).removeClass("incorrect");
+              $(ele).addClass("correct")
             }
-            else if ($(ele).hasClass('incorrect') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('incorrect')) {
-                score = score + 1;
+            else
+            {
+            $(ele).removeClass("correct");
+            $(ele).addClass("incorrect");
             }
-            else{
-                $(ele).css('background','red');
-            }
+
+
+//
+//            if ($(ele).hasClass('correct') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('correct')) {
+//                score = score + 1;
+//                $(ele).css('background','#569279');
+//            }
+//            else
+//                $(ele).css('background','red');
+//
+//            if ($(ele).hasClass('incorrect') && myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == ('incorrect')) {
+//                score = score + 1;
+//                $(ele).css('background','#569279');
+//            }
+//            else
+//                $(ele).css('background','red');
+
         });
-
-        var percentage_score = Math.round((score / $('.selected').length) * 100);
-
-
+        var percentage_score = Math.round((score  / ($('.selected').length) * 100));
 
     $('.knob').show();
     $('.knob').each(function () {
@@ -98,15 +114,23 @@ function review(in1, nd) {
     answered = true;
     var reason;
     $('.selected').each(function (index, ele) {
-        if (nd.charAt(index) == 'P') {
-            $(ele).empty();
-            $(ele).css("background-color", "#569279");
-            $(ele).css("opacity", "0.65");
-            //$(ele).css('filter','alpha(opacity='+50+')');
-            reason = "This section is correct";
-        }
-        else {
-            switch (nd.charAt(index)) {
+//        console.log($(this).attr("id"));
+//        if (nd.charAt(index) == 'P') {
+////            $(ele).empty();
+//            //$(ele).css("background-color", "#569279");
+////            $(ele).css("opacity", "0.65");
+//            //$(ele).css('filter','alpha(opacity='+50+')');
+//            reason = "This section is correct";
+//        }
+//        else {
+
+
+            switch (nd.charAt($(this).attr("id"))) {
+                case "P":
+                {
+                    reason = "This section is correct";
+                    break;
+                }
                 case "G":
                 {
                     reason = "Grammar Error.";
@@ -133,47 +157,48 @@ function review(in1, nd) {
                     break;
                 }
             }
-            $(ele).empty();
-            $(ele).css("background-color", "#CB473A");
-            $(ele).css("opacity", "0.65");
-            //$(ele).css('filter','alpha(opacity='+50+')');
-        }
-        if (in1[index] == 1) {
+//            $(ele).empty();
+//            $(ele).css("background-color", "#CB473A");
+//            $(ele).css("opacity", "0.65");
+//            //$(ele).css('filter','alpha(opacity='+50+')');
+//        }
+//        console.log(in1)
+        if (in1[$(this).attr("id")] != []) {
             $(ele).append('<img src="assets/images/thumbsup.gif" style="display: none; height:34px;max-height: 32px; margin-left: 36px;" alt="' + reason + '">');
         }
         else {
             $(ele).append('<img src="assets/images/thumbsdown.gif" style="display: none; height:34px;max-height: 32px; margin-left: 36px;" alt="' + reason + '">');
         }
-        $(ele).hover(
-            function () {
-                $('.next_doc>a').html($(this).find('img').attr('alt'));
-            },
-            function () {
-                $('.next_doc>a').html("Click here to go ahead");
-            }
-        );
+//        $(ele).hover(
+//            function () {
+//                $('.next_doc>a').html($(this).find('img').attr('alt'));
+//            },
+//            function () {
+//                $('.next_doc>a').html("Click here to go ahead");
+//            }
+//        );
         $(ele).on('click', function(){
             $(".instructionbox").css({
                 'border': '1px solid green'
             });
             $("#ans").text("");
 
-            if ( ($(ele).hasClass("selected")) && (myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == 'correct') ) {
-                this_class = "You have selected this section. However"
-            }
-            else if ( ($(ele).hasClass("selected")) && (myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == 'incorrect') ) {
-                this_class = "Well done! You have selected this section correctly."
-            }
-            else if ( (!$(ele).hasClass("selected")) && (myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == 'correct') ) {
-                this_class = "Well done! You have not selected this section."
-            }
-            else if ( (!$(ele).hasClass("selected")) && (myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == 'incorrect') ) {
-                this_class = "You missed this error."
-            }
-
-            else {
-                this_class = "You have not selected"
-            }
+//            if ( ($(ele).hasClass("selected")) && (myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == 'correct') ) {
+//                this_class = "You have selected this section. However"
+//            }
+//            else if ( ($(ele).hasClass("selected")) && (myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == 'incorrect') ) {
+//                this_class = "Well done! You have selected this section correctly."
+//            }
+//            else if ( (!$(ele).hasClass("selected")) && (myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == 'correct') ) {
+//                this_class = "Well done! You have not selected this section."
+//            }
+//            else if ( (!$(ele).hasClass("selected")) && (myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields[index].Field.data == 'incorrect') ) {
+//                this_class = "You missed this error."
+//            }
+//
+//            else {
+//                this_class = "You have not selected"
+//            }
             //$("#ans").text(this_class + " " + $(ele).find('img').attr('alt'));
             $("#ans").text($(ele).find('img').attr('alt'));
         })
@@ -182,6 +207,8 @@ function review(in1, nd) {
 }
 
 function disp(this_obj) {
+    if(!gm_ovr)
+    {
     if ($(this_obj).hasClass("correct"))
     {
         $(this_obj).addClass("incorrect").removeClass("correct")
@@ -190,6 +217,7 @@ function disp(this_obj) {
     {
         $(this_obj).addClass("correct").removeClass("incorrect")
 
+    }
     }
 
 
@@ -230,16 +258,17 @@ function start_sim() {
 
         var input = myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields;
         $.each(input, function (index, value) {
-            $('#form').append('<div class="selected incorrect" onclick="disp($(this)); " style="top:' + value.Field.top + 'px;left:' + value.Field.left + 'px;height:' + value.Field.height + 'px;width:' + value.Field.width + 'px;" >.</div>');
+            if (value.Field.top>0)
+            $('#form').append('<div id='+index+' class="selected correct" onclick="disp($(this)); " style="top:' + value.Field.top + 'px;left:' + value.Field.left + 'px;height:' + value.Field.height + 'px;width:' + value.Field.width + 'px;" >.</div>');
         });
 
     total_sections = myJSONObject[image_list.indexOf(new_image_copied)].Form.Fields.length;
 
-    $(".correct").each(function() {
-        if ($(this).position().top==0){
-            inactivesection= inactivesection + 1;
-        }
-    });
+//    $(".selected").each(function() {
+//        if ($(this).position().top==0){
+//            inactivesection= inactivesection + 1;
+//        }
+//    });
 
 
 }
