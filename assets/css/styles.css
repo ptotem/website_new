@@ -528,10 +528,16 @@ ul.wi-container li.wi-move {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: -1150px;
+    top: -100%;
     background-size: 100% 100%;
 }
-
+.knob_container{
+    left: 0;
+    /*height: 300px;*/
+    width: 100%;
+    position: absolute;
+    top:75%
+}
 
 /* desktop starts */
 @media all and (min-width: 1024px){
