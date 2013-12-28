@@ -134,7 +134,14 @@ function init_game(type){
         });
 }
 
-
+//this is the function to create windys. The arguments explanation;
+//img_array-> array of images that the windy should contain. This array should contain the list of filenames(paths),
+//text_array-> the text associated with images.
+//name_array-> The title associated with each image
+//div_id-> the id of DOM element that would be converted to windy.
+//nav_prev->id of prev arrow
+//nav_next->id of next arrow.
+//note: all ids are passed with #
 function img_windy(img_array, text_array, name_array,div_id,nav_prev,nav_next) {
     var seplen = img_array.length;   //images array
     var carus = $(div_id);        //will append images to this element
@@ -144,26 +151,20 @@ function img_windy(img_array, text_array, name_array,div_id,nav_prev,nav_next) {
         imglist += '<li><img src="' + img_array[i] + '" alt="image' + [i + 1] + '"/><h4>' + name_array[i] + '</h4><p>' + text_array[i] + '</p></li>';    //add all images what we have (actually there 2 or 3 images)
     }
     carus.html(imglist);
-
     var $el = $(div_id),
         windy = $el.windy(),
         allownavnext = false,
         allownavprev = false;
-
     $(nav_prev).on('mousedown',
         function (event) {
-
             allownavprev = true;
             navprev();
-
         }).on('mouseup mouseleave', function (event) {
-
             allownavprev = false;
-
         });
-
     $(nav_next).on('mousedown',
         function (event) {
+            //this is the function to make the windy cyclic i nature.Thus , when the last image appears and user clicks on next , the first image appears
             counter++;
             if(counter === seplen)
             {
