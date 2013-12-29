@@ -429,32 +429,34 @@ function products_bookblock(img_array, div_id) {
             imglist += '<div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
         }
     }
-    else if (div_id == "gameWin") {
-        for (var i = 0; i < seplen; i++) {
-            if (i > 0) {
-                imglist += '<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-                //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-            }
-            else {
-                imglist += '<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-                //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-            }
-
-        }
-    }
-    else {
-        for (var i = 0; i < seplen; i++) {
-            if (i > 0) {
-                imglist += '<a href="#" class="close_parallax_btn" data-toggle="modal" data-target="#confModal" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-                //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-            }
-            else {
-                imglist += '<a href="#" class="close_parallax_btn" data-toggle="modal" data-target="#confModal" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-                //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
-            }
-
-        }
-    }
+    //this is something we are no more doing so no need of this coode.
+    //TODO: remove this code after testing
+//    else if (div_id == "gameWin") {
+//        for (var i = 0; i < seplen; i++) {
+//            if (i > 0) {
+//                imglist += '<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+//                //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+//            }
+//            else {
+//                imglist += '<a href="#" class="close_parallax_btn" onclick="window.location.reload()" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+//                //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+//            }
+//
+//        }
+//    }
+//    else {
+//        for (var i = 0; i < seplen; i++) {
+//            if (i > 0) {
+//                imglist += '<a href="#" class="close_parallax_btn" data-toggle="modal" data-target="#confModal" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+//                //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+//            }
+//            else {
+//                imglist += '<a href="#" class="close_parallax_btn" data-toggle="modal" data-target="#confModal" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+//                //imglist += '<a href="#" class="close_parallax_btn" style="pointer-events:auto;"><div class="close_parallax_btn_text">X</div></a><div class="bb-item" style="display: block;"><a href="#"><img src="' + img_array[i] + '"/></a></div>';
+//            }
+//
+//        }
+//    }
 
 
     carus.html(imglist);
@@ -494,162 +496,162 @@ function products_bookblock(img_array, div_id) {
 //    Page2.init()
 }
 
-var Page1 = (function () {
-
-    var config1 = {
-            $bookBlock: $('#bbHard'),
-            $navNext: $('#navHardNext'),
-            $navPrev: $('#navHardPrev')
-        },
-        init1 = function () {
-
-            config1.$bookBlock.bookblock({
-                speed: 800,
-                shadowSides: 0.8,
-                shadowFlip: 0.7,
-                onEndFlip   : function( page, isLimit ) {
-                    if (isLimit==(hard_game_img_array.length-1)){
-                        config1.$navNext.css('pointer-events','none');
-                    }
-                    else{
-                        config1.$navNext.css('pointer-events','auto');
-                    }
-                }
-            });
-            initEvents1();
-        },
-
-        initEvents1 = function () {
-
-            var $slides = config1.$bookBlock.children();
-
-            // add navigation events
-            config1.$navNext.on('click touchstart', function () {
-
-                config1.$bookBlock.bookblock('next');
-                return false;
-            });
-
-            config1.$navPrev.on('click touchstart', function () {
-                config1.$bookBlock.bookblock('prev');
-                return false;
-            });
-
-            // add swipe events
-            $slides.on({
-                'swipeleft': function (event) {
-                    config1.$bookBlock.bookblock('next');
-                    return false;
-                },
-                'swiperight': function (event) {
-                    config1.$bookBlock.bookblock('prev');
-                    return false;
-                }
-            });
-
-            // add keyboard events
-            $(document).keydown(function (e) {
-                var keyCode = e.keyCode || e.which,
-                    arrow = {
-                        left: 37,
-                        up: 38,
-                        right: 39,
-                        down: 40
-                    };
-
-                switch (keyCode) {
-                    case arrow.left:
-                        config1.$bookBlock.bookblock('prev');
-                        break;
-                    case arrow.right:
-                        config1.$bookBlock.bookblock('next');
-                        break;
-                }
-            });
-        };
-
-    return { init1: init1 };
-
-})();
-
-var Page = (function () {
-
-    var config = {
-            $bookBlock: $('#bbEasy'),
-            $navNext: $('#navEasyNext'),
-            $navPrev: $('#navEasyPrev')
-        },
-
-        init = function () {
-            config.$bookBlock.bookblock({
-                speed: 800,
-                shadowSides: 0.8,
-                shadowFlip: 0.7,
-                onEndFlip   : function( page, isLimit ) {
-                    if (isLimit==(easy_game_img_array.length-1)){
-                        config.$navNext.css('pointer-events','none');
-                    }
-                    else{
-                        config.$navNext.css('pointer-events','auto');
-                    }
-                    //return false;
-                }
-            });
-            initEvents();
-        },
-
-        initEvents = function () {
-
-            var $slides = config.$bookBlock.children();
-
-            // add navigation events
-            config.$navNext.on('click touchstart', function () {
-
-                config.$bookBlock.bookblock('next');
-                return false;
-            });
-
-            config.$navPrev.on('click touchstart', function () {
-                config.$bookBlock.bookblock('prev');
-                return false;
-            });
-
-            // add swipe events
-            $slides.on({
-                'swipeleft': function (event) {
-                    config.$bookBlock.bookblock('next');
-                    return false;
-                },
-                'swiperight': function (event) {
-                    config.$bookBlock.bookblock('prev');
-                    return false;
-                }
-            });
-
-            // add keyboard events
-            $(document).keydown(function (e) {
-                var keyCode = e.keyCode || e.which,
-                    arrow = {
-                        left: 37,
-                        up: 38,
-                        right: 39,
-                        down: 40
-                    };
-
-                switch (keyCode) {
-                    case arrow.left:
-                        config.$bookBlock.bookblock('prev');
-                        break;
-                    case arrow.right:
-                        config.$bookBlock.bookblock('next');
-                        break;
-                }
-            });
-        };
-
-    return { init: init };
-
-})();
+//var Page1 = (function () {
+//
+//    var config1 = {
+//            $bookBlock: $('#bbHard'),
+//            $navNext: $('#navHardNext'),
+//            $navPrev: $('#navHardPrev')
+//        },
+//        init1 = function () {
+//
+//            config1.$bookBlock.bookblock({
+//                speed: 800,
+//                shadowSides: 0.8,
+//                shadowFlip: 0.7,
+//                onEndFlip   : function( page, isLimit ) {
+//                    if (isLimit==(hard_game_img_array.length-1)){
+//                        config1.$navNext.css('pointer-events','none');
+//                    }
+//                    else{
+//                        config1.$navNext.css('pointer-events','auto');
+//                    }
+//                }
+//            });
+//            initEvents1();
+//        },
+//
+//        initEvents1 = function () {
+//
+//            var $slides = config1.$bookBlock.children();
+//
+//            // add navigation events
+//            config1.$navNext.on('click touchstart', function () {
+//
+//                config1.$bookBlock.bookblock('next');
+//                return false;
+//            });
+//
+//            config1.$navPrev.on('click touchstart', function () {
+//                config1.$bookBlock.bookblock('prev');
+//                return false;
+//            });
+//
+//            // add swipe events
+//            $slides.on({
+//                'swipeleft': function (event) {
+//                    config1.$bookBlock.bookblock('next');
+//                    return false;
+//                },
+//                'swiperight': function (event) {
+//                    config1.$bookBlock.bookblock('prev');
+//                    return false;
+//                }
+//            });
+//
+//            // add keyboard events
+//            $(document).keydown(function (e) {
+//                var keyCode = e.keyCode || e.which,
+//                    arrow = {
+//                        left: 37,
+//                        up: 38,
+//                        right: 39,
+//                        down: 40
+//                    };
+//
+//                switch (keyCode) {
+//                    case arrow.left:
+//                        config1.$bookBlock.bookblock('prev');
+//                        break;
+//                    case arrow.right:
+//                        config1.$bookBlock.bookblock('next');
+//                        break;
+//                }
+//            });
+//        };
+//
+//    return { init1: init1 };
+//
+//})();
+//
+//var Page = (function () {
+//
+//    var config = {
+//            $bookBlock: $('#bbEasy'),
+//            $navNext: $('#navEasyNext'),
+//            $navPrev: $('#navEasyPrev')
+//        },
+//
+//        init = function () {
+//            config.$bookBlock.bookblock({
+//                speed: 800,
+//                shadowSides: 0.8,
+//                shadowFlip: 0.7,
+//                onEndFlip   : function( page, isLimit ) {
+//                    if (isLimit==(easy_game_img_array.length-1)){
+//                        config.$navNext.css('pointer-events','none');
+//                    }
+//                    else{
+//                        config.$navNext.css('pointer-events','auto');
+//                    }
+//                    //return false;
+//                }
+//            });
+//            initEvents();
+//        },
+//
+//        initEvents = function () {
+//
+//            var $slides = config.$bookBlock.children();
+//
+//            // add navigation events
+//            config.$navNext.on('click touchstart', function () {
+//
+//                config.$bookBlock.bookblock('next');
+//                return false;
+//            });
+//
+//            config.$navPrev.on('click touchstart', function () {
+//                config.$bookBlock.bookblock('prev');
+//                return false;
+//            });
+//
+//            // add swipe events
+//            $slides.on({
+//                'swipeleft': function (event) {
+//                    config.$bookBlock.bookblock('next');
+//                    return false;
+//                },
+//                'swiperight': function (event) {
+//                    config.$bookBlock.bookblock('prev');
+//                    return false;
+//                }
+//            });
+//
+//            // add keyboard events
+//            $(document).keydown(function (e) {
+//                var keyCode = e.keyCode || e.which,
+//                    arrow = {
+//                        left: 37,
+//                        up: 38,
+//                        right: 39,
+//                        down: 40
+//                    };
+//
+//                switch (keyCode) {
+//                    case arrow.left:
+//                        config.$bookBlock.bookblock('prev');
+//                        break;
+//                    case arrow.right:
+//                        config.$bookBlock.bookblock('next');
+//                        break;
+//                }
+//            });
+//        };
+//
+//    return { init: init };
+//
+//})();
 
 
 var Page2 = (function () {
@@ -730,75 +732,75 @@ var Page2 = (function () {
 
 })();
 
-var Page3 = (function () {
-
-    var config = {
-            $bookBlock: $('#gameWin'),
-            $navNext: $('#gameWinNext'),
-            $navPrev: $('#gameWinPrev')
-        },
-
-        init = function () {
-            config.$bookBlock.bookblock({
-                speed: 800,
-                shadowSides: 0.8,
-                shadowFlip: 0.7
-            });
-            initEvents();
-        },
-
-        initEvents = function () {
-
-            var $slides = config.$bookBlock.children();
-
-            // add navigation events
-            config.$navNext.on('click touchstart', function () {
-
-                config.$bookBlock.bookblock('next');
-                return false;
-            });
-
-            config.$navPrev.on('click touchstart', function () {
-                config.$bookBlock.bookblock('prev');
-                return false;
-            });
-
-            // add swipe events
-            $slides.on({
-                'swipeleft': function (event) {
-                    config.$bookBlock.bookblock('next');
-                    return false;
-                },
-                'swiperight': function (event) {
-                    config.$bookBlock.bookblock('prev');
-                    return false;
-                }
-            });
-
-            // add keyboard events
-            $(document).keydown(function (e) {
-                var keyCode = e.keyCode || e.which,
-                    arrow = {
-                        left: 37,
-                        up: 38,
-                        right: 39,
-                        down: 40
-                    };
-
-                switch (keyCode) {
-                    case arrow.left:
-                        config.$bookBlock.bookblock('prev');
-                        break;
-                    case arrow.right:
-                        config.$bookBlock.bookblock('next');
-                        break;
-                }
-            });
-        };
-
-    return { init: init };
-
-})();
+//var Page3 = (function () {
+//
+//    var config = {
+//            $bookBlock: $('#gameWin'),
+//            $navNext: $('#gameWinNext'),
+//            $navPrev: $('#gameWinPrev')
+//        },
+//
+//        init = function () {
+//            config.$bookBlock.bookblock({
+//                speed: 800,
+//                shadowSides: 0.8,
+//                shadowFlip: 0.7
+//            });
+//            initEvents();
+//        },
+//
+//        initEvents = function () {
+//
+//            var $slides = config.$bookBlock.children();
+//
+//            // add navigation events
+//            config.$navNext.on('click touchstart', function () {
+//
+//                config.$bookBlock.bookblock('next');
+//                return false;
+//            });
+//
+//            config.$navPrev.on('click touchstart', function () {
+//                config.$bookBlock.bookblock('prev');
+//                return false;
+//            });
+//
+//            // add swipe events
+//            $slides.on({
+//                'swipeleft': function (event) {
+//                    config.$bookBlock.bookblock('next');
+//                    return false;
+//                },
+//                'swiperight': function (event) {
+//                    config.$bookBlock.bookblock('prev');
+//                    return false;
+//                }
+//            });
+//
+//            // add keyboard events
+//            $(document).keydown(function (e) {
+//                var keyCode = e.keyCode || e.which,
+//                    arrow = {
+//                        left: 37,
+//                        up: 38,
+//                        right: 39,
+//                        down: 40
+//                    };
+//
+//                switch (keyCode) {
+//                    case arrow.left:
+//                        config.$bookBlock.bookblock('prev');
+//                        break;
+//                    case arrow.right:
+//                        config.$bookBlock.bookblock('next');
+//                        break;
+//                }
+//            });
+//        };
+//
+//    return { init: init };
+//
+//})();
 
 
 var state = 'home';
