@@ -1,0 +1,744 @@
+body {
+    margin: 0;
+    width: 98.9%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    display: none;
+}
+
+/* Initial Parameters */
+/*-----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Arial', sans-serif;
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+#logo .panel {
+    left: 10%;
+    top: 5%;
+}
+
+ul#menu {
+    position: absolute;
+    right: -940px;
+    bottom: 20%;
+    list-style-type: none;
+    padding: 5px;
+    color: white;
+    padding-right: 50px;
+    background: #dd8b25;
+    opacity: 0.7;
+    z-index: 999;
+}
+
+ul#menu li {
+    display: inline;
+    padding: 10px;
+    margin: 3px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#caseContainer{
+    margin-top: 8%;
+}
+
+
+ul#menu li:hover {
+    background: chocolate;
+}
+
+.old-school {
+    display: none;
+}
+
+#contact-us {
+    background: #333;
+    position: fixed;
+    bottom: -220px;
+    right: 30px;
+    border-radius: 10px;
+    height: 260px;
+    padding: 30px;
+    padding-right: 0;
+    padding-top: 0px;
+    color: #f5f5f5;
+    cursor: pointer;
+    display: none;
+    z-index: 999999;
+    width: 150px;
+}
+
+#find-us {
+
+    width: 500px;
+    height: 100%;
+    padding: 20px;
+    padding-right: 0;
+    padding-left: 50px;
+    float: right;
+    background: #333;
+    border-radius: 10px;
+}
+
+/* The Tree and the Sky */
+/*-----------------------------------------------------------*/
+
+.scene {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.layer {
+    position: relative;
+    background: transparent;
+}
+
+.panel {
+    position: absolute;
+    background: transparent;
+    pointer-events: none;
+    box-shadow: none;
+    display: none;
+}
+
+#logo {
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    width: 200px;
+    height: 75px;
+    z-index: 999;
+    display: none;
+}
+
+#sky_image {
+    width: 100%;
+    height: 100%;
+}
+
+#sky .panel {
+    top: -10%;
+    width: 100%;
+    height: 120%;
+    opacity: 0.8;
+}
+
+#tree .panel {
+    right: -10%;
+    bottom: -120%;
+    width: 150%;
+}
+
+.cloud {
+    opacity: 0.8;
+}
+
+#thinker {
+    pointer-events: auto;
+    display: none;
+}
+
+#thinker img {
+    position: absolute;
+    width: 3.65em;
+    height: 5em;
+    top: 67.1%;
+    right: 36.7%;
+}
+
+.product-book {
+    display: none;
+}
+
+#cloud1 .panel {
+    right: 55%;
+    top: 15%;
+}
+
+#cloud2 .panel {
+    right: 0%;
+    top: 25%;
+}
+
+#cloud3 .panel {
+    right: -5%;
+    top: 35%;
+}
+
+/*-----------------------------------------------------------*/
+/* The Right Panel Home Page */
+/*-----------------------------------------------------------*/
+
+#catchphrase {
+    line-height: 1;
+    opacity: 0;
+    position: relative;
+    margin-top: 120px;
+    right: -960px;
+}
+
+#blurbie {
+    position: relative;
+    text-align: right;
+    margin-right: -50px;
+    display: none;
+}
+
+/*-----------------------------------------------------------*/
+/* The Right Panel About Us */
+/*-----------------------------------------------------------*/
+
+#aboutUs {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    margin-top: 10%;
+    font-size: 12px;
+    pointer-events:none;
+}
+
+#productsPage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    margin-top: 10%;
+    font-size: 12px;
+    opacity: 0;
+}
+
+#hiddenPage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    margin-top: 15%;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events:none;
+}
+
+#productList {
+    list-style: none;
+    width: 100%;
+}
+
+#productList li {
+    display: inline-block;
+    width: 19%;
+    height: 100px;
+    padding: 10px;
+}
+
+#productList li img {
+    width: 100%;
+}
+
+.productsLink{
+    pointer-events:auto;
+}
+
+.caseButton{
+    background: #dd8b25;
+    color:white;
+    padding: 10px;
+    float: right;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+.caseButton:hover{
+    background: chocolate;
+}
+
+.popover-title {
+    background: #DD8B25;
+    color: white;
+}
+.popover-content {
+    background-image: url("../images/background.jpg");
+}
+
+.windy {
+    width: 100%;
+    margin: 40px auto;
+    color: #aaa;
+}
+
+ul.wi-container {
+    width: 100%;
+    height: 450px;
+    bottom: 11px;
+    position: relative;
+    padding: 0;
+    list-style-type: none;
+    -webkit-perspective: 1400px;
+    -moz-perspective: 1400px;
+    -ms-perspective: 1400px;
+    -o-perspective: 1400px;
+    perspective: 1400px;
+    border-radius: 5px;
+}
+
+ul.wi-container li {
+    width: 100%;
+    height: 100%;
+    display: none;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    padding: 10px;
+    padding-top: 20px;
+    pointer-events: auto;
+}
+
+.windy ul.wi-container::before,
+.windy ul.wi-container::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #ffcf57;
+    left: 0;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.windy ul.wi-container::before {
+    top: 10px;
+    z-index: -2;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.windy ul.wi-container::after {
+    top: 7px;
+    z-index: -1;
+}
+
+.windy h4 {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 0 5px;
+    margin-top: 15px;
+    margin-right: 0;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.windy h4 a {
+    color: #333;
+}
+
+.windy p {
+    color: #333;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.windy ul.wi-container li {
+    border-radius: 5px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.windy li img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.6), 0 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.windy li img.thumb-connect {
+    float: right;
+    width: 16px;
+    margin-right: 10px;
+    box-shadow: none;
+}
+
+ul.wi-container li.wi-move {
+    pointer-events: none;
+    -webkit-transition: -webkit-transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+    -moz-transition: -moz-transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+    -o-transition: -o-transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+    -ms-transition: -ms-transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+    transition: transform 600ms ease, opacity 600ms ease, left 600ms ease, top 600ms ease;
+}
+
+.wi-container img {
+    height: auto;
+}
+
+.windy nav {
+    width: 100%;
+    margin-left: 30%;
+}
+
+.windy nav span {
+    width: 40px;
+    height: 40px;
+    margin: 0 4px;
+    float: left;
+    background: url(../images/nav.png) no-repeat 100% 0;
+    text-indent: -9000px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.windy nav span:first-child {
+    background-position: 0 0;
+}
+
+.windy nav span:active {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    background-position: 100% 2px;
+}
+
+.windy nav span:first-child:active {
+    background-position: 0 2px;
+}
+
+.caseRow{
+    height: 170px;
+    overflow: hidden;
+    /*border-bottom: 1px solid #E7C867;*/
+    margin-bottom: 5px;
+    background: none;
+    padding: 10px 20px 10px 0;
+}
+
+.caseImage img {
+    border: 6px solid #DD8B25;
+}
+
+.caseCard {
+}
+
+.caseContent {
+}
+
+.showmore, .showdemo {
+    cursor: pointer;
+}
+
+.tagline {
+    padding-left: 30px;
+}
+.tagline h4{
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.flipHeader {
+    padding-left: 30px;
+}
+
+.flipHeader h4{
+    padding-bottom:0;
+    margin-bottom:0;
+}
+
+.mandate {
+    padding-left: 30px;
+    font-size: 11px;
+}
+
+.solution {
+    font-size: 11px;
+}
+
+.caseNo {
+    font-size: 11px;
+    text-align: center;
+}
+
+#hidden-list{
+    margin-top: 100px;
+}
+#hidden-list ul{
+    list-style: none;
+}
+#hidden-list ul>li{
+    background: #dd8b25;
+    color:white;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+#hidden-list ul>li:hover{
+    background: chocolate;
+}
+
+
+/*-----------------------------------------------------------*/
+
+#footer {
+    position: absolute;
+    bottom: 10px;
+    padding: 10px;
+    padding-left: 40px;
+    pointer-events: none;
+    color: white;
+}
+
+#footer-xs {
+    margin-left: 6%;
+    margin-top: -4%;
+    pointer-events: none;
+
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a:link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* unvisited link */
+
+a:visited {
+    color: #ffffff;
+}
+
+/* visited link */
+
+a:hover {
+    text-decoration: none;
+    /*font-weight: bold;*/
+    color: #ffffff;
+}
+
+/* mouse over link */
+
+a:active {
+    color: #ffffff;
+}
+
+/* selected link */
+
+ul#xsmenu {
+    margin-top: 0em;
+    list-style-type: none;
+    padding: 2em;
+    /*margin-left: 2em;*/
+}
+
+ul#xsmenu li {
+    padding: 0.2em;
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-left: 5px solid gray;
+    margin-bottom: 0.2em;
+    cursor: pointer;
+}
+
+.gamify {
+    opacity: 0.8;
+    z-index: 9999;
+    -webkit-transition: all 0.2s ease-in-out;
+}
+
+.gamify:hover {
+    opacity: 1;
+}
+
+.glower {
+    z-index: 1;
+}
+
+.glower:hover {
+    opacity: 1;
+}
+
+#products {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+}
+
+/*--------------------------------------------------*/
+
+.nopad {
+    margin: 0 0 0 4%;
+    padding: 0;
+    width: 15%;
+}
+
+#coordinates {
+    width: 90%;
+    margin-left: 10%;
+    margin-top: -2%;
+}
+
+.coordinate_block {
+    cursor: pointer;
+}
+
+.colors {
+    margin-top: 50%;
+}
+
+.mobile_text {
+    font-family: 'Impact';
+    font-size: 2.4em;
+    margin-left: 10%;
+    line-height: 1.8em;
+}
+
+.mob_landing_logo {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+/* desktop starts */
+@media all and (min-width: 1024px) {
+
+}
+
+/* desktop ends */
+
+/* tablet landscape starts */
+@media screen and (min-width: 768px) and (max-width: 1025px) {
+    #tree .panel {
+        right: -63%;
+        bottom: -120%;
+        width: 225%;
+    }
+
+    ul#menu{
+        padding-right: 10px;
+    }
+    ul#menu li {
+        padding: 10px;
+        font-size: 16px;
+    }
+    #left-section{
+        overflow: hidden;
+    }
+
+    .tagline h4{
+        font-size: 16px;
+    }
+}
+/* tablet landscape ends */
+
+/* tablet portrait starts */
+@media all and (max-width: 768px) {
+    #left-section{
+        overflow: visible;
+    }
+    #tree .panel {
+        right: -200%;
+        bottom: -120%;
+        width: 400%;
+    }
+    ul#menu{
+        padding-right: 10px;
+        opacity: 1;
+    }
+    ul#menu li {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    #logoportraitSmall{
+        position: absolute;
+        bottom:50px;
+        left:50px;
+        width:40%;
+        opacity: 0;
+    }
+
+    ul.wi-container li {
+        padding: 30px;
+        padding-top: 20px;
+    }
+
+    .caseRow{
+        height: 200px;
+    }
+
+    #caseContainer{
+        margin-top: 5%;
+    }
+
+
+}
+
+/* tablet portrait ends */
+
+/* mobile portrait starts */
+
+@media all and (min-width: 240px) and (max-width: 460px){
+    #find-us {
+        width:  320px;
+        height: 100%;
+        padding: 20px;
+        padding-right: 0;
+        padding-left: 50px;
+        float: right;
+        background: #333;
+        border-radius: 10px;
+    }
+
+}
+
+/* mobile portrait ends */
+
+/* mobile landscape starts */
+
+@media all and (min-width:461px) and (max-width:768px){
+    #find-us {
+        width:  320px;
+        height: 100%;
+        padding: 20px;
+        padding-right: 0;
+        padding-left: 50px;
+        float: right;
+        background: #333;
+        border-radius: 10px;
+    }
+    body{
+        overflow-y: visible;
+    }
+}
+
+
+
+
+
+
+
